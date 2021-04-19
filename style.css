@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+
+    background-image: url("Imágenes Proyecto/Landing Page/LandingPage.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: scroll;
+    background-color: #62528c;
+
+    font-family: Arial;
+
+    width: 100%;
+
+}
+
+.header {
+    background: #d3b4b1;
+    color: white;
+    padding: 20px 10px;
+    border-bottom: 2px solid white;
+
+    /* Cabecera fija */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.header:hover {
+    background-color: #d2a9a3;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    letter-spacing: 10px;
+    font-size: 35px;
+}
+
+.menu-icon {
+    display: none;
+    padding: 0 10px;
+}
+
+.logo-nav-container {  /* contenedor del Logo y el apartado de navegación; Cabecera */
+    display: flex; /* Consigue que los elementos sean flexibles */
+    justify-content: space-between; /* los elementos (logo y ul) estarán repartidos a lo ancho de la pantalla */
+    align-items: center;  /* centrados */
+    padding: 10px; /* tamaño de la caja */
+    flex-wrap: wrap;  /* cambiar de línea cuando no haya espacio */
+}
+
+    .navigation ul {
+        text-shadow: 1px 1px 2px black;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        .navigation ul li {
+            display: inline-block;  /* Elementos dispuestos horizontalmente */
+        }
+
+            .navigation ul li a {
+                display: block;
+                padding: 0.4rem 1rem;
+                transition: all 0.2s linear;  /* animación en los botones */
+                border-radius: 5px;
+                font-size: 22px;
+                margin: 0 4px;
+            }
+
+
+                .navigation ul li a:hover {
+                    background: #645757;
+                }
+
+                .dropdown-content {
+                    z-index: 1;
+                    display: none;
+                    position: absolute;
+                    max-width: 400px;
+                }
+
+                .dropdown-content li {
+                    background-color: #d2a9a3;
+                    border-radius: 5px;
+                    border-bottom: 2px solid white;
+                    border-right: 2px solid white;
+                }
+
+                .dropbtn:hover .dropdown-content {
+                    display: block;
+                }
+
+        /* TEXTOS E IMÁGENES */
+
+.main {
+
+    text-align: justify;
+    padding: 40px;
+    margin-top: 250px;
+    background-color: #62528c;
+    border-top: 2px solid white;
+    margin-bottom: 60px;
+}
+
+
+.h1{
+    line-height: 1.6em;
+}
+
+.container {    /* Anchura y anchura máxima. margin: "en y" "en x" */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+
+}
+
+.titulos-texto-left,
+.titulos-texto-right {
+    line-height: 1.6em;
+    display: flex;
+}
+
+.float-left,
+.float-right {
+    justify-content: center
+}
+
+.float-left {
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
+.float-right {
+    float: right;
+    margin: 0 0 1em 2em;
+}
+
+
+#main-container {
+    color: white;
+    padding-top: 330px;
+    text-align: center;
+}
+
+.fondo-trans {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0 45px;
+    padding-bottom: 15px;
+    display: inline-block;
+    border-radius: 40px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.titular {
+    font-size: 40px;
+    border-radius: 8px;
+}
+
+.relleno {
+    font-size: 24px;
+    display: inline-block;
+}
+
+.btn {
+    transition: all 0.3s linear;  /* animación en los botones */
+    border: 1px solid white;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+
+    /*text-shadow: 0 1px 0px rgba(255, 255, 255, 0.3);*/
+    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.4);
+}
+
+.btn-solicitud {
+    text-shadow: 2px 2px 0px #8775b7;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #62528c;
+}
+
+.btn-solicitud:hover {
+    background-color: #725fa4;
+}
+.btn-solicitud:active {
+    background-color: #8775b7;
+}
+
+.footer {
+    border-top: 2px solid white;
+    background: #d2b3b0;
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .main {
+        padding-top: 100px;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+   .navigation {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+   .navigation ul {
+       display: none;
+   }
+
+    .navigation ul.show {
+        display: block;
+    }
+
+    .navigation ul li {
+        display: block;  /* Elementos en vertical */
+    }
+
+    .navigation ul li a {
+        display: block;
+        padding: 0.2rem 1rem;   /* padding: "en Y" "en X" */
+        transition:/*all 0.3s linear;*/ none;  /* animación en los botones */
+        border-radius: 5px;
+    }
+
+    .navigation ul li a:hover {
+        background: #645757;
+    }
+
+
+
+    .dropdown-content {
+        display: none;
+    }
+
+    .dropdown-content li {
+        display: block;
+        background-color: #d2a9a3;
+        border-radius: 5px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+    }
+}
