@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Solicitudes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="ImagenesProyecto/brote.svg" type="image/ico"/>
+    <link href="css/tablasClientes-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sidenav.css">
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/botonesMostrar.js"></script>
+
+</head>
+
+<body>
+
+<!-- Menú -->
+<nav id="mySidenav" class="sidenav">
+    <ul>
+        <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
+        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
+        </li>
+        <li><a class="sidenav-nav" href="panelUsuario.html">Sensores</a></li>
+        <li><a class="sidenav-nav" href="admin.html">Administrar Sensores</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Cabezera -->
+<header class="header">
+    <div class="container logo-menu-container">
+        <a href="../index.html" class="logo"><img src="ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
+        <!-- Use any element to open the sidenav -->
+        <span><a class="menu-icon" onClick="openNav()"><img src="ImagenesProyecto/LandingPage/menu.svg"
+                                                            height="32" width="46" alt="menu-icon"/></a></span>
+    </div>
+</header>
+
+
+<br><br><br><br>
+
+<main>
+    <h2>Lista de solicitudes</h2>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar por...">
+
+    <!-- Tabla de clientes -->
+    <table id="myTable">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Motivo</th>
+            <th>Ubicación</th>
+            <th>Fecha</th>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Benito</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Mariano</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Jacinta</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Loco</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Pepe</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Bardo</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Elo</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+        <tr>
+            <td data-titulo="Nombre">Benito</td>
+            <td data-titulo="Apellidos">Martínez López</td>
+            <td data-titulo="Email">bmlopez@email.com</td>
+            <td data-titulo="Teléfono">534545433</td>
+            <td data-titulo="Motivo">Me hacen falta sondas para monitorizar el campo</td>
+            <td data-titulo="Ubicación">C/Rosa, Gandía</td>
+            <td data-titulo="Fecha">28/04/2021</td>
+        </tr>
+    </table>
+
+    <br><br><br>
+</main>
+
+<!-- Footer -->
+<footer id="footer" class="footer">
+    <p><a href="../terminosPrivacidad.html">© 2021 - GTI</a></p>
+    <p>Escuela Politécnica Superior de Gandia <br>
+        C/ Paranimf, 1 <br>
+        46730 Grao de Gandia, Gandia <br>
+        Tel. (+34) 96 284 93 33
+    </p>
+</footer>
+<script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OlvidaContraseña</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="app/ImagenesProyecto\brote.svg" type="image/ico"/>
+
+    <link rel="stylesheet" href="app/css/olvidaContraseña-style.css">
+    <link rel="stylesheet" href="app/css/formularios-style.css">
+
+    <link rel="stylesheet" href="app/css/sidenav.css">
+    <script src="app/js/sidenav.js"></script>
+</head>
+
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<nav id="mySidenav" class="sidenav">
+    <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a>
+        <li><a class="sidenav-nav" href="login.html">Iniciar sesión</a>
+        </li>
+        <li><a class="sidenav-nav" href="preguntasFrecuentes.html">Preguntas Frecuentes</a>
+        </li>
+        <li><a class="sidenav-nav" href="nosotros.html">Acerca de Nosotros</a>
+        </li>
+        <li><a class="sidenav-nav" href="#footer">Contáctanos</a>
+        </li>
+    </ul>
+</nav>
+
+<header class="header">
+    <div class="container logo-menu-container">
+        <a href="index.html" class="logo"><img src="app/ImagenesProyecto/logogti.svg" height="" width="120"/></a>
+        <!-- Use any element to open the sidenav -->
+        <span><a class="menu-icon" onClick="openNav()"><img src="app/ImagenesProyecto/LandingPage/menu.svg"
+                                                            height="32" width="46" alt="menu-icon"/></a></span>
+    </div>
+</header>
+
+
+<body class="fondo-pantalla-olv">
+<div class="estructura-div">
+    <div class="login-box">
+        <a href="index.html">
+        </a>
+        <h2>Soporte de GTI</h2><br>
+        <h3>¿Has olvidado el nombre o la contraseña de tu cuenta de GTI?</h3>
+        <form>
+            <!-- user name -->
+            <label for="username">Correo electrónico</label>
+            <input type="text" placeholder="Introduce tu dirección de correo">
+            <!--contraseña -->
+
+            <div class="enviar"><input type="submit" value="Enviar"></div><!-- boton de enviar -->
+        <div class="links">
+            <a href="solicitud.html">¿No eres cliente?</a><br>
+            <a href="index.html">Volver</a>
+        </div>
+
+        </form>
+
+    </div>
+</div>
+
+<footer id="footer" class="footer">
+    <div class="parrafo"><a href="terminosPrivacidad.html">© 2021 - GTI</a></div>
+    <div class="parrafo">Escuela Politécnica Superior de Gandia <br>
+        C/ Paranimf, 1 <br>
+        46730 Grao de Gandia, Gandia <br>
+        Tel. (+34) 96 284 93 33
+    </div>
+</footer>
+
+</body>
+
+</html>

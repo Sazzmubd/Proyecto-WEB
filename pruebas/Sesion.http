@@ -1,0 +1,6 @@
+POST http://localhost:80/api/item
+Content-Type: application/x-www-form-urlencoded //esto significa que los parametros qeu envio salen de un formulario de una pagina web
+nombre=admin&contrasenya=1234
+//id=99&content=new-element
+
+###

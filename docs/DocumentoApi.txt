@@ -1,0 +1,52 @@
+
+#API
+
+## usuarios
+### GET/usuarios/
+devuelve todos los usuarios del sitio
+###repiesta
+-200ok
+[
+    {
+        id:1;
+        nombre:1;
+        rol: admin
+    }
+]
+
+### GET/usuarios/{id}
+devuelve la informacion de un usuario
+
+
+
+
+
+
+
+SESION
+
+### POST/sesion/ /*hago una peticion parra crear una sesion*/
+
+Parametro:
+body 
+	
+	- usuario -> string
+	- contrasenya-> string
+
+Respuesta
+200 Ok
+
+{
+	id : 1
+	nombre: usuario
+	rol: admin
+}
+
+401 noautorizado
+
+
+//--------------------------------------------------------------
+### GET/sesion
+//--------------------------------------------------------------
+### DELETE/sesion
+
