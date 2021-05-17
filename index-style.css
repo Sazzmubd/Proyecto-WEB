@@ -1,0 +1,258 @@
+
+.fondo {
+    width: 100%;
+    background-image: url("../ImagenesProyecto/LandingPage/lavanderfield.jpg");
+    width: 100%;
+    
+    background-repeat: no-repeat;
+    
+    margin: 0;
+    background-color: #4c3b75;
+
+    font-family: Arial;
+}
+
+.header {
+
+    height: 78px;
+    background: #d2c8ef;
+    color: black;
+    border-bottom: 3px solid white;
+
+    /* Cabecera fija */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.logo-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 14px 5%;
+}
+
+.menu-icon {
+    padding: 5px 5px;
+}
+
+/* FIN: CABECERA FIJA */
+
+
+
+
+main {
+    margin-top: 18vh;
+    height: 81.8vh;
+}
+
+.titular-relleno {
+
+    width: 96%;
+    text-align: center;
+    margin:17% auto 20% auto;
+    
+}
+
+.titular-relleno2 {
+
+    width: 96%;
+    text-align: center;
+    margin:20% auto 0% auto;
+    
+}
+
+.titular-box {
+    background-color: rgba(0,0,0, 0.4);
+    border-radius: 6px;
+    min-width: min-content;
+}
+
+.titular {
+    color: #ffffff;
+    font-size: 37px;
+    text-shadow: 3px 0 10px black;
+}
+
+.relleno-box {
+    margin-top: -10px;
+    margin-bottom: 40px;
+}
+
+.relleno {
+    color: black;
+    font-size: 19px;
+}
+
+.solicita {
+    font-weight: lighter;
+    font-size: 18px;
+    margin-bottom: -12px;
+}
+
+.btn-container {
+    margin: -2% 0px 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    font-shadow: 0px 0px 3px rgba(0,0,0,0.9);
+
+    background-color: #e36275;
+    box-shadow: 0px 0px 8px #29233b;
+    border-radius: 6px;
+    padding: 14px 20px;
+
+    margin-top: 100px;
+}
+
+.btn:active {
+    color: #ffffff;
+    background-color: #ac4a59;
+}
+
+.flexbox {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+
+
+
+.flechita {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15%;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto 0 auto;
+    width: 100%;
+    
+    
+    line-height: 1.6rem;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+
+    background-color: #4c3b75;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+
+section .img1 {
+    width: 100%;
+}
+
+.img2,
+.img3{
+    width: 100%;
+}
+
+.iconos-sensores {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.parrafo {
+    line-height: 1.3rem;
+    text-align: left;
+    color: white;
+    font-size: 13px;
+}
+
+.parrafo a {
+color: inherit;
+}
+
+.footer {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: border-box;
+
+    border-top: 3px solid white;
+    background-color: #363637;
+
+    margin: 0 auto 0 auto;
+    padding: 20px 10px;
+
+}
+
+
+@media(min-width: 800px){
+
+    .logo-menu-container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 14px auto 0 auto;
+    }
+
+    .titular-relleno {
+
+        width: 96%;
+        text-align: center;
+        margin:12% auto 5% auto;
+        
+    }
+    
+    .titular-relleno2 {
+
+        width: 96%;
+        text-align: center;
+        margin-top: 10%;
+        
+    }
+    
+    
+}
+
+@media(max-width: 340px){
+    body {
+        background-image: url("../ImagenesProyecto/LandingPage/fondoOrdenadorCampoLavanda.jpg");
+    }
+
+    .logo-menu-container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 14px auto 0 auto;
+    }
+    main {
+        margin-top: 100px;
+        height: 82vh;
+    }
+    .titular {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,81 @@
+body {
+    font-family: arial;
+    background: rgb(76, 59, 117);
+    background: -moz-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
+    background: linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c3b75", endColorstr="#4c3b75", GradientType=1);
+    color: white;
+    margin: 0;
+}
+
+.header {
+
+    height: 78px;
+    background: #d2c8ef;
+    color: black;
+    border-bottom: 3px solid white;
+
+    /* Cabecera fija */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.logo-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 14px 5%;
+    max-width: 1200px;
+}
+
+.menu-icon {
+    padding: 5px 5px;
+}
+
+/* START: FLEXBOX (TÍTULO - BOTÓN USUARIO) */
+
+.titulo-usuario-box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 76px auto 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.usuario-dropbtn {
+    margin-right: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 36px;
+
+    background-color: #d2c8ef;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid white;
+}
+
+.usuario-dropbtn p {
+    text-align: center;
+    padding: 0 3px 0 6px;
+}
+
+.usuario-dropbtn img {
+    padding: 0 6px 0 3px;
+    width: 17px;
+}
+
+.titulo {
+    margin-left: 0.6rem;
+    font-weight: lighter;
+}
