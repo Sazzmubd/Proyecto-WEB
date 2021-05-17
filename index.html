@@ -1,126 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page</title>
-    <link rel="icon" href="Imágenes Proyecto\brote.svg" type="image/ico"/>
-    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Index</title>
+
+    <link rel="icon" href="app/ImagenesProyecto/brote.svg" type="image/ico"/>
+    <link rel="stylesheet" href="app/css/index-style.css">
+    <link rel="stylesheet" href="app/css/sidenav.css">
+
+    <script src="app/js/sidenav.js"></script>
 
 </head>
-<body>
+<body class="fondo">
+
+
+<nav id="mySidenav" class="sidenav">
+    <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a>
+        <li><a class="sidenav-nav" href="login.html">Iniciar sesión</a>
+        </li>
+        <li><a class="sidenav-nav" href="preguntasFrecuentes.html">Preguntas Frecuentes</a>
+        </li>
+        <li><a class="sidenav-nav" href="nosotros.html">Acerca de Nosotros</a>
+        </li>
+        <li><a class="sidenav-nav" href="#footer">Contáctanos</a>
+        </li>
+    </ul>
+</nav>
+
+
 
 <header class="header">
-    <div class="container logo-nav-container">
-        <a href="#" class="logo"><img src="Imágenes Proyecto/logoDef.png" height="" width="80"/></a>
-        <span class="menu-icon"><img src="Imágenes Proyecto/Landing Page/menu.png" height="50" width="50" alt="menu-icon"/></span>
-        <nav class="navigation">
-             <ul>
-                 <li class="dropbtn"><a href="#">Menú</a>
-                     <ul class="dropdown-content">
-                         <li><a href="#">Acerca de Nosotros</a></li>
-                        <li><a href="Preguntas-Frecuentes.html">Preguntas Frecuentes</a></li>
-                     </ul>
-                 </li>
-                 <li><a href="loginDef.html">Iniciar Sesión</a></li>
-             </ul>
-        </nav>
-    </div>
+    <nav class="container logo-menu-container">
+        <a href="index.html" class="logo"><img src="app/ImagenesProyecto/logogti.svg" height=""
+                                               width="120"/></a>
+        <!-- Use any element to open the sidenav -->
+        <span><a class="menu-icon" onClick="openNav()"><img src="app/ImagenesProyecto/LandingPage/menu.svg"
+                                                            height="32" width="46" alt="menu-icon"/></a></span>
+    </nav>
 </header>
 
-<br><br>
+<div class="fondo-pantalla">
 
-<div id="main-container">
-    <div class="fondo-trans"><h1 class="titular">Consigue una mayor eficiencia en tus cultivos</h1>
-    <h3 class="relleno">Una sensación de tranquilidad invade todo tu cuerpo.
-        Tus cultivos están a salvo, no hay nada de lo que preocuparse,
-        y si fuera así, lo sabrías.</h3>
-    </div>
-    <br><br><br><br>
-        <a href="solicitudDef.html" class="btn btn-solicitud">Solicitar Servicio</a>
-    </div>
+    <main>
+        <div class="titular-relleno">
+            <div class="titular-box">
+                <h1 class="titular"><p>AUMENTA <br>LA <em style="color:#eece91">EFICIENCIA</em><br>DE TUS CULTIVOS
+                </p></h1>
+            </div>
+            <div class="relleno-box"><h3 class="relleno"> 
+                <span class="solicita">Solicita aquí una cita con nuestros <br> técnicos y ellos te
+                asesorarán.</span></h3>
+            </div>
+        </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br id="#servicios"><br>
+        <div class="btn-container">
+            <div>
+                <a href="solicitud.html" class="btn btn-solicitud">Solicitar Servicio</a>
+            </div>
+        </div>
+        <div class="titular-relleno2">
+            
+            <div class="relleno-box"><h3 class="relleno"> 
+                <span class="solicita">Baje para más información</span></h3>
+            </div>
+        </div>
+        
+        <div class="flexbox flechita">
+            <a href="#saber-mas"><img id="saber-mas"
+                                      src="app/ImagenesProyecto/LandingPage/flecha-hacia-abajo%20(1).svg"
+                                      alt="flecha"
+                                      width="40px"></a>
+        </div>
+        
 
-<main class="main">
-    <div class="container ">
+        <br><br>
+    </main>
+</div>
 
-        <div class="float-right" style="border: 6px solid aliceblue;"><img src="Imágenes Proyecto/Landing Page/sonda_agrícola2.png" height="320" width=""/></div>
-        <div>
-        <h1 class="titulos-texto-left">Optimiza tu trabajo</h1>
-        <p> La tecnología avanza y queremos poner a su alcance lo último de lo último. La revolución
+<section class="flexbox column space-between section-info">
+    <div class="text-box">
+        <p><em>La tecnología avanza y queremos poner a su alcance lo último de lo último. La <em
+                style="color: #EECE91;"> revolución</em>
             de la agricultura ha llegado.
-
-            Sensores especializados para ti. Nosotros nos ocupamos del riguroso estudio tecnológico
-            y te traemos justo lo que necesites. Optimiza tu trabajo comodamente monitoreando todos
-            los parámetros que desees.
-            <br>
-                - Monitorice el uso del agua
-            <br>
-                - Controle la calidad del aire
-            <br>
-                - Detecta un posible robo
-            <br>
-                - Consulta los resultados a distancia</p>
-        </div>
-
+        </em></p>
     </div>
 
-    <div class="container align-items-flex-end">
+    <img class="img1" src="app/ImagenesProyecto/LandingPage/agricultura-landing1.jpg" alt="">
 
-    <br>
 
-        <div class="float-left" style="border: 6px solid aliceblue;"><img src="Imágenes Proyecto/Landing Page/sonda_agrícola.png" height="320" width=""/>
-        </div>
-        <div>
-            <h1 class="titulos-texto-right">Cómo funciona nuestro servicio</h1>
-            <p>El proceso es muy sencillo. Usted acude a la sección Producto y completa el
-                correspondiente formulario. Una vez hecho eso, nosotros nos pondremos en contacto y
-                concertaremos una cita para concluir todos los detalles acerca del sensor.
-                Posteriormente se instalará el sensor en su explotación y le concederemos un usuario
-                y una contraseña para acceder a la web.
-                Nuestros sensores son intuitivos y sencillos de utilizar.
-
-                Todo esto y más. Comienza tu experiencia GTI con un único click.</p>
-        </div>
-
+    <div class="text-box">
+        <p><em>Sensores <em style="color: #EECE91;"> especializados para ti</em>. Nosotros nos ocupamos del riguroso
+            estudio tecnológico
+            y te traemos justo lo que necesites.
+        </em></p>
     </div>
 
-    <br>
+    <img class="img2" src="app/ImagenesProyecto/LandingPage/agricultura-img2.jpg" alt="">
 
-    <div class="container ">
 
-        <div class="float-right" style="border: 6px solid aliceblue;"><img
-                src="Imágenes Proyecto/Landing Page/acerca-de-nosotros.png" height="401" width="571"/></div>
-        <div>
-            <h1 class="titulos-texto-left">Acerca de Nosotros</h1>
-            <p> GTI es una empresa innovadora especializada en el diseño y creación de sensores
-                agrarios que atiende a la perfección todas las necesidades del mercado e inquietudes
-                que el cliente demande.
+    <div class="text-box">
+        <p><em><em style="color: #EECE91;"> Optimiza </em>tu trabajo cómodamente monitoreando todos
+            los parámetros que desees. <br>
 
-                GTI utiliza un modelo innovador proveedor-cliente para que el servicio satisfaga
-                correctamente y cumpla con los objetivos deseados.
-                El uso de componentes de alta calidad así como la experiencia técnica en el sector
-                le otorga a GTI las cualidades idoneas para adeacuarse a cualquier tipo de cliente.
+        <div class="iconos-sensores">
+            <img src="app/ImagenesProyecto/LandingPage/iconos%20sensores.png" alt=""> <br>
 
-                Valores de GTI. El objetivo es proporcionar la mejor experiencia a sus
-                compradores. Prioriza el trato y correcto proceso del servicio porque cree
-                que es la mejor forma de alcanzar las expectativas de sus clientes.</p>
         </div>
+        <p>
+        - Consulta los parámetros a distancia. <br>
 
+        - Monitoriza el uso del agua. <br>
+
+        - Controla la calidad del aire. <br>
+
+        - Detecta un posible robo.
+        </em></p>
     </div>
 
+    <img class="img3" src="app/ImagenesProyecto/LandingPage/agricultura-img3.jpg" alt="">
+
+</section>
 
 
-</main>
-
-
-<footer class="footer">
-    <div class="container" style="text-shadow: 2px 1px 0 #665399">FOOTER</div>
+<footer id="footer" class="footer">
+    <div class="parrafo"><a href="terminosPrivacidad.html">© 2021 - GTI</a></div>
+    <div class="parrafo">Escuela Politécnica Superior de Gandia <br>
+        C/ Paranimf, 1 <br>
+        46730 Grao de Gandia, Gandia <br>
+        Tel. (+34) 96 284 93 33
+    </div>
 </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script>
 
 </body>
 </html>
