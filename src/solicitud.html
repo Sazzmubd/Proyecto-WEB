@@ -25,25 +25,26 @@
         <form>
             <!-- user name -->
             <label for="username">Nombre y Apellido (Obligatorio)</label>
-            <input type="text" placeholder="Ingresar Nombre y apellidos" name="F" required>
+            <input type="text" placeholder="Ingresar Nombre y apellidos" name="inputName" required>
             
             <div class="custom-control custom-radio"> Empresa
-                <input type="radio" id="customRadio2" name="tipo" class="custom-control-input">
+                <input type="radio" id="customRadio2" name="inputTipo" class="custom-control-input">
                 <label class="custom-control-label" for="customRadio2"></label>
             </div>
 
             <label for="e-mail">Correo (Obligatorio)</label>
-            <input type="text" placeholder="Ingresar E-mail" name="correo" required>
+            <input type="text" placeholder="Ingresar E-mail" name="inputCorreo" required>
+
+
+            <label for="telefono">Teléfono</label>
+            <input type="number" placeholder="Ingrese su telefono" name="inputTelefono">
 
             <label for="solicitud">Motivo</label>
             <textarea class="cuadro-grande"  id="msg" name="motivo" placeholder="Escribir Mensaje"></textarea>
 
 
-            <label for="direccion1">Teléfono</label>
-            <input type="text" placeholder="Ingrese su provincia" name="telefono">
-
-            <label for="direccion2">Provincia</label>
-            <input type="text" placeholder="Ingrese su localidad" name="provincia">
+            <label for="provincia">Provincia</label>
+            <input type="text" placeholder="Ingrese su Provincia" name="inputProvincia">
 
 
             <div class="enviar"><input type="submit" value="Enviar"></div><!-- boton de enviar -->
