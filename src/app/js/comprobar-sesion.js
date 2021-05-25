@@ -3,7 +3,8 @@ fetch('../api/v1.0/sesion').then(function (respuesta) {
         location.href = '../login.html';
 
     }else{
-        location.href = '../app/panelUsuario.html';
+        document.body.style = 'block';
+
 
     }
 })
