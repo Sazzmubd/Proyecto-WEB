@@ -15,7 +15,16 @@ $result = mysqli_query($conn, $sql);//
 //echo mysqli_num_rows($result);
 if (mysqli_num_rows($result) > 0) {
 
-    session_start();
+
+//                   esto es lo de RECORDAR CONTRASEÑA
+    if(isset($_POST['recordar'])){
+        session_start([
+            'cookie_lifetime' => 60 * 60 * 24* 365,
+        ]);
+    }else{
+        session_start();
+    }
+
 
     while ($fila = mysqli_fetch_assoc($result)) {
         //echo $fila["nombre"] . "<br>";// esto devuelve los datos que pidesen este caso nombre

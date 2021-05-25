@@ -2,18 +2,18 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
     event.preventDefault();//para q no envie cuando hagas enter el submit
     let dataLogin = new FormData(event.target); //aqui se almacena los datos en la variable esa
-    console.log(dataLogin.get("username"));
-    console.log(dataLogin.get("userpass"));
+    //event.target es la informacion que rellenas en la tabla
 
 
-    fetch('http://localhost/src/api/v1.0/solicitud', {
+
+    fetch('api/v1.0/solicitud/', {
         method: 'POST',
         body:dataLogin,
 
     }).then(function (res) {
 
-        console.log(response);
-        response.json().then(data => console.log(data))
+        console.log(res);
+        res.json().then(data => console.log(data))
 
     })
 })
