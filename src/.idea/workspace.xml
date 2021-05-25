@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="32b4d416-660d-4f63-bf12-aa7052284bb6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Sprit1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Sprit1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bbdd/proyectoDefinitivo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../bbdd/proyectoDefinitivo.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/DocumentoApi.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/DocumentoApi.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pruebas/Sesion.http" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/Sesion.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pruebas/grafica-base.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/grafica-base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pruebas/graficas.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/graficas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/dataSources/6d847f38-8adf-4ed7-bda7-adeb9125b811.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/dataSources/6d847f38-8adf-4ed7-bda7-adeb9125b811.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/dataSources/6d847f38-8adf-4ed7-bda7-adeb9125b811/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/dataSources/6d847f38-8adf-4ed7-bda7-adeb9125b811/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/.idea/v1.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/.idea/v1.0.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/Proyecto WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/Proyecto WEB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/includes/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/includes/conexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/delete-sesion.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/delete-sesion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/get-sesion.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/get-sesion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/get-usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/get-usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/nombreUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/nombreUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/post-sesion.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/post-sesion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/post-solicitud.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/post-solicitud.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/vistas/json.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/vistas/json.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/bootstrap_main.4901d46d1d36a610ddfc.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/bootstrap_main.4901d46d1d36a610ddfc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/bootstrap_qr-e892ca30934b9f1b9db6.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/bootstrap_qr-e892ca30934b9f1b9db6.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/lazy_loaded_high_priority_components.73ec82359679ea8b20b9.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/lazy_loaded_high_priority_components.73ec82359679ea8b20b9.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/lazy_loaded_high_priority_components_lazy_loaded_low_priority_components.fc5b5a8da2673c56e501.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/lazy_loaded_high_priority_components_lazy_loaded_low_priority_components.fc5b5a8da2673c56e501.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/lazy_loaded_low_priority_components.c9e655ed9d61a3f90746.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/(2) WhatsApp_files/lazy_loaded_low_priority_components.c9e655ed9d61a3f90746.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/agricultura (1).svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/agricultura (1).svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/flecha-hacia-abajo (1).svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/flecha-hacia-abajo (1).svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/flecha-hacia-abajo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/flecha-hacia-abajo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/menu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/menu.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/ordenador-portatil (1).svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/ordenador-portatil (1).svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/ordenador-portatil.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/ordenador-portatil.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/plantando (1).svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/plantando (1).svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/plantando.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/plantando.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/atencion.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/atencion.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/logoGTI.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/logoGTI.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/humedad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/humedad.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/luminosidad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/luminosidad.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/marcador-de-posicion.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/marcador-de-posicion.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/sal.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/monitorSensores/sal.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/plus.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/ImagenesProyecto/plus.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/admin-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/admin-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/formularios-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/formularios-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/index-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/index-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/login-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/login-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/monitorSensores-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/monitorSensores-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/nosotrosTerminos-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/nosotrosTerminos-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/olvidaContraseña-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/olvidaContraseña-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/panelUsuario-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/panelUsuario-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/preguntasFrecuentes-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/preguntasFrecuentes-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/sidenav.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/sidenav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/solicitud-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/solicitud-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/tablasClientes-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/tablasClientes-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/botonesMostrar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/botonesMostrar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/cerrar-sesion.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/cerrar-sesion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/index-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/index-scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/jQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/jQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/mapa.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/mapa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/nombreUS.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/nombreUS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/preguntasFrecuentes-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/preguntasFrecuentes-scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/sidenav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/monitorSensores.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/monitorSensores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/panelUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/panelUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tablaSolicitudes.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/tablaSolicitudes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/nosotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olvidaContraseña.html" beforeDir="false" afterPath="$PROJECT_DIR$/olvidaContraseña.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preguntasFrecuentes.html" beforeDir="false" afterPath="$PROJECT_DIR$/preguntasFrecuentes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terminosPrivacidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/terminosPrivacidad.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1syM2qaKW5kfrTxqc8jWfQfM5Yv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32b4d416-660d-4f63-bf12-aa7052284bb6" name="Default Changelist" comment="" />
+      <created>1621840193211</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621840193211</updated>
+      <workItem from="1621840201401" duration="4694000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

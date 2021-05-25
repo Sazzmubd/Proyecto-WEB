@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2021 a las 20:01:49
+-- Tiempo de generación: 24-05-2021 a las 10:24:30
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `proyecto`
+-- Base de datos: `proyectocorregida`
 --
 
 -- --------------------------------------------------------
@@ -30,11 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `campos` (
   `idCampos` int(11) NOT NULL,
   `id` int(11) NOT NULL,
-  `esquinas` float NOT NULL,
   `color` varchar(255) NOT NULL,
-  `poligonoLatitud` float NOT NULL,
-  `poligonoLongitud` float NOT NULL
+  `esquinas` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`esquinas`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `campos`
+--
+
+INSERT INTO `campos` (`idCampos`, `id`, `color`, `esquinas`) VALUES
+(1, 2, 'red', '-0.190527'),
+(2, 3, 'orange', '-0.160486');
 
 -- --------------------------------------------------------
 
@@ -44,9 +50,9 @@ CREATE TABLE `campos` (
 
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
-  `nombreApellidosEmpresa` varchar(255) NOT NULL,
+  `nombreapellidosempresa` varchar(255) NOT NULL,
   `tipo` enum('empresa','particular') NOT NULL,
-  `e-mail` varchar(255) NOT NULL,
+  `correo` varchar(255) NOT NULL,
   `telefono` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -54,9 +60,10 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `nombreApellidosEmpresa`, `tipo`, `e-mail`, `telefono`) VALUES
+INSERT INTO `clientes` (`id`, `nombreapellidosempresa`, `tipo`, `correo`, `telefono`) VALUES
 (1, 'Francisco Esteve Cortes', 'empresa', 'fran@gmail.com', 63274823),
-(2, 'Carlos Prieto Marinez', 'particular', 'carlosp@gmail.com', 637383883);
+(2, 'Carlos Prieto Marinez', 'particular', 'carlosp@gmail.com', 637383883),
+(3, 'Paco Sanz Gorriz', 'particular', 'paco@gmail.com', 63274822);
 
 -- --------------------------------------------------------
 
@@ -70,8 +77,17 @@ CREATE TABLE `mediciones` (
   `humedad` float NOT NULL,
   `salinidad` float NOT NULL,
   `temperatura` float NOT NULL,
-  `Luminosidad` int(11) NOT NULL
+  `Luminosidad` int(11) NOT NULL,
+  `fechaMedicion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `mediciones`
+--
+
+INSERT INTO `mediciones` (`idSensor`, `idMedicion`, `humedad`, `salinidad`, `temperatura`, `Luminosidad`, `fechaMedicion`) VALUES
+(1, 1, 30.4, 10.9, 23.02, 2, '2021-05-24 08:03:03'),
+(1, 2, 32.5, 13.9, 25.02, 2, '2021-05-24 08:03:03');
 
 -- --------------------------------------------------------
 
@@ -82,10 +98,16 @@ CREATE TABLE `mediciones` (
 CREATE TABLE `sensor` (
   `idSensor` int(11) NOT NULL,
   `idCampos` int(11) NOT NULL,
-  `latitud` float NOT NULL,
-  `longitud` float NOT NULL,
+  `localizacion` varchar(255) NOT NULL,
   `estado` enum('activo','fallo') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sensor`
+--
+
+INSERT INTO `sensor` (`idSensor`, `idCampos`, `localizacion`, `estado`) VALUES
+(1, 1, '41.5905', 'activo');
 
 -- --------------------------------------------------------
 
@@ -96,11 +118,12 @@ CREATE TABLE `sensor` (
 CREATE TABLE `solicitud` (
   `idSolicitudes` int(11) NOT NULL,
   `nombreApellidosEmpresa` varchar(255) NOT NULL,
-  `tipo` enum('empresa','paricular') NOT NULL,
-  `e-mail` varchar(255) NOT NULL,
-  `telefono` int(11) NOT NULL,
+  `tipo` enum('empresa','particular') NOT NULL,
+  `correo` varchar(255) NOT NULL,
+  `telefono` int(9) NOT NULL,
   `motivo` varchar(255) NOT NULL,
-  `provincia` varchar(255) NOT NULL
+  `provincia` varchar(255) NOT NULL,
+  `fechaSolicitud` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -111,8 +134,9 @@ CREATE TABLE `solicitud` (
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `contrasenya` varchar(255) NOT NULL,
+  `contrasenya` int(11) NOT NULL,
   `rol` enum('admin','normal') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -120,9 +144,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `contrasenya`, `rol`) VALUES
-(1, 'admin', '1234', 'admin'),
-(2, 'usuario1', '1234', 'normal');
+INSERT INTO `usuarios` (`id`, `idUsuario`, `nombre`, `contrasenya`, `rol`) VALUES
+(1, 1, 'admin', 1234, 'admin'),
+(2, 2, 'usuario1', 1234, 'normal'),
+(3, 3, 'usuario2', 1234, 'normal');
 
 --
 -- Índices para tablas volcadas
@@ -165,6 +190,7 @@ ALTER TABLE `solicitud`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idUsuario`),
   ADD KEY `id` (`id`);
 
 --
@@ -175,31 +201,37 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `campos`
 --
 ALTER TABLE `campos`
-  MODIFY `idCampos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCampos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `mediciones`
 --
 ALTER TABLE `mediciones`
-  MODIFY `idMedicion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMedicion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `sensor`
 --
 ALTER TABLE `sensor`
-  MODIFY `idSensor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSensor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `idSolicitudes` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSolicitudes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
