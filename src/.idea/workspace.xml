@@ -6,11 +6,12 @@
       <change beforePath="$PROJECT_DIR$/../.idea/Sprit1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Sprit1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bbdd/proyectoDefinitivo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../bbdd/proyectoDefinitivo.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bbdd/proyectocorregidaDefinitivo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../bbdd/proyectocorregidaDefinitivo.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../docs/DocumentoApi.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/DocumentoApi.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pruebas/Sesion.http" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/Sesion.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pruebas/grafica-base.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/grafica-base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pruebas/graficas.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/graficas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/.idea/dataSources.xml" afterDir="false" />
@@ -75,6 +76,7 @@
       <change beforePath="$PROJECT_DIR$/app/js/nombreUS.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/nombreUS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/preguntasFrecuentes-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/preguntasFrecuentes-scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/sidenav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/solicitud.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/solicitud.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/monitorSensores.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/monitorSensores.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/panelUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/panelUsuario.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/tablaSolicitudes.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/tablaSolicitudes.html" afterDir="false" />
@@ -83,6 +85,7 @@
       <change beforePath="$PROJECT_DIR$/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/nosotros.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/olvidaContraseña.html" beforeDir="false" afterPath="$PROJECT_DIR$/olvidaContraseña.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preguntasFrecuentes.html" beforeDir="false" afterPath="$PROJECT_DIR$/preguntasFrecuentes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solicitud.html" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terminosPrivacidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/terminosPrivacidad.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +106,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
