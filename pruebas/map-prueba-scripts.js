@@ -3,7 +3,7 @@ let userName;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 49.0085631, lng: -4.0779268 },
+        center: { lat: 39.0085631, lng: -4.0779268 },
         zoom: 5,
         mapTypeId: 'hybrid',
         styles: [
@@ -21,19 +21,16 @@ function initMap() {
         rotateControl: false,
         zoomControl: false,
     });
-
 }
 
- // Esto es para crear los recuadros para los campos.
-
 function drawUserField(fieldData, lblName){
-    var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(fieldData.esquinas)));
+    var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(fieldData.localizacion)));
     var bounds = createBounds(shape);
 
     addMarkerFieldClick(addMarker(bounds.getCenter(), lblName, "field"), bounds, function(){
         var formData = new FormData();
         formData.append('data', "plot");
-        formData.append('extra', fieldData.idCampo);
+        formData.append('extra', fieldData.fieldID);
         fetchData(formData, function(res){
             for (let i = 0; i < res.length; i++) {
                 drawUserPlot(res[i], shape, "Parcela " + (i+1));
@@ -42,10 +39,8 @@ function drawUserField(fieldData, lblName){
     });
 }
 
-// Crea un marcador por cada sensor
-
 function drawUserPlot(plotData, fieldShape, lblName){
-    var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(plotData.localizacion)));
+    var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(plotData.location)));
     var bounds = createBounds(shape);
 
     addMarkerPlotClick(addMarker(bounds.getCenter(), lblName, "field"), fieldShape, bounds, function(){
@@ -54,7 +49,7 @@ function drawUserPlot(plotData, fieldShape, lblName){
         formData.append('extra', plotData.plotID);
         fetchData(formData, function(res){
             for (let i = 0; i < res.length; i++) {
-                addMarkerSensorClick(addMarker(JSON.parse(res[i].localizacion), " ", "probe", true), res[i]);
+                addMarkerSensorClick(addMarker(JSON.parse(res[i].esquinas), " ", "probe", true), res[i]);
             }
         })
     })
@@ -115,8 +110,6 @@ function addMarkerSensorClick(marker, sensorData){
     });
 }
 
-//Crea una forma con las coordenadas que le pases
-
 function createCoordShape(data){
     let polygon = new google.maps.Polygon({
         paths: data,
@@ -150,20 +143,18 @@ function parseJSONLocationFormat(data){
     return data;
 }
 
-function fetchData(formData, cb) {
+function fetchData(formData, cb){
+    formData.append('user', userName);
 
-    formData.append('id', id);
-
-    fetch("../api/v1.0/modelos/post-map.php", {
+    fetch("./api/v1/probes.php", {
         method: "POST",
         body: formData
     }).then(function (result) {
-        if (result.status == 200) {
-            return result;
+        if(result.status == 200){
+            return result.json();
         }
     }).then(async function (data) {
-        console.log(data)
-        if (data != null) {
+        if(data != null){
             cb(data);
         }
     });

@@ -162,6 +162,20 @@ main {
     border-bottom: 2px solid white;
 }
 
+.text-box .titulos-info {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 0 12px;
+}
+
+.text-box .titulos-info img {
+    margin-bottom: 10px;
+}
+
+.text-box .titulos-info h1 {
+    font-family: ;
+}
+
 
 section .img1 {
     width: 100%;

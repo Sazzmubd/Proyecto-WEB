@@ -1,7 +1,7 @@
 body {
     font-family: arial;
     background: rgb(76, 59, 117);
-    background: -moz-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
+    background: -moz-linear-gradient(90deg, rgb(76, 59, 117) 0%, rgba(140, 119, 200, 1) 50%, rgb(76, 59, 117) 100%);
     background: -webkit-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgb(76, 59, 117) 100%);
     background: linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c3b75", endColorstr="#4c3b75", GradientType=1);
@@ -13,16 +13,16 @@ body {
 .header {
 
     height: 78px;
+    width: 100%;
     background: #d2c8ef;
     color: black;
     border-bottom: 3px solid white;
 
     /* Cabecera fija */
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
 }
 
 .logo-menu-container {
@@ -30,12 +30,41 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    margin: 14px 5%;
+    margin: auto 5%;
     max-width: 1200px;
 }
 
-.menu-icon {
-    padding: 5px 5px;
+.menu-user {
+    margin-right: 20px;
+}
+
+ul li {
+    list-style: none;
+}
+
+.submenu-user {
+    float:left;
+    /*display: none;*/
+    position: absolute;
+    right: 17%;
+
+}
+
+.submenu-user li a{
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #363637;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    display: block;
+}
+
+.user-menu-icons {
+    margin: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -45,7 +74,7 @@ body {
     max-width: 1200px;
     margin: 90px auto 0 auto;
 
-    width: 96%;
+    width: 94%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +86,7 @@ body {
     width: 100%;
     display: flex;
     margin-left: 0rem;
+    align-items: center;
 }
 
 .titulo-usuario-box div h1 {
@@ -72,8 +102,7 @@ body {
     display: block;
 }
 
-.usuario-dropbtn {
-
+.usuario-dropbtn li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -84,6 +113,11 @@ body {
     text-decoration: none;
     border-radius: 4px;
     border: 2px solid white;
+}
+
+
+.usuario-dropbtn .usuario-submenu {
+    display: none;
 }
 
 .usuario-dropbtn p {
@@ -107,14 +141,14 @@ body {
 /* START: SECCIÓN MAPA */
 
 #map {
-    height: 60vh;
+    height: 70vh;
     border: solid 1px white;
     border-radius: 4px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .map {
-    margin: -14px auto 0 auto;
+    margin: -14px auto 50px auto;
     width: 96%;
     max-width: 1200px;
 }
@@ -176,97 +210,6 @@ body {
 
 /* END: SECCIÓN MAPA */
 
-/* START: SECCIÓN LISTA DE SONDAS */
-
-.lista-sondas {
-    margin: 20px auto 12px auto;
-    width: 96%;
-}
-
-.lista-sondas h2 {
-    font-weight: lighter;
-    font-size: 20px;
-
-    margin-left: 2%;
-    margin-bottom: -2px;
-}
-
-.sonda-container {
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: .2rem 0.8rem;
-    margin-top: .6rem;
-    border-radius: 5px;
-    border: 1px solid white;
-
-}
-
-.sonda-container .sonda-name {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.sonda-container h2 {
-    font-weight: lighter;
-    font-size: 20px;
-}
-
-.sonda-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.dropbtn {
-
-    color: white;
-    font-size: 14px;
-    line-height: 1.6em;
-    text-decoration: none;
-
-    background-color: #806bb8;
-    text-shadow: 1px 1px 1px black;
-    padding: 0px 8px;
-    border-radius: 8px;
-
-    height: 40px;
-}
-
-.flex-column-img-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.flex-column-img-icons img {
-    padding: 2px 6px;
-    background-color: white;
-    border-radius: 4px;
-    width: 50%;
-}
-
-.dropdown-content {
-    display: none;
-}
-
-.flex-icon-box {
-    display: flex;
-    justify-content: space-between;
-    width: min-content;
-}
-
-.flex-icon-box img {
-    border-radius: 4px;
-    padding: 2px 2px;
-    margin: 0 4px;
-    background-color: white;
-    width: 30px;
-}
-
-h2, h1 {
-    font-weight: lighter;
-    text-shadow: -2px -1px 1px rgba(0, 0, 0, 0.5);
-}
 
 
 /* FOOTER */
@@ -308,7 +251,7 @@ h2, h1 {
     .logo-menu-container {
         width: 80%;
         max-width: 1200px;
-        margin: 14px auto 0 auto;
+        margin: 0px auto 0 auto;
     }
 
     .titulo-usuario-box {

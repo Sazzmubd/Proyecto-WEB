@@ -18,7 +18,8 @@
 <nav id="mySidenav" class="sidenav">
     <ul>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a>
-        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
+        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a>
+            <!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
         </li>
         <li><a class="sidenav-nav" href="../preguntasFrecuentes.html">Preguntas Frecuentes</a>
         </li>
@@ -33,9 +34,29 @@
     <div class="container logo-menu-container">
         <a href="../index.html" class="logo"><img src="ImagenesProyecto/logogti.svg" height="" width="120"/></a>
         <!-- Use any element to open the sidenav -->
-        <span><a class="menu-icon" onClick="openNav()"><img src="ImagenesProyecto/LandingPage/menu.svg"
-                                                            height="32" width="46" alt="menu-icon"/></a></span>
+        <div class="user-menu-icons">
+            <span>
+                <ul class="menu-user">
+                <li>
+                    <a id="userBtn" href="#" class="user-icon"><img src="ImagenesProyecto/monitorSensores/user.svg"
+                                                                    alt=""
+                                                                    width="38"></a>
+                </li>
+                    <ul id="submenu" class="submenu-user">
+                        <li><a href="">Contacta</a></li>
+                        <li><a href="">ehrt</a></li>
+                        <li><a href="">wergwtg</a></li>
+                        <li><a id="cerrarBtn">Cerrar</a></li>
+
+                    </ul>
+            </ul>
+            </span>
+            <span><a class="menu-icon" onClick="openNav()"><img src="ImagenesProyecto/LandingPage/menu.svg"
+                                                                height="32" width="46" alt="menu-icon"/></a></span>
+        </div>
     </div>
+
+
 </header>
 <!--END: -->
 
@@ -43,14 +64,11 @@
 <div class="titulo-usuario-box">
     <div>
         <img src="ImagenesProyecto/monitorSensores/Panel-de-usuario.svg" alt="">
-        <h1 class="titulo">Panel de usuario</h1>
+        <h1 class="titulo">PANEL DE CONTROL</h1>
+        <div id="output"></div>
     </div>
-    <a id="usuario-dropbtn" class="usuario-dropbtn" href="#">
-        <p>usuario</p>
-        <img src="ImagenesProyecto/monitorSensores/chevron.png" alt="icon"/>
-    </a>
 
-</div>
+
 </div>
 
 <!--END: FLEXBOX(TÍTULO - BOTÓN USUARIO)-->
@@ -60,118 +78,10 @@
 <section class="map">
     <h2>Mapa de Sondas</h2>
     <div id="output"></div>                                 <!--  SACAR NOMBREEEEEEEEEEE -->
-    <div class="flex-row">
-        <div class="addMarker">
-            <button onclick="addMarker()">Añadir marca</button>
-
-            <input placeholder="Introduce lat..." type="text" id="lat">
-            <input placeholder="Introduce lng..." type="text" id="lng">
-        </div>
-
-        <div class="addPolygon">
-            <button onclick="addPolygon()">Añadir polígono</button>
-
-            <input placeholder="Introduce lat..." type="text" id="p-lat">
-            <input placeholder="Introduce lng..." type="text" id="p-lng">
-        </div>
-    </div>
-
     <div id="map"></div>
 
 </section>
 <!--END: SECCIÓN UBICACIÓN-->
-
-<!--START: SECCIÓN LISTA DE SONDAS-->
-
-<section class="lista-sondas">
-    <h2>Lista de Sondas</h2>
-
-    <div class="sonda-container">
-        <div class="sonda-header">
-            <h3 class="sonda-name">Insertar nombre</h3>
-            <button id="dropbtn1" class="dropbtn" onclick="ShowHideElement1()">Mostrar</button>
-        </div>
-        <p id="element1" class="dropdown-content">
-            El primer paso es rellenar la solicitud de compra de nuestros servicios con tu información desde
-            <a style="color: #f5f2a6;" href="solicitud.html">esta página</a>. A continuación, tu petición será valorada
-            y pronto te responderemos
-            con los detalles de tu pedido.
-        </p>
-    </div>
-
-    <div class="sonda-container">
-        <div class="sonda-header">
-            <h3 class="sonda-name">Insertar nombre</h3>
-            <button id="dropbtn2" class="dropbtn" onclick="ShowHideElement2()">Mostrar</button>
-        </div>
-        <div id="element2" class="dropdown-content">
-            <div class="flex-column-img-icons">
-                <img src="ImagenesProyecto/monitorSensores/ICONOS.png" alt="">
-                <div class="flex-icon-box">
-                    <img src="ImagenesProyecto/monitorSensores/humedad.svg" alt="">
-                    <img src="ImagenesProyecto/monitorSensores/sal.svg" alt="">
-                    <img src="ImagenesProyecto/monitorSensores/temperatura.svg" alt="">
-                    <img src="ImagenesProyecto/monitorSensores/luminosidad.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="sonda-container">
-        <div class="sonda-header">
-            <h3 class="sonda-name">Insertar nombre</h3>
-            <button id="dropbtn3" class="dropbtn" onclick="ShowHideElement3()">Mostrar</button>
-        </div>
-        <p id="element3" class="dropdown-content">
-            El primer paso es rellenar la solicitud de compra de nuestros servicios con tu información desde
-            <a style="color: #f5f2a6;" href="solicitud.html">esta página</a>. A continuación, tu petición será valorada
-            y pronto te responderemos
-            con los detalles de tu pedido.
-        </p>
-    </div>
-
-    <div class="sonda-container">
-        <div class="sonda-header">
-            <h3 class="sonda-name">Insertar nombre</h3>
-            <button id="dropbtn4" class="dropbtn" onclick="ShowHideElement4()">Mostrar</button>
-        </div>
-        <p id="element4" class="dropdown-content">
-            El primer paso es rellenar la solicitud de compra de nuestros servicios con tu información desde
-            <a style="color: #f5f2a6;" href="solicitud.html">esta página</a>. A continuación, tu petición será valorada
-            y pronto te responderemos
-            con los detalles de tu pedido.
-        </p>
-    </div>
-
-    <div class="sonda-container">
-        <div class="sonda-header">
-            <h3 class="sonda-name">Insertar nombre</h3>
-            <button id="dropbtn5" class="dropbtn" onclick="ShowHideElement5()">Mostrar</button>
-        </div>
-        <p id="element5" class="dropdown-content">
-            El primer paso es rellenar la solicitud de compra de nuestros servicios con tu información desde
-            <a style="color: #f5f2a6;" href="solicitud.html">esta página</a>. A continuación, tu petición será valorada
-            y pronto te responderemos
-            con los detalles de tu pedido.
-        </p>
-    </div>
-
-    <div class="sonda-container">
-        <div class="sonda-header">
-            <h3 class="sonda-name">Insertar nombre</h3>
-            <button id="dropbtn6" class="dropbtn" onclick="ShowHideElement6()">Mostrar</button>
-        </div>
-        <p id="element6" class="dropdown-content">
-            El primer paso es rellenar la solicitud de compra de nuestros servicios con tu información desde
-            <a style="color: #f5f2a6;" href="solicitud.html">esta página</a>. A continuación, tu petición será valorada
-            y pronto te responderemos
-            con los detalles de tu pedido.
-        </p>
-    </div>
-
-</section>
-
-<!--END: SECCIÓN LISTA DE SONDAS-->
 
 
 <footer id="footer" class="footer">
@@ -183,11 +93,14 @@
     </div>
 </footer>
 <!-- ---------------------------------------------------------------------------------------------- -->
-
-<script src="js/mapa.js"></script>
-
+<script src="js/panelUsuario-scripts.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?=AIzaSyAGiASDXdDjzom5HGyoOCsZshbHe2klfMg&callback=initMap" async
         defer></script>
+<script src="js/mapa.js"></script>
+
+
+
+
 <script src="js/nombreUS.js"></script>                      <!--  SACAR NOMBREEEEEEEEEEE -->
 <script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
 

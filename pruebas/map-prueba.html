@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+    <link rel="icon" href="../src/app/ImagenesProyecto/brote.svg">
+    <link rel="stylesheet" href="../src/app/css/panelUsuario-style.css">
+    <link rel="stylesheet" href="../src/app/css/sidenav.css">
+
+    <script src="../src/app/js/jQuery.js"></script>
+    <script src="../src/app/js/botonesMostrar.js"></script>
+    <script src="../src/app/js/sidenav.js"></script>
+</head>
+<body>
+
+<h2>Mapa de Sondas</h2>
+<div id="output"></div>                                 <!--  SACAR NOMBREEEEEEEEEEE -->
+<div class="flex-row">
+    <div class="addMarker">
+        <button onclick="addMarker()">Añadir marca</button>
+
+        <input placeholder="Introduce lat..." type="text" id="lat">
+        <input placeholder="Introduce lng..." type="text" id="lng">
+    </div>
+
+    <div class="addPolygon">
+        <button onclick="addPolygon()">Añadir polígono</button>
+
+        <input placeholder="Introduce lat..." type="text" id="p-lat">
+        <input placeholder="Introduce lng..." type="text" id="p-lng">
+    </div>
+</div>
+
+<div id="map"></div>
+
+</body>
+
+<script src="../src/app/js/mapa.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?=AIzaSyAGiASDXdDjzom5HGyoOCsZshbHe2klfMg&callback=initMap" async
+        defer></script>
+<script src="../src/app/js/nombreUS.js"></script>                      <!--  SACAR NOMBREEEEEEEEEEE -->
+<script src="../src/app/js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
+
+</html>
