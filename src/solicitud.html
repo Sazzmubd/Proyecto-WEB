@@ -5,7 +5,7 @@
     <title>Solicitud</title>
     <meta charset = "UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="app/ImagenesProyecto\brote.svg" type="image/ico"/>
+    <link rel="icon" href="app/ImagenesProyecto/brote.svg" type="image/ico"/>
 
     <link href="app/css/solicitud-style.css" rel="stylesheet">
     <link href="app/css/formularios-style.css" rel="stylesheet">
@@ -26,22 +26,34 @@
             <!-- user name -->
             <label for="username">Nombre y Apellido (Obligatorio)</label>
             <input type="text" placeholder="Ingresar Nombre y apellidos" name="inputName" required>
-            
+
             <div class="custom-control custom-radio"> Empresa
                 <input type="radio" id="customRadio2" name="inputTipo" class="custom-control-input">
+            <!--
+            <div class="custom-control custom-radio"> Empresa
+                <input type="radio" id="customRadio2" name="inputTipo" value="Particular" class="custom-control-input">
+>>>>>>> alvaroDevelope2
                 <label class="custom-control-label" for="customRadio2"></label>
             </div>
+             -->
+            <!--
+            Cliente checkbox: <input type="checkbox" name="">
+            Cliente:
+             -->
+            Tipo de cliente:<select name="inputTipo">
+            <option>Particular</option>
+            <option>Empresa</option>
+
+            </select>
 
             <label for="e-mail">Correo (Obligatorio)</label>
             <input type="text" placeholder="Ingresar E-mail" name="inputCorreo" required>
 
-
             <label for="telefono">Teléfono</label>
-            <input type="number" placeholder="Ingrese su telefono" name="inputTelefono">
+            <input type="phone" placeholder="Ingrese su telefono" name="inputTelefono">
 
             <label for="solicitud">Motivo</label>
-            <textarea class="cuadro-grande"  id="msg" name="motivo" placeholder="Escribir Mensaje"></textarea>
-
+            <textarea type="text" class="cuadro-grande"  id="msg" name="inputMotivo" placeholder="Escribir Mensaje"></textarea>
 
             <label for="provincia">Provincia</label>
             <input type="text" placeholder="Ingrese su Provincia" name="inputProvincia">
@@ -49,6 +61,7 @@
 
             <div class="enviar"><input type="submit" value="Enviar"></div><!-- boton de enviar -->
             <div class="link"><a href="index.html">Volver</a></div>
+
 
         </form>
 
@@ -87,7 +100,7 @@
         Tel. (+34) 96 284 93 33
     </div>
 </footer>
-<script src="app/js/solicitud.js"></script><!--  cagar js -->
+<script src="app/js/solicitud-scripts.js"></script><!--  cagar js -->
 
 </body>
 </html>
