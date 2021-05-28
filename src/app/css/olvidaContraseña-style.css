@@ -3,6 +3,7 @@
     padding: 0;
     background-size: cover;
     font-family: Arial;
+   
 
     /*border-radius: 30%;*/
 }
@@ -28,7 +29,9 @@
 .links {
     text-align: center;
 }
-
+.links :hover{
+    text-decoration: underline;
+}
 .login-box h2 {
     margin: 0;
     margin-top: 20px;
@@ -61,8 +64,9 @@
     outline: none;
     font-family: Arial;
     height: 40px;
-    color: black;
+    color: white;
     font-size: 16px;
+    
 }
 
 .login-box input[type="submit"]{
@@ -74,6 +78,17 @@
     font-size: 18px;
     font-family: "Arial";
     border-radius: 20px;
+}
+.login-box input :hover{
+    border: none;
+    outline: none;
+    height: 40px;
+    background:  white;/*hacer la casilla transparente*/
+    color: indianred;
+    font-size: 18px;
+    font-family: "Arial";
+    border-radius: 20px;
+   
 }
 .login-box a{
     text-decoration: none;
@@ -90,9 +105,12 @@
 
 @media only screen and (max-width: 800px){
 
+    
+
     .estructura-body{
         padding-bottom: 275px;
-        overflow: hidden;    
+        overflow: hidden;
+           
     }
     .login-box{                         
         max-width: 100%;

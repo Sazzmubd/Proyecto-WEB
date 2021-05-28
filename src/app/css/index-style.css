@@ -160,6 +160,21 @@ main {
     background-color: #4c3b75;
     border-top: 2px solid white;
     
+
+
+}
+
+.text-box h2{
+
+    margin: -10px 0 -10px 0;
+}
+
+.text-box p {
+
+    padding: 0px 10px;
+
+
+
 }
 
 
