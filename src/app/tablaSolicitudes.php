@@ -23,8 +23,11 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <nav id="mySidenav" class="sidenav">
     <ul>
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
-        <li><a class="sidenav-nav" href="../preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
-        <li><a class="sidenav-nav" href="monitorSensores2.html">Sensores</a></li>
+        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
+        </li>
+        <li><a class="sidenav-nav" href="panelUsuario.html">Sensores</a></li>
+        <li><a class="sidenav-nav" href="admin.php">Administrar Sensores</a>
+        </li>
     </ul>
 </nav>
 
@@ -101,6 +104,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <script src="js/filter.js"></script>
 <script src="js/botonesMostrar.js"></script>
 <script src="js/sortable.js"></script>
+<script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
 
 </body>
 </html>

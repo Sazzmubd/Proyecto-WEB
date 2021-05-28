@@ -20,7 +20,7 @@ document .querySelector("form").addEventListener("submit", function (event){
     }).then(function (datos){
         if(datos.rol == "admin"){// Caso rol admin
             document.getElementById("output").textContent = "Bienvenido ," +datos.nombre + "!";
-            setTimeout(function (){location.href = "app/tablaSolicitudes.html"}, 500);
+            setTimeout(function (){location.href = "app/tablaSolicitudes.php"}, 500);
         } else { // Caso resto roles
             document.getElementById("output").textContent = "Bienvenido ," +datos.nombre + "!";
             setTimeout(function (){location.href = "app/panelUsuario.html"}, 500); // Aquí cambiar el href por el que tú quieras
