@@ -21,8 +21,10 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 
 <nav id="mySidenav" class="sidenav"><!-- LO DE LOS UL -->
     <ul>
+        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
+        </li>
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
-        <li><a class="sidenav-nav" href="tablaSolicitudes.html">Tabla Solicitudes</a></li>
+        <li><a class="sidenav-nav" href="tablaSolicitudes.php">Tabla Solicitudes</a></li>
     </ul>
 </nav>
 
@@ -67,7 +69,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
             <td data-titulo="Tipo"><?php echo $mostrar['tipo']?></td>
             <td data-titulo="Correo"><?php echo $mostrar['correo']?></td>
             <td data-titulo="Teléfono"><?php echo $mostrar['telefono']?></td>
-            <td><a href="../app/monitorSensores2.html" class="logo"><img src="ImagenesProyecto/atencion.svg" height="" width="70"/></a></td>
+            <td><a href="panelUsuario.html" class="logo"><img src="ImagenesProyecto/atencion.svg" height="" width="70"/></a></td>
             <td><img src="ImagenesProyecto/editar.svg" height="" width="20"</td>
 
         </tr>
@@ -92,6 +94,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <script src="js/sidenav.js"></script>
 <script src="js/filter.js"></script>
 <script src="js/botonesMostrar.js"></script>
+<script src="js/comprobar-sesion.js"></script>
 <script src="js/sortable.js"></script>
 
 </body>
