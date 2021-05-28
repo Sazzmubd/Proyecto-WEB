@@ -52,10 +52,10 @@ function cargarCampo(idCampos) {
         let polygon = new google.maps.Polygon({//esto crea el poligono
             paths: jsonCampos,
             strokeColor: "#ff0000",
-            strokeOpacity: 0,
+            strokeOpacity: .8,
             strokeWeight: 2,
             fillColor: "#ff0000",
-            fillOpacity:  0,
+            fillOpacity:  .5,
             map: map
         });
 
