@@ -24,30 +24,31 @@
         <h1>Solicitar Servicio</h1>
         <form>
             <!-- user name -->
-            <label for="username">Nombre y Apellido (Empresa) <em class="obligatorio">*</em></label>
-            <input type="text" placeholder="Ingresar Nombre y apellidos o nombre de la empresa" required>
-            
-            <div class="custom-control custom-radio"> Empresa
-                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2"></label>
-            </div>
+            <label for="username">Nombre y Apellido<em class="obligatorio">*</em></label>
+            <input type="text" placeholder="Ingresar Nombre y apellidos" name="inputName" required>
 
-            <label for="e-mail">Correo <em class="obligatorio">*</em></label>
-            <input type="text" placeholder="Ingresar E-mail" required>
+            Tipo de cliente:  <select name="inputTipo">
+            <option>Particular</option>
+            <option>Empresa</option>
+
+            </select>
+
+            <label for="e-mail">Correo<em class="obligatorio">*</em></label>
+            <input type="text" placeholder="Ingresar E-mail" name="inputCorreo" required>
+
+            <label for="telefono">Teléfono</label>
+            <input type="phone" placeholder="Ingrese su telefono" name="inputTelefono">
 
             <label for="solicitud">Motivo</label>
-            <textarea class="cuadro-grande"  id="msg" name="user_message" placeholder="Escribir Mensaje"></textarea>
+            <textarea type="text" class="cuadro-grande"  id="msg" name="inputMotivo" placeholder="Escribir Mensaje"></textarea>
 
-
-            <label for="direccion1">Teléfono</label>
-            <input type="text" placeholder="Ingrese su numero de teléfono">
-
-            <label for="direccion2">Provincia</label>
-            <input type="text" placeholder="Ingrese su provincia">
+            <label for="provincia">Provincia</label>
+            <input type="text" placeholder="Ingrese su Provincia" name="inputProvincia">
 
 
             <div class="enviar"><input type="submit" value="Enviar"></div><!-- boton de enviar -->
             <div class="link"><a href="index.html">Volver</a></div>
+
 
         </form>
 
@@ -71,7 +72,7 @@
 
 <header class="header">
         <div class="container logo-menu-container">
-            <a href="index.html" class="logo"><img src="app/ImagenesProyecto/logogti.svg" height="" width="120"/></a>
+            <a href="index.html" class="logo"><img src="app/ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
             <!-- Use any element to open the sidenav -->
             <span><a class="menu-icon" onClick="openNav()"><img src="app/ImagenesProyecto/LandingPage/menu.svg"
                                                                 height="32" width="46" alt="menu-icon"/></a></span>
