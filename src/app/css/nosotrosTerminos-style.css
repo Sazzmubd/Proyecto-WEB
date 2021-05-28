@@ -94,8 +94,8 @@ section .imgEmp {
     text-align: left;
 
     background-color: rgba(0, 0, 0, 0.4);
-    border: 2px solid white;
     border-radius: 2px;
+   
     padding: 20px 40px;
 
     border-top: none;

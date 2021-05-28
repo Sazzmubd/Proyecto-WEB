@@ -1,5 +1,4 @@
 
-
 .estructura-div{
     margin: 0;
     padding: 0;
@@ -15,8 +14,8 @@
     margin-top: 5em;
     width: 100%;
     max-width: 70%;
-    background-color: #d2c8ef;
-    color: black;
+    background-color: #4c3b75;
+    color: white;
     height: 93.5vh;
     box-sizing: border-box;
     padding: 70px 30px;
@@ -54,7 +53,7 @@
     background:  transparent;/*hacer la casilla transparente*/
     outline: none;
     height: 40px;
-    color: black;
+    color: white;
     font-size: 16px;
 }
 
@@ -71,17 +70,18 @@
     text-decoration: none;
     font-size: 14px;
     line-height: 23px;
-    color: #000000;
+    color: white;
 }
 
 .leftsize a:hover {
-    color: #4e4d4d;
+    color: white;
 }
 
 .mini-menu {
-    background-color: #d2c8ef;
+    background-color: #4c3b75;
     margin-top: 4vh;
     text-align: center;
+    color: white;
 }
 
 
