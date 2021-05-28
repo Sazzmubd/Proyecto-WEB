@@ -27,7 +27,7 @@ function initMap() {
         rotateControl: false,
     });
 
-
+    cargarCampo(1)
 }
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -36,10 +36,12 @@ function initMap() {
 //------------------------------------------------------------------------------------------
 
 function cargarCampo(idCampos) {
-    fetch('../api/v1.0/esquinasParcelas="'+idCampos+'"').then(function (campos) {
+    fetch('../api/v1.0/esquinasParcelas?idParcela='+idCampos).then(function (campos) {
         return campos.json();
 
     }).then(function (jsonCampos) {//viene del get esquinas
+
+        console.log(jsonCampos);
 
         jsonCampos.forEach(function(campo){//obtener cada parcelas bucle todas
             campo.lat = parseFloat(campo.lat);//obtener cada latitud
@@ -58,10 +60,14 @@ function cargarCampo(idCampos) {
         });
 
 
+
         polygon.getPath().getArray().forEach(function (v) {
+            //console.log(v);
             bounds.extend(v);
         })
+        console.log(map);
         map.fitBounds(bounds);
+        map.setCenter(jsonCampos[0]);
     })
 }
 
