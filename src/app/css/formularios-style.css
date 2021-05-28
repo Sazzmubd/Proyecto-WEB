@@ -46,6 +46,7 @@ main {
 }
 
 .logo-menu-container {
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -99,8 +100,7 @@ main {
 
 @media(min-width: 800px){
     .logo-menu-container {
-        width: 80%;
-        max-width: 1200px;
+        width: 95%;
         margin: 14px auto 0 auto;
     }
 }

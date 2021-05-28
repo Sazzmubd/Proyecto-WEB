@@ -183,8 +183,7 @@ section .imgEmp {
     }
 
     .logo-menu-container {
-        width: 80%;
-        max-width: 1200px;
+        width: 95%;
         margin: 14px auto 0 auto;
     }
 

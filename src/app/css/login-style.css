@@ -84,13 +84,23 @@
     color: white;
 }
 
-
+.logo-menu-container {
+    width: 95%;
+    max-width: 2000px;
+    margin: 14px auto 0 auto;
+}
 
 @media only screen and (max-width: 800px){
 
     .estructura-body{
         padding-bottom: 275px;
         overflow: hidden;    
+    }
+
+    .logo-menu-container {
+        width: 90%;
+        max-width: 2000px;
+        margin: 14px auto 0 auto;
     }
     .leftsize{                         
         max-width: 100%;
