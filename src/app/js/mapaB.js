@@ -27,8 +27,8 @@ function initMap() {
         rotateControl: false,
     });
 
-    cargarCampo(idCampos)
-    cargarPosicion(idCampos)
+    cargarCampo(1)
+    cargarPosicion(1)
 }
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -77,10 +77,9 @@ function cargarCampo(idCampos) {
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
-
 function cargarPosicion(idCampos) {
     //let idParcelaEnlace = idCampos;
-    fetch('../api/v1.0/posicionSensor="'+idCampos+'"').then(function (localizaciones) {
+    fetch('../api/v1.0/posicionSensor?idParcela="'+idCampos+'"').then(function (localizaciones) {
         return localizaciones.json();
     }).then(function (localizacionesj) {
 
