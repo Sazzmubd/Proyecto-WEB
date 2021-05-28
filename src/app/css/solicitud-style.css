@@ -1,6 +1,7 @@
 body {
     font-family: arial;
     
+    
 }
 
 .cuadro-grande {
@@ -8,7 +9,7 @@ body {
     /* To properly align multiline text fields with their labels */
     vertical-align: top;
     /* To give enough room to type some text */
-    background: rgba(255, 255, 255, 0.5);
+    background: white;
     border-bottom: 1px solid indianred;
     height: 5em;
     width: 100%;
@@ -30,8 +31,8 @@ body {
     margin-top: 5em;
     height: 82.7vh;
     max-width: 70%;
-    background-color: #d2c8ef;
-    color: black;
+    background-color: #4c3b75;
+    color: white;
     padding: 70px 30px 110px 30px;
     border-right: 3px solid white;
 
@@ -95,7 +96,7 @@ body {
     text-decoration: none;
     font-size: 17px;
     line-height: 20px;
-    color: black;
+    color: white;
 }
 
 .login-box a:hover {
@@ -127,6 +128,7 @@ body {
         .login-box label {
             padding: 0vh;
         }
+        
 
     }
     
@@ -155,6 +157,7 @@ body {
         .login-box label {
             font-size: small;
         }
+       
         
 
     }

@@ -67,7 +67,9 @@ main {
 .parrafo a {
     color: inherit;
 }
-
+.obligatorio{
+    color: red;
+}
 .footer {
 
     display: flex;
