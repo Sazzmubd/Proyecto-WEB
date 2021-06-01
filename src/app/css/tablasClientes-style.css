@@ -37,31 +37,6 @@ nav ul{
 
 }
 
-.usuario-dropbtn {
-    margin-right: 6px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 36px;
-
-    background-color: #d2c8ef;
-    color: black;
-    text-decoration: none;
-    border-radius: 4px;
-    border: 2px solid white;
-}
-
-.usuario-dropbtn p {
-    text-align: center;
-    padding: 0 3px 0 6px;
-}
-
-.usuario-dropbtn img {
-    padding: 0 6px 0 3px;
-    width: 17px;
-}
-
 .titulo {
     margin-left: 0.6rem;
     font-weight: lighter;

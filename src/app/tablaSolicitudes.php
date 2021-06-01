@@ -69,7 +69,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
         ?>
 
         <tr>
-            <td data-titulo="Fecha"><div style="width: 6rem"><?php echo $mostrar['fecha']?></div></td>
+            <td data-titulo="Fecha"><div style="width: 6rem"><?php echo $mostrar['fechasolicitud']?></div></td>
             <td data-titulo="Nombre y Apellidos"><?php echo $mostrar['nombreApellidosEmpresa']?></td>
             <td data-titulo="Tipo"><?php echo $mostrar['tipo']?></td>
             <td data-titulo="Email"><?php echo $mostrar['correo']?></td>
