@@ -35,40 +35,6 @@ body {
     margin: 14px 5%;
 }
 
-.menu-user {
-    margin-right: 20px;
-}
-
-ul li {
-    list-style: none;
-}
-
-.submenu-user {
-    float:left;
-    /*display: none;*/
-    position: absolute;
-    right: 17%;
-
-}
-
-.submenu-user li a{
-    text-decoration: none;
-    padding: 8px 12px;
-    background-color: #363637;
-    color: white;
-    border: 1px solid white;
-    border-radius: 2px;
-    display: block;
-}
-
-.user-menu-icons {
-    margin: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
 /* START: FLEXBOX (TÍTULO - BOTÓN USUARIO) */
 
 .titulo-usuario-box {
@@ -167,51 +133,6 @@ ul li {
     flex-direction: column;
     justify-content: flex-start;
 }
-
-.map .addMarker{
-    height: min-content;
-    display: flex;
-    margin: 20px 0 0.2rem 1%;
-
-    border-radius: 4px;
-    justify-content: flex-start;
-}
-
-.map .addMarker button, input {
-    border-radius: 4px;
-    padding: 8px 8px;
-    max-width: 120px;
-}
-
-.map .addMarker button {
-    background-color: rgba(76, 59, 117, 1);
-    color: white;
-    margin-right: 1%;
-}
-
-.map .addPolygon{
-    display: flex;
-    margin: 20px 0 0.2rem 1%;
-
-    border-radius: 4px;
-    justify-content: flex-start;
-}
-
-.map .addPolygon button, input {
-    border-radius: 4px;
-    padding: 8px 8px;
-    max-width: 100px;
-}
-
-.map .addPolygon button {
-    background-color: rgba(76, 59, 117, 1);
-    color: white;
-    margin-right: 1%;
-}
-
-/* END: SECCIÓN MAPA */
-
-
 
 /* FOOTER */
 

@@ -8,7 +8,6 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <head>
     <meta charset="UTF-8">
     <title>Lista de Solicitudes</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="ImagenesProyecto/brote.svg" type="image/ico"/>
