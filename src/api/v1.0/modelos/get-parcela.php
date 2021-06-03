@@ -1,19 +1,17 @@
 <?php
 session_start();
 
-if( $_GET['idParcela']!=0) {//si es distinto de cero haz esto
-
+if( $_GET['idCampos']!=0) {//si es distinto de cero haz esto
     $idUsuario = $_SESSION['id'];
+    $idParcela = $_GET['idCampos'];
 
-    $idParcela = $_GET['idParcela'];
-
-    if($_SESSION['rol'] == 1){// si eres admin q te de todas la parcelas
-        $sql = "SELECT * FROM `campos` WHERE  `id` = $idParcela";
+    if($_SESSION['rol'] == "admin"){// si eres admin q te de todas la parcelas
+        $sql = "SELECT * FROM `campos` WHERE  `idCampos` = $idParcela";
         $res = mysqli_query($conn, $sql);
     }
     
     else{//si eres usuario solo t va a dar las tuyas
-        $sql = "SELECT * FROM `campos` WHERE `id_usuario`= $idUsuario AND `id` = $idParcela";
+        $sql = "SELECT * FROM `campos` WHERE `id`= $idUsuario AND `idCampos` = $idParcela";
         $res = mysqli_query($conn, $sql);
     }
 
@@ -22,7 +20,7 @@ if( $_GET['idParcela']!=0) {//si es distinto de cero haz esto
         array_push($salida, $fila);
     }
     
-    echo json_encode($salida);//enviar a  JSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+    //echo json_encode($salida);//enviar a  JSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
     $http_code = 200;
 
 }else{
