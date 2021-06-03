@@ -19,19 +19,20 @@ body {
     border-bottom: 3px solid white;
 
     /* Cabecera fija */
-    z-index: 2;
+    z-index: -1;
     position: fixed;
     left: 0;
     top: 0;
 }
 
 .logo-menu-container {
+    width: 90%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    margin: auto 5%;
-    max-width: 1200px;
+    margin: 14px 5%;
 }
 
 .menu-user {
@@ -249,8 +250,7 @@ ul li {
 @media (min-width: 800px) {
 
     .logo-menu-container {
-        width: 80%;
-        max-width: 1200px;
+        width: 95%;
         margin: 0px auto 0 auto;
     }
 
