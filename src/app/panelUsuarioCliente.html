@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+    <link rel="icon" href="ImagenesProyecto/brote.svg">
+    <link rel="stylesheet" href="css/panelUsuario-style.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+</head>
+<body>
+
+<nav id="mySidenav" class="sidenav">
+    <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a>
+        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a>
+            <!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
+        </li>
+        <li><a class="sidenav-nav" href="../admin.php">Tabla de clientes</a>
+        </li>
+        <li><a class="sidenav-nav" href="../tablaSolicitudes.php">Tabla de solicitudes</a>
+        </li>
+    </ul>
+</nav>
+
+<header class="header">
+    <div class="container logo-menu-container">
+        <a href="../index.html" class="logo"><img src="ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
+        <!-- Use any element to open the sidenav -->
+        <div class="user-menu-icons">
+            
+            <span><a class="menu-icon" onClick="openNav()"><img src="ImagenesProyecto/LandingPage/menu.svg"
+                                                                height="32" width="46" alt="menu-icon"/></a></span>
+        </div>
+    </div>
+
+
+</header>
+<!--END: -->
+
+<!--START: FLEXBOX(TÍTULO - BOTÓN USUARIO)-->
+<div class="titulo-usuario-box">
+    <div>
+        <img src="ImagenesProyecto/monitorSensores/Panel-de-usuario.svg" alt="">
+        <h1 class="titulo">PANEL DE CONTROL</h1>
+    </div>
+
+    <div id="output"></div>
+
+</div>
+
+<!--END: FLEXBOX(TÍTULO - BOTÓN USUARIO)-->
+
+<!--START: SECCIÓN UBICACIÓN-->
+
+<section class="map">
+    <h2>Mapa de Sondas</h2>
+    <div id="output"></div>                                 <!--  SACAR NOMBREEEEEEEEEEE -->
+    <div id="map"></div>
+
+</section>
+<!--END: SECCIÓN UBICACIÓN-->
+
+
+<footer id="footer" class="footer">
+    <div><a href="terminosPrivacidad.html">© 2021 - GTI</a></div>
+    <div><p>Escuela Politécnica Superior de Gandia <br>
+        C/ Paranimf, 1 <br>
+        46730 Grao de Gandia, Gandia <br>
+        Tel. (+34) 96 284 93 33</p>
+    </div>
+</footer>
+<!-- ---------------------------------------------------------------------------------------------- -->
+<!-- <script src="js/panelUsuario-scripts.js"></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?=AIzaSyAGiASDXdDjzom5HGyoOCsZshbHe2klfMg&callback=initMap" async defer></script>
+<script src="js/mapaB.js"></script>
+<script src="js/nombreUS.js"></script>                      <!--  SACAR NOMBREEEEEEEEEEE -->
+<script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
+<script src="js/jQuery.js"></script>
+<script src="js/botonesMostrar.js"></script>
+<script src="js/sidenav.js"></script>
+
+</body>
+</html>

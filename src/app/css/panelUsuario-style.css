@@ -28,6 +28,31 @@ body {
 .logo-menu-container {
     width: 90%;
 
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 14px 5%;
+}
+
+.menu-user {
+    margin-right: 20px;
+}
+
+ul li {
+    list-style: none;
+}
+
+.submenu-user {
+    float:left;
+    /*display: none;*/
+    position: absolute;
+    right: 17%;
+
+}
+
+
     display: flex;
     align-items: center;
     justify-content: space-between;
