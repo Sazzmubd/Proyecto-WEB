@@ -8,4 +8,5 @@ fetch( '../api/v1.0/sesion/', {
     }
 }).then(function (datos) {
     document.getElementById("output").textContent = datos.nombre;
+    window.datosUsuario = datos;//                            AQUI DECLARO UNA VARIABLE SUUUUUPEEEEERRRRGLOBAL
 })
