@@ -1,0 +1,51 @@
+.recuadro-img {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.recuadro-txt {
+    width: 60%;
+    height: 100%;
+}
+.recuadro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recuadro-link {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recuadro-desc {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recuadro-boton {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15%;
+    align-items: center;
+}
+
+
+#link{
+    width: 80%;
+}
+#desc-link {
+    width: 80%;
+    height: 10vh;
+}
+
+.tabla {
+    
+    background-image: url('./app/ImagenesProyecto/tabla.png');
+}
