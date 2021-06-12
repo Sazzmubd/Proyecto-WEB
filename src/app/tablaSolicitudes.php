@@ -1,5 +1,5 @@
-<!-- Conexion con la bbdd -->
 <?php
+<<<<<<< Updated upstream
 $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 ?>
 
@@ -45,24 +45,16 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
     <br>
 
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar por...">
+=======
+session_start();
+>>>>>>> Stashed changes
 
-    <!-- Tabla de solicitudes1 -->
-    <table class="sortable" id="myTable">
-        <tr>
-            <th>Fecha</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
-            <th>Email</th>
-            <th>Teléfono</th>
-            <th>Motivo</th>
-            <th>Provincia</th>
-            <th>Añadir/Eliminar</th>
-        </tr>
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 
-        <?php
         $sql="SELECT * from solicitud";
         $result=mysqli_query($conexion,$sql);
 
+<<<<<<< Updated upstream
         while($mostrar=mysqli_fetch_array($result)){
         ?>
 
@@ -104,3 +96,32 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 
 </body>
 </html>
+=======
+        if (mysqli_num_rows($result) > 0) {
+        while($mostrar=mysqli_fetch_assoc($result)){
+            $resultado = [];
+            $resultado['fechasolicitud']=$mostrar['fechasolicitud'];
+            $resultado['nombreApellidosEmpresa']=$mostrar['nombreApellidosEmpresa'];
+            $resultado['tipo']=$mostrar['tipo'];
+            $resultado['correo']=$mostrar['correo'];
+            $resultado['telefono']=$mostrar['telefono'];
+            $resultado['motivo']=$mostrar['motivo'];
+            $resultado['provincia']=$mostrar['provincia'];
+
+            $_SESSION['fechasolicitud']=$mostrar['fechasolicitud'];
+            $_SESSION['nombreApellidosEmpresa']=$mostrar['nombreApellidosEmpresa'];
+            $_SESSION['tipo']=$mostrar['tipo'];
+            $_SESSION['correo']=$mostrar['correo'];
+            $_SESSION['telefono']=$mostrar['telefono'];
+            $_SESSION['motivo']=$mostrar['motivo'];
+            $_SESSION['provincia']=$mostrar['provincia'];
+
+            header("Content-Type:application/json");
+            echo json_encode($_SESSION);
+        }
+        } else {
+            http_response_code(401);
+            die();
+        }
+        ?>
+>>>>>>> Stashed changes
