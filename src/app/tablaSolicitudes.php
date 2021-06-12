@@ -1,5 +1,5 @@
+<!-- Conexion con la bbdd -->
 <?php
-<<<<<<< Updated upstream
 $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 ?>
 
@@ -8,7 +8,6 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <head>
     <meta charset="UTF-8">
     <title>Lista de Solicitudes</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="ImagenesProyecto/brote.svg" type="image/ico"/>
@@ -23,8 +22,11 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <nav id="mySidenav" class="sidenav">
     <ul>
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
-        <li><a class="sidenav-nav" href="../preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
-        <li><a class="sidenav-nav" href="monitorSensores2.html">Sensores</a></li>
+        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
+        </li>
+        <li><a class="sidenav-nav" href="panelUsuario.html">Sensores</a></li>
+        <li><a class="sidenav-nav" href="admin.php">Administrar Sensores</a>
+        </li>
     </ul>
 </nav>
 
@@ -45,23 +47,35 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
     <br>
 
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar por...">
-=======
-session_start();
->>>>>>> Stashed changes
 
-$conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
+    <!-- Tabla de solicitudes1 -->
+    <table class="sortable" id="myTable">
+        <tr>
+            <th>Fecha</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Motivo</th>
+            <th>Provincia</th>
+            <th>Añadir/Eliminar</th>
+        </tr>
 
+        <?php
         $sql="SELECT * from solicitud";
         $result=mysqli_query($conexion,$sql);
 
-<<<<<<< Updated upstream
         while($mostrar=mysqli_fetch_array($result)){
         ?>
 
         <tr>
+
+            <td data-titulo="Fecha"><div style="width: 6rem"><?php echo $mostrar['fechasolicitud']?></div></td>
+
             <td data-titulo="Fecha"><div style="width: 6rem"><?php echo $mostrar['fecha']?></div></td>
-            <td data-titulo="Nombre"><?php echo $mostrar['nombreApellidosEmpresa']?></td>
-            <td data-titulo="Apellidos"><?php echo $mostrar['tipo']?></td>
+
+            <td data-titulo="Nombre y Apellidos"><?php echo $mostrar['nombreApellidosEmpresa']?></td>
+            <td data-titulo="Tipo"><?php echo $mostrar['tipo']?></td>
             <td data-titulo="Email"><?php echo $mostrar['correo']?></td>
             <td data-titulo="Teléfono"><?php echo $mostrar['telefono']?></td>
             <td data-titulo="Motivo"><?php echo $mostrar['motivo']?></td>
@@ -93,35 +107,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <script src="js/filter.js"></script>
 <script src="js/botonesMostrar.js"></script>
 <script src="js/sortable.js"></script>
+<script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
 
 </body>
 </html>
-=======
-        if (mysqli_num_rows($result) > 0) {
-        while($mostrar=mysqli_fetch_assoc($result)){
-            $resultado = [];
-            $resultado['fechasolicitud']=$mostrar['fechasolicitud'];
-            $resultado['nombreApellidosEmpresa']=$mostrar['nombreApellidosEmpresa'];
-            $resultado['tipo']=$mostrar['tipo'];
-            $resultado['correo']=$mostrar['correo'];
-            $resultado['telefono']=$mostrar['telefono'];
-            $resultado['motivo']=$mostrar['motivo'];
-            $resultado['provincia']=$mostrar['provincia'];
-
-            $_SESSION['fechasolicitud']=$mostrar['fechasolicitud'];
-            $_SESSION['nombreApellidosEmpresa']=$mostrar['nombreApellidosEmpresa'];
-            $_SESSION['tipo']=$mostrar['tipo'];
-            $_SESSION['correo']=$mostrar['correo'];
-            $_SESSION['telefono']=$mostrar['telefono'];
-            $_SESSION['motivo']=$mostrar['motivo'];
-            $_SESSION['provincia']=$mostrar['provincia'];
-
-            header("Content-Type:application/json");
-            echo json_encode($_SESSION);
-        }
-        } else {
-            http_response_code(401);
-            die();
-        }
-        ?>
->>>>>>> Stashed changes

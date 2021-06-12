@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+</head>
+<body>
+
+<h1>Crear usuario</h1>
+<form enctype="multipart/form-data" id="form">
+    <label>Nombre:<br>
+        <input name="nombre" type="text"></label>
+    <br>
+    <br>
+    <label>Foto:<br><!-- ESTO ES LA IMGAEN EN NEDRO -->
+        <img src="avatar/noavatar.png" style="width: 100px; height: 100px;
+        object-fit: cover;
+        object-position: top" alt="preview avatar" id="preview"><br <!-- ESTO DE OBJECT ES PARA EDITAR LA IMAGEN -->
+
+        <input id="pic" name="pic" type="file"></label>
+    <br>
+    <br>
+    <input type="submit">
+</fo
+
+<br>
+<cite>https://www.dropzonejs.com/</cite>
+<br>
+<cite>https://fengyuanchen.github.io/cropperjs/</cite>
+
+<script>
+
+    document.getElementById('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let formData = new FormData(event.target);
+
+        fetch('api/upload.php', {//CAMBIAR URL API/V1.0....
+            method: 'post',
+            body: formData
+        }).then(function (respuesta) {
+            return respuesta.json();// CONVIERTO A JSON LA RESPUESTA
+        }).then(function (data) {
+            console.log(data);//LA MUESTRO POR CONSOLA
+        })
+    });
+
+    document.getElementById('pic').addEventListener('change', function (event){//ESTO ES PARA PREVISUALIZAR LA IMAGEN
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('preview').src = e.target.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);//event.target HACE REFENCIA A L20 INPUT PIC
+    })
+
+</script>
+
+</body>
+</html>

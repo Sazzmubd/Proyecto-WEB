@@ -8,10 +8,10 @@ $inputCorreo= $_POST['inputCorreo'];
 $inputTelefono= $_POST['inputTelefono'];
 $inputMotivo= $_POST['inputMotivo'];
 $inputProvincia= $_POST['inputProvincia'];
+$inputFecha = date("Y/m/d");   //let textoFecha = new Date().toUTCString();
 
 
-
-$sql = "INSERT INTO `solicitud` (`nombreapellidosempresa`, `tipo`, `correo`,`telefono`, `motivo`, `provincia`) VALUES ('$inputName' ,'$inputTipo', '$inputCorreo','$inputTelefono', '$inputMotivo', '$inputProvincia' )";
+$sql = "INSERT INTO `solicitud` (`nombreapellidosempresa`, `tipo`, `correo`,`telefono`, `motivo`, `provincia`, `fechasolicitud`) VALUES ('$inputName' ,'$inputTipo', '$inputCorreo','$inputTelefono', '$inputMotivo', '$inputProvincia' ,'$inputFecha')";
 $res = mysqli_query($conn, $sql);
 if ($res==true){
     $http_code=200;//enviado

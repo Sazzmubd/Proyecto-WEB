@@ -26,6 +26,7 @@ body {
 .logo-menu-container {
     display: flex;
     align-items: center;
+    width: 95%;
     justify-content: space-between;
 
     margin: 14px 5%;
@@ -79,3 +80,4 @@ body {
     margin-left: 0.6rem;
     font-weight: lighter;
 }
+
