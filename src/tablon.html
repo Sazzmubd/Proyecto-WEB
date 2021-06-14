@@ -44,22 +44,35 @@
 
 <div class="fondo-pantalla">
     <main>
-        <form class="tabla" id="formAdmin">
+        <form action="./api/v1.0/modelos/post-anuncios.php" class="tabla" id="formAdmin">
         <div class="recuadro">
             <div class="recuadro-img">
-                <input type="file" id="img-link" value="" accept="image/png, image/jpeg, image/jpg">
+                <input type="file" id="img-link" value="" name="img-link" accept="image/png, image/jpeg, image/jpg">
             </div>
             <div class="recuadro-txt"> 
+                <label for="input_label">Inserte una URL válida</label>
                 <div class="recuadro-link">
-                    <input type="text" id="link">
+                    <input type="text" id="link" name="link">
                 </div>
+                <br>
+                <label for="input_label">Inserte una descripción válida</label>
                 <div class="recuadro-desc">
-                    <textarea id="desc-link"></textarea>
+                    <textarea id="desc-link" name="desc-link"></textarea>
                 </div>
             </div>
         </div>
-            <div class="recuadro-boton"><input type="submit" id="insertar"></div>
+            <div class="recuadro-boton"><input type="submit" id="insertar" name="insertar"></div>
         </form>
+
+        <h1>Publicaciones</h1>
+        <div class="card-columns">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title that wraps to a new line</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
     </main>
 </div>
 
