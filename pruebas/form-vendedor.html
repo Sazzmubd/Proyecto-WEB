@@ -20,8 +20,8 @@
 	</select>
 </div>
 
-<form id="edicion-vendedor">
-  <input type="hidden" name="id" value="0">
+<form id="edicion-vendedor" onsubmit="onEnviarForm(this, event)">
+  <input type="hidden" name="id" id="id" value="0">
   <table>
     <tr>
       <td><label for="nombre">Nombre*:</label></td>
@@ -50,27 +50,80 @@
 </div>
 
 
-<!-- lo que tiene q hacer el admin en la pagina -->
+
 <script>
 
 function ObtenerTodos() {
-
+  console.log("Obtener todos los vendedores");
+  fetch('../api/1.0/vendedores/').then(function (respuesta){
+    return respuesta.json();
+  }).then(function (json){
+    console.log(json);
+    let sel = document.getElementById('select-vendedor');
+    json.forEach(function (item){
+      //console.log(item);
+      opt.textContent = item.apellidos + ", " + item.nombre;
+      opt.value = item.id;
+      sel.appendChild(opt);
+    })
+  })
 }
 
-function ObtenerVendedor() {
-
+function ObtenerVendedor(idVendedor) {
+  console.log(idVendedor);
+  fetch('../api/v1.0/vendedores/' + idVendedor).then(function (respuesta){
+    return respuesta.json();
+  }).then(function (json){
+    console.log(json);
+    document.getElementById('id').value = json[0].id;
+    document.getElementById('nombre').value = json[0].nombre;
+    document.getElementById('apellidos').value = json[0].apellidos;
+    document.getElementById('email').value = json[0].email;
+    document.getElementById('telefono').value = json[0].telefono;
+  })
 }
 
-function CrearVendedor() {
-
+function CrearVendedor(form) {
+  fetch('../api/v1.0/vendedores/',{
+    method: 'post',
+    body: new FormData(form)
+  }).then(function (respuesta){
+    return respuesta.json();
+  }).then(function (json){
+    console.log(json);
+  })
 }
 
-function ActualizarVendedor() {
-
+function ActualizarVendedor(form) {
+  fetch('../api/v1.0/vendedores/' + document.getElementById('id').value, {
+    method: 'put',
+    body: JSON.stringify(Object.fromEntries(new FormData(form)))
+  }).then(function (respuesta){
+    console.log(respuesta.ok);
+  })
 }
 
 function EliminarVendedor() {
+  let id = document.getElementById('id').value;
+  if(id !=0) {
+    fetch('../api/v1.0/vendedores/' + id, {
+      method: 'delete'
+    }).then(function (respuesta){
+      console.log(respuesta.ok)
+    })
+  }
+}
 
+ObtenerTodos();
+
+function onEnviarForm(form, event){
+  event.preventDefault();
+  let id = document.getElementById('id').value;
+  if(id == 0) {
+    CrearVendedor(form);
+  } else {
+    ActualizarVendedor(form);
+  }
 }
 
 
