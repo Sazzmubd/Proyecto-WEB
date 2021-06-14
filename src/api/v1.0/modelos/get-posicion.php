@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if( $_GET['idCampos']!=0) {//si es distinto de cero haz esto
+if(isset($_GET["idCampos"]) && $_GET['idCampos']!=0) {//si es distinto de cero haz esto
     $idUsuario = $_SESSION['id'];
     $idParcela = $_GET['idCampos'];
 
