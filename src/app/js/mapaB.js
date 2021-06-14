@@ -7,20 +7,12 @@ let map;
 
 let idCampos;
 
-/*fetch( '../api/v1.0/parcela?idCampos='+1).then(function (respuesta){
-        return respuesta.json();
-}).then(function(datos){
-    console.log(datos);
-    idCampos = datos.idCampos;
-})*/
-
-
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 38.9965055, lng: -0.1674364},
         zoom: 15,
-
+        //coordenadas de madrid 39.686823, -3.901718
         mapTypeId: 'hybrid',
         styles: [
             {
@@ -37,8 +29,7 @@ function initMap() {
         rotateControl: false,
     });
 
-    //cargarCampo(1)
-    //cargarPosicion(1)
+
     cargarParcelas(datosUsuario.id);
     // 1º coger la sesion del usuario
     // 2º coger todos sus ids campos
@@ -47,75 +38,6 @@ function initMap() {
     cargarPosiciones(datosUsuario.id);
 }
 
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-function cargarCampo(idCampos) {
-    fetch('../api/v1.0/esquinasParcelas?idParcela=' + idCampos).then(function (campos) {
-        return campos.json();
-
-    }).then(function (jsonCampos) {//viene del get esquinas
-
-        console.log(jsonCampos);
-
-        jsonCampos.forEach(function (campo) {//obtener cada parcelas bucle todas
-            campo.lat = parseFloat(campo.lat);//obtener cada latitud
-            campo.lng = parseFloat(campo.lng);//obtener cada longitud
-        });
-
-        let bounds = new google.maps.LatLngBounds();//esto son los limites del poligono
-        let polygon = new google.maps.Polygon({//esto crea el poligono
-            paths: jsonCampos,
-            strokeColor: "#ff0000",
-            strokeOpacity: .8,
-            strokeWeight: 2,
-            fillColor: "#ff0000",
-            fillOpacity: .5,
-            map: map
-        });
-
-
-        polygon.getPath().getArray().forEach(function (v) {
-            //console.log(v);
-            bounds.extend(v);
-        })
-        console.log(map);
-        map.fitBounds(bounds);
-        map.setCenter(jsonCampos[0]);
-    })
-}
-
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-function cargarPosicion(idCampos) {
-    //let idParcelaEnlace = idCampos;
-    fetch('../api/v1.0/posicionSensor?idParcela="' + idCampos + '"').then(function (localizaciones) {
-        return localizaciones.json();
-    }).then(function (localizacionesj) {
-
-        localizacionesj.forEach(function (localizacion) {
-            localizacion.lat = parseFloat(localizacion.lat);
-            localizacion.lng = parseFloat(localizacion.lng);
-        });
-
-
-        localizacionesj.forEach(function (localizacion) {
-            var marker = new google.maps.Marker({
-                position: {lat: localizacion.lat, lng: localizacion.lng},// aqui pones la la latitud y longitud
-                //de la base de datos en los markers
-                label: localizacion.id + "",
-                animation: google.maps.Animation.DROP,//esto es la gota roja
-                map: map
-            });
-
-        })
-    })
-}
 
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -172,9 +94,6 @@ function cargarParcelas(idUsuario = "") {
 
 
 }
-
-
-
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -207,15 +126,45 @@ function cargarPosiciones(idUsuario = "") {
             posicion.lat = parseFloat(posicion.lat);
             posicion.lng = parseFloat(posicion.lng);
 
+
+
             posiciones.forEach(function (posicion) {// esto de aqui crea  marcadores y en este caso como hay un foreach es crear todos
+                const contentString =
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<h1  id="firstHeading" class="letras-google">Uluru</h1>' +
+                    '<div class="letras-google" id="bodyContent">' +
+
+
+                  //  "<div id='outputtt'></div>"+
+
+                    "<p>evrvvrvr<b></b>, also referred to as <b>Ayers Rock</b>, is a large " +
+                    "sandstone rock formation in the southern part of the " +
+                    "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+                    "south west of the nearest large town, Alice Springs; 450&#160;km " +
+                    "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+                    "Heritage Site.</p>" +
+                    '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+                    "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+                    "(last visited June 22, 2009).</p>" +
+                    "</div>" +
+                    "</div>";
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString,
+                });
                 var marker = new google.maps.Marker({
                     position: {lat: posicion.lat, lng: posicion.lng},
-                    label: posicion.id + "",
+                    label:  posicion.idCampos,
                     animation: google.maps.Animation.DROP,
-                    map: map
+                    map: map,
+                    //title: "Campo"+ posicion.id,
+
                 });
-
-
+                marker.addListener("click", () => {
+                    infowindow.open(map, marker);
+                });
+                //sacarNumcampo();
             })
 
 
@@ -225,48 +174,22 @@ function cargarPosiciones(idUsuario = "") {
 
 
 }
-
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
 /*
-function cargarPosiciones(idUsuario = "") {
-    let url = '../api/v1.0/parcelas';
-    let idParcela;
-    if (idUsuario != "") {
-        url = '../api/v1.0/parcelas?idUsuario=' + idUsuario;
-    }
-    fetch(url).then(function (parcelas) {
-        return parcelas.json();
-    }).then(function (parcelasj) {//enviar a JSSSSSSSSSSSSSSS  esto viene de get parcelas
-        parcelasj.forEach(function (parcela) {
-            fetch('../api/v1.0/posicionSonda?idParcela="' + parcela.id + '"').then(function (posicionesParcela) {
-                idParcela = parcela.id;
-                return posicionesParcela.json();
-            }).then(function (posicionesj) {
+function  sacarNumcampo(){
+    fetch( '../api/v1.0/posicion/', {
 
-                posicionesj.forEach(function (posicion) {
-                    posicion.lat = parseFloat(posicion.lat);
-                    posicion.lng = parseFloat(posicion.lng);
-                });
+        method:"GET"
 
-                posicionesj.forEach(function (posicion) {// esto de aqui crea  marcadores y en este caso como hay un foreach es crear todos
-                    var marker = new google.maps.Marker({
-                        position: {lat: posicion.lat, lng: posicion.lng},
-                        label: posicion.id + "",
-                        animation: google.maps.Animation.DROP,
-                        map: map
-                    });
-
-
-                })
-
-            })
-        })
+    }).then(function (respuesta) {
+        if (respuesta.ok) {
+            return respuesta.json();
+        }
+    }).then(function (datos) {
+        console.log( document.getElementById("outputtt"))
+        document.getElementById("outputtt").textContent = datos.idCampos;
 
     })
-}
 
+
+}
 */
