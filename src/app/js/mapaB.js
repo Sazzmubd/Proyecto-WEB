@@ -107,7 +107,6 @@ function cargarParcelas(idUsuario = "") {
 //COGER EL MISMO CODIGO DE PARCELAS Y HACER LO MISMO CON POSICIONES
 //CAMBIAR LA SENTENCIA SQL
 
-
 function cargarPosiciones(idUsuario = "") {
     let url = '../api/v1.0/posicion';
     if (idUsuario != "") {
@@ -137,7 +136,7 @@ function cargarPosiciones(idUsuario = "") {
                     '<div class="letras-google" id="bodyContent">' +
 
 
-                  //  "<div id='outputtt'></div>"+
+                    //  "<div id='outputtt'></div>"+
 
                     "<p>evrvvrvr<b></b>, also referred to as <b>Ayers Rock</b>, is a large " +
                     "sandstone rock formation in the southern part of the " +
@@ -174,6 +173,13 @@ function cargarPosiciones(idUsuario = "") {
 
 
 }
+
+//------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------
+
 /*
 function  sacarNumcampo(){
     fetch( '../api/v1.0/posicion/', {

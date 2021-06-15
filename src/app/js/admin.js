@@ -14,7 +14,8 @@ fetch("../api/v1.0/modelos/admin.php",{
             '<td id="tipo" data-titulo="Tipo">'+clientes[i].tipo+'</td>'+
             '<td id="email" data-titulo="Email">'+clientes[i].correo+'</td>'+
             '<td id="telefono" data-titulo="Teléfono">'+clientes[i].telefono+'</td>'+
-            '<td>'+'<a href="../app/monitorSensores2.html" className="logo">'+'<img src="ImagenesProyecto/atencion.svg" height="" width="70"/>'+'</a>'+'</td>'+
+            '<td>'+'<a className="logo">'+'<img onclick="verCamposUsuario('+clientes[i].id+')" src="ImagenesProyecto/atencion.svg" height="" width="70"/>'+'</a>'+'</td>'+
             '<td>'+'<img src="ImagenesProyecto/editar.svg" height="" width="20">'+'</td>'
     }
-})
+})            //onclick="verCamposUsuario(<?php echo $mostrar['id']?>)"
+

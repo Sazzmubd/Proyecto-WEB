@@ -14,6 +14,8 @@ if (mysqli_num_rows($result) > 0) {
         $resultado['tipo']=$mostrar['tipo'];
         $resultado['correo']=$mostrar['correo'];
         $resultado['telefono']=$mostrar['telefono'];
+        $resultado['id']=$mostrar['id'];
+
         $arrayresultado[$narray]=$resultado;
         $narray++;
 

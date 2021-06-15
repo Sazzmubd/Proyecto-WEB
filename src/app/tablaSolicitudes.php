@@ -25,7 +25,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
         <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
         </li>
         <li><a class="sidenav-nav" href="panelUsuario.html">Sensores</a></li>
-        <li><a class="sidenav-nav" href="admin.php">Administrar Sensores</a>
+        <li><a class="sidenav-nav" href="../../pruebas/admin.php">Administrar Sensores</a>
         </li>
     </ul>
 </nav>
