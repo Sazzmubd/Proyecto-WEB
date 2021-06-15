@@ -11,9 +11,9 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="ImagenesProyecto/brote.svg" type="image/ico"/>
-    <link href="css/tablasClientes-style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="icon" href="../src/app/ImagenesProyecto/brote.svg" type="image/ico"/>
+    <link href="../src/app/css/tablasClientes-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/app/css/sidenav.css">
 
 </head>
 
@@ -24,16 +24,16 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
         <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
         </li>
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
-        <li><a class="sidenav-nav" href="tablaSolicitudes.php">Tabla Solicitudes</a></li>
+        <li><a class="sidenav-nav" href="../src/app/tablaSolicitudes.php">Tabla Solicitudes</a></li>
     </ul>
 </nav>
 
 
 <header class="header">
     <div class="container logo-menu-container">
-        <a href="../index.html" class="logo"><img src="ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
+        <a href="../src/index.html" class="logo"><img src="../src/app/ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
         <!-- Use any element to open the sidenav -->
-        <span><a class="menu-icon" onClick="openNav()"><img src="ImagenesProyecto/LandingPage/menu.svg"
+        <span><a class="menu-icon" onClick="openNav()"><img src="../src/app/ImagenesProyecto/LandingPage/menu.svg"
                                                             height="32" width="46" alt="menu-icon"/></a></span>
     </div>
 </header>
@@ -69,8 +69,9 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
             <td data-titulo="Tipo"><?php echo $mostrar['tipo']?></td>
             <td data-titulo="Correo"><?php echo $mostrar['correo']?></td>
             <td data-titulo="Teléfono"><?php echo $mostrar['telefono']?></td>
-            <td><a href="panelUsuario.html" class="logo"><img src="ImagenesProyecto/atencion.svg" height="" width="70"/></a></td>
-            <td><img src="ImagenesProyecto/editar.svg" height="" width="20"</td>
+
+            <td><img onclick="verCamposUsuario(<?php echo $mostrar['id']?>)" src="../src/app/ImagenesProyecto/atencion.svg" height="" width="70"/></td>
+            <td><img src="../src/app/ImagenesProyecto/editar.svg" height="" width="20"</td>
 
         </tr>
             <?php
@@ -90,12 +91,14 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 </footer>
 
 <!-- Scripts -->
-<script src="js/jQuery.js"></script>
-<script src="js/sidenav.js"></script>
-<script src="js/filter.js"></script>
-<script src="js/botonesMostrar.js"></script>
-<script src="js/comprobar-sesion.js"></script>
-<script src="js/sortable.js"></script>
+<script src="../src/app/js/jQuery.js"></script>
+<script src="../src/app/js/sidenav.js"></script>
+<script src="../src/app/js/filter.js"></script>
+<script src="../src/app/js/botonesMostrar.js"></script>
+<script src="../src/app/js/comprobar-sesion.js"></script>
+<script src="../src/app/js/sortable.js"></script>
+<script src="../src/app/js/funcionRecogerId.js"></script>
+
 
 </body>
 </html>

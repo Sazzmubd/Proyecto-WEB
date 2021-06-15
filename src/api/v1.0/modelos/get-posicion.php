@@ -6,7 +6,7 @@ if(isset($_GET["idCampos"]) && $_GET['idCampos']!=0) {//si es distinto de cero h
     $idParcela = $_GET['idCampos'];
 
     if($_SESSION['rol'] == "admin"){// si eres admin q te de todas la parcelas
-        $sql ="SELECT `campos`.`id` AS usuario, `campos`.`idCampos` AS `campo`, `sensor`.* FROM `campos` INNER JOIN `sensor` ON `campos`.`idCampos` = `sensor`.`idCampos`";
+        $sql ="SELECT `campos`.`id` AS usuario, `campos`.`idCampos` AS `campo`, `sensor`.* FROM `campos` INNER JOIN `sensor` ON `campos`.`idCampos` = `sensor`.`idCampos` WHERE `campos`.`id` = $idUsuarioSelecionado";
 
         $res = mysqli_query($conn, $sql);
     }
