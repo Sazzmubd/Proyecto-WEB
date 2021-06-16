@@ -5,8 +5,18 @@
     background-size: cover;
     font-family: arial;
     height: 100vh;
+    display: flex;
+    justify-content: center;
 
     /*border-radius: 30%;*/
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -16,10 +26,13 @@
     max-width: 70%;
     background-color: #4c3b75;
     color: white;
-    height: 93.5vh;
+    height: 100%;
     box-sizing: border-box;
-    padding: 70px 30px;
-    border-right: 3px solid white;
+    padding-top:  70px;
+    padding-bottom: 50px;
+    
+    
+
     
 }
 .leftsize form {

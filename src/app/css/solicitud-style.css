@@ -25,16 +25,18 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .login-box {
     margin-top: 5em;
-    height: 82.7vh;
-    max-width: 70%;
+    height: 100%;
+    max-width: 90%;
     background-color: #4c3b75;
     color: white;
-    padding: 70px 30px 110px 30px;
-    border-right: 3px solid white;
+    padding: 40px 30px 50px 30px;
+    
 
 }
 
@@ -84,7 +86,7 @@ body {
 }
 
 .enviar {
-    width: 10vh;
+    width: 100px;
     margin: 0 auto;
 }
 
@@ -115,9 +117,9 @@ body {
         .login-box{                         
             max-width: 100%;
             border: none;
-            padding-bottom: 5%;
-            height: 95vh;
-            padding-top: 2vh;
+            /*padding-bottom: 5%;*/
+            height: 100%;
+            padding-top: 30px;
         }
         .login-box h1 {
             font-size: 20px;
@@ -141,9 +143,9 @@ body {
         .login-box{                         
             max-width: 100%;
             border: none;
-            padding-bottom: 0%;
+            /*padding-bottom: 0%;*/
             height: 100%;
-            padding-top: 1vh;
+            padding-top: 30px;
         }
         .login-box h1 {
             font-size: 16px;

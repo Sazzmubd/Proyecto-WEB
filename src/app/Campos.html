@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Campos</title>
+    <meta charset = "UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="ImagenesProyecto/brote.svg" type="image/ico"/>
+
+    <link href="css/solicitud-style.css" rel="stylesheet">
+    <link href="css/formularios-style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/sidenav.css">
+    <script src="js/sidenav.js"></script>
+
+</head>
+
+<body class="fondo-pantalla-sol">
+
+<div class="estructura-body">
+    <div class="login-box">
+        <a href="index.html">
+        </a>
+        <h1>Campos</h1>
+        <form>
+            <!-- user name -->
+            <label for="idcampos">ID Campos</label>
+            <input type="text" placeholder="Ingresar ID campo" name="inputidcampos" required>
+
+            <!--Tipo de cliente:  <select name="inputTipo">
+            <option>Particular</option>
+            <option>Empresa</option>
+
+            </select>-->
+
+            <label for="color">Color (inglés)</label>
+            <input type="text" placeholder="Ingresar color" name="inputColor" required>
+
+            <!--<label for="telefono">Color (inglés)</label>
+            <input type="phone" placeholder="Ingrese color" name="inputTelefono">-->
+
+           <!-- <label for="solicitud">Color (inglés)</label>
+            <textarea type="text" class="cuadro-grande"  id="msg" name="inputMotivo" placeholder="elige un color"></textarea>
+
+            <label for="provincia">Provincia</label>
+            <input type="text" placeholder="Ingrese su Provincia" name="inputProvincia">-->
+
+
+            <div class="enviar"><input type="submit" value="Enviar"></div>  <!-- boton de enviar -->
+            <div class="link"><a href="Esquinas.html">Acceder a esquinas</a></div>
+
+
+        </form>
+
+    </div>
+    
+</div>
+
+<nav id="mySidenav" class="sidenav">
+    <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a>
+        <li><a class="sidenav-nav" href="login.html">Iniciar sesión</a>
+        </li>
+        <li><a class="sidenav-nav" href="preguntasFrecuentes.html">Preguntas Frecuentes</a>
+        </li>
+        <li><a class="sidenav-nav" href="nosotros.html">Acerca de Nosotros</a>
+        </li>
+        <li><a class="sidenav-nav" href="#footer">Contáctanos</a>
+        </li>
+    </ul>
+</nav>
+
+<header class="header">
+        <div class="container logo-menu-container">
+            <a href="index.html" class="logo"><img src="ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
+            <!-- Use any element to open the sidenav -->
+            <span><a class="menu-icon" onClick="openNav()"><img src="ImagenesProyecto/LandingPage/menu.svg"
+                                                                height="32" width="46" alt="menu-icon"/></a></span>
+        </div>
+</header>
+
+<footer id="footer" class="footer">
+    <div class="parrafo"><a href="terminosPrivacidad.html">© 2021 - GTI</a></div>
+    <div class="parrafo">Escuela Politécnica Superior de Gandia <br>
+        C/ Paranimf, 1 <br>
+        46730 Grao de Gandia, Gandia <br>
+        Tel. (+34) 96 284 93 33
+    </div>
+</footer>
+<script src="js/solicitud-scripts.js"></script><!--  cagar js -->
+
+</body>
+</html>
+
