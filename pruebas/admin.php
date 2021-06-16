@@ -24,7 +24,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
         <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
         </li>
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
-        <li><a class="sidenav-nav" href="../src/app/tablaSolicitudes.php">Tabla Solicitudes</a></li>
+        <li><a class="sidenav-nav" href="tablaSolicitudes.php">Tabla Solicitudes</a></li>
     </ul>
 </nav>
 
