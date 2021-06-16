@@ -30,12 +30,20 @@ function initMap() {
     });
 
 
+    // let search = new URLSearchParams(location.search);
+
+    // if (search.has('idUsuario') ) {
+    //    cargarParcelas(search.get('idUsuario'));
+    //} else {
     cargarParcelas(datosUsuario.id);
-    // 1º coger la sesion del usuario
-    // 2º coger todos sus ids campos
-    //3º mostrar los ids q has sacado
-    //4º meter esos ids en un array
+    //}
+
+    // if (search.has('idUsuario') ) {
+    //  cargarPosiciones(search.get('idUsuario'));
+    //} else {
     cargarPosiciones(datosUsuario.id);
+    //}
+
 }
 
 
@@ -109,6 +117,17 @@ function cargarParcelas(idUsuario = "") {
 
 function cargarPosiciones(idUsuario = "") {
     let url = '../api/v1.0/posicion';
+
+
+/*
+//esto es para el admin
+    //if (idUsuario == '1') {
+    url = '../api/v1.0/posicion?idUsuario='+ idUsuario;
+    //}else{
+    url = '../api/v1.0/posicion?idCampos=' + idUsuario;
+    //}
+    */
+
     if (idUsuario != "") {
         url = '../api/v1.0/posicion?idCampos=' + idUsuario;
     }
@@ -154,7 +173,7 @@ function cargarPosiciones(idUsuario = "") {
                 });
                 var marker = new google.maps.Marker({
                     position: {lat: posicion.lat, lng: posicion.lng},
-                    label:  posicion.idCampos,
+                    label:  posicion.idCampos, // este es el id campo al que pertenece
                     animation: google.maps.Animation.DROP,
                     map: map,
                     //title: "Campo"+ posicion.id,
@@ -163,7 +182,6 @@ function cargarPosiciones(idUsuario = "") {
                 marker.addListener("click", () => {
                     infowindow.open(map, marker);
                 });
-                //sacarNumcampo();
             })
 
 
@@ -179,23 +197,3 @@ function cargarPosiciones(idUsuario = "") {
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
-
-/*
-function  sacarNumcampo(){
-    fetch( '../api/v1.0/posicion/', {
-
-        method:"GET"
-
-    }).then(function (respuesta) {
-        if (respuesta.ok) {
-            return respuesta.json();
-        }
-    }).then(function (datos) {
-        console.log( document.getElementById("outputtt"))
-        document.getElementById("outputtt").textContent = datos.idCampos;
-
-    })
-
-
-}
-*/

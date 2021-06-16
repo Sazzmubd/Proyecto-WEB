@@ -16,6 +16,9 @@ fetch("../api/v1.0/modelos/admin.php",{
             '<td id="telefono" data-titulo="Teléfono">'+clientes[i].telefono+'</td>'+
             '<td>'+'<a className="logo">'+'<img onclick="verCamposUsuario('+clientes[i].id+')" src="ImagenesProyecto/atencion.svg" height="" width="70"/>'+'</a>'+'</td>'+
             '<td>'+'<img src="ImagenesProyecto/editar.svg" height="" width="20">'+'</td>'
+        //window.datosUsuario = +clientes[i];//                            AQUI DECLARO UNA VARIABLE SUUUUUPEEEEERRRRGLOBAL
+
     }
 })            //onclick="verCamposUsuario(<?php echo $mostrar['id']?>)"
+
 

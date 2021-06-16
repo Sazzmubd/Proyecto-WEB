@@ -10,9 +10,9 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
     <title>Lista de Solicitudes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="ImagenesProyecto/brote.svg" type="image/ico"/>
-    <link href="css/tablasClientes-style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="icon" href="../src/app/ImagenesProyecto/brote.svg" type="image/ico"/>
+    <link href="../src/app/css/tablasClientes-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/app/css/sidenav.css">
 
 </head>
 
@@ -24,8 +24,8 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
         <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
         </li>
-        <li><a class="sidenav-nav" href="panelUsuario.html">Sensores</a></li>
-        <li><a class="sidenav-nav" href="../../pruebas/admin.php">Administrar Sensores</a>
+        <li><a class="sidenav-nav" href="../src/app/panelUsuario.html">Sensores</a></li>
+        <li><a class="sidenav-nav" href="admin.php">Administrar Sensores</a>
         </li>
     </ul>
 </nav>
@@ -33,9 +33,9 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 <!-- Cabezera -->
 <header class="header">
     <div class="container logo-menu-container">
-        <a href="../index.html" class="logo"><img src="ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
+        <a href="../src/index.html" class="logo"><img src="../src/app/ImagenesProyecto/logoGTI.svg" height="" width="120"/></a>
         <!-- Use any element to open the sidenav -->
-        <span><a class="menu-icon" onClick="openNav()"><img src="ImagenesProyecto/LandingPage/menu.svg" height="32" width="46" alt="menu-icon"/></a></span>
+        <span><a class="menu-icon" onClick="openNav()"><img src="../src/app/ImagenesProyecto/LandingPage/menu.svg" height="32" width="46" alt="menu-icon"/></a></span>
     </div>
 </header>
 
@@ -80,7 +80,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
             <td data-titulo="Teléfono"><?php echo $mostrar['telefono']?></td>
             <td data-titulo="Motivo"><?php echo $mostrar['motivo']?></td>
             <td data-titulo="Provincia"><?php echo $mostrar['provincia']?></td>
-            <td><div><img src="ImagenesProyecto/plus.svg" height="" width="30">  <img src="ImagenesProyecto/eliminar.svg" height="" width="30"></div></td>
+            <td><div><img src="../src/app/ImagenesProyecto/plus.svg" height="" width="30">  <img src="../src/app/ImagenesProyecto/eliminar.svg" height="" width="30"></div></td>
         </tr>
             <?php
         }
@@ -92,7 +92,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 
 <!-- Footer -->
 <footer id="footer" class="footer">
-    <p><a href="../terminosPrivacidad.html">© 2021 - GTI</a></p>
+    <p><a href="../src/terminosPrivacidad.html">© 2021 - GTI</a></p>
     <p>Escuela Politécnica Superior de Gandia <br>
         C/ Paranimf, 1 <br>
         46730 Grao de Gandia, Gandia <br>
@@ -102,12 +102,12 @@ $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
 
 
 <!-- Scripts -->
-<script src="js/jQuery.js"></script>
-<script src="js/sidenav.js"></script>
-<script src="js/filter.js"></script>
-<script src="js/botonesMostrar.js"></script>
-<script src="js/sortable.js"></script>
-<script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
+<script src="../src/app/js/jQuery.js"></script>
+<script src="../src/app/js/sidenav.js"></script>
+<script src="../src/app/js/filter.js"></script>
+<script src="../src/app/js/botonesMostrar.js"></script>
+<script src="../src/app/js/sortable.js"></script>
+<script src="../src/app/js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
 
 </body>
 </html>

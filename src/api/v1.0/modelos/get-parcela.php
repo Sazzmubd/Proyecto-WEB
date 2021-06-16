@@ -3,11 +3,11 @@ session_start();
 
 if( $_GET['idCampos']!=0) {//si es distinto de cero haz esto
     $idUsuario = $_SESSION['id'];
-    $idParcela = $_GET['idCampos'];
+    //$idParcela = $_GET['idCampos'];
 
     if($_SESSION['rol'] == "admin"){// si eres admin q te de todas la parcelas
         //$sql = "SELECT * FROM `campos` WHERE  `idCampos` = $idParcela";
-        $sql ="SELECT `campos`.`id` AS usuario, `campos`.`color`, `campos`.`idCampos` AS `campo`, `esquinas`.* FROM `campos` INNER JOIN `esquinas` ON `campos`.`idCampos` = `esquinas`.`idCampos`";
+        $sql ="SELECT `campos`.`id` AS usuario, `campos`.`color`, `campos`.`idCampos` AS `campo`, `esquinas`.* FROM `campos` INNER JOIN `esquinas` ON `campos`.`idCampos` = `esquinas`.`idCampos` WHERE `campos`.`id` = $idUsuario";
         $res = mysqli_query($conn, $sql);
     }
     
