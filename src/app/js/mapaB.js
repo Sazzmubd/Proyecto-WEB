@@ -7,6 +7,136 @@ let map;
 
 let idCampos;
 
+
+function loadData(){
+    let datos = {
+        labels:[],
+        datasets:[
+            {
+                label: 'humedad',
+                data: [],
+                fill: true,
+                backgroundColor: 'rgba(43,69,34,.5)',
+                borderColor: 'rgb(43,110,86)',
+                borderDash: [2,3],
+                pointStyle: 'rectRot',
+                pointRadius: 10,
+            },
+            {
+                label: 'temperatura',
+                data: [],
+                fill: true,
+                backgroundColor: 'rgba(111,69,34,.5)',
+                borderColor: 'rgb(111,110,86)',
+                borderDash: [2,3],
+                pointStyle: 'rectRot',
+                pointRadius: 10,
+            },
+            {
+                label: 'salinidad',
+                data: [],
+                fill: true,
+                backgroundColor: 'rgba(255,69,34,.5)',
+                borderColor: 'rgb(255,110,86)',
+                borderDash: [2,3],
+                pointStyle: 'rectRot',
+                pointRadius: 10,
+            },
+            {
+                label: 'luminosidad',
+                data: [],
+                fill: true,
+                backgroundColor: 'rgba(200,69,34,.5)',
+                borderColor: 'rgb(200,110,86)',
+                borderDash: [2,3],
+                pointStyle: 'rectRot',
+                pointRadius: 10,
+            }
+        ]
+    };
+
+    return datos;
+}
+
+function loadOptions(idSensor){
+    let opciones = {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                stacked: true
+            }
+        },
+        plugins: {
+            legend: {
+                position: 'left',
+                align: 'end'
+            },
+            title: {
+                display: true,
+                text: 'Medidas sensor ' + idSensor
+            },
+            tooltips: {
+                backgroundColor: '#fff',
+                titleColor: '#000',
+                titleAlign: 'center',
+                bodyColor: '#333',
+                borderColor: '#666',
+                borderWidth: 1,
+            }
+        }
+    };
+    return opciones;
+}
+
+function crearGrafica(idElem, grafica){
+    let ctx = document.getElementById('contentSensor' + idElem);
+    console.log(ctx);
+    console.log(datos);
+    let miGrafica = new Chart(ctx, {
+        type: 'line',
+        data: grafica[0],
+        options: grafica[1]
+    });
+}
+
+function procesarDatos(idSensor, medidas){
+    medidas = medidas.sort(function (a, b) {
+        if (a.fechaMedicion < b.fechaMedicion) return -1;
+        if (a.fechaMedicion > b.fechaMedicion) return 1;
+        return 0;
+    });
+
+    let fechas = [];
+    let humedades = [];
+    let temperaturas = [];
+    let salinidades = [];
+    let luminosidades = [];
+
+
+    medidas.forEach(element => {
+        if (medidas.idSensor == idSensor){
+            fechas.push(element.fechaMedicion);
+            humedades.push(parseFloat(element.humedad));
+            temperaturas.push(parseFloat(element.temperatura));
+            salinidades.push(parseFloat(element.salinidad));
+            luminosidades.push(parseFloat(element.Luminosidad));
+        }
+
+    });
+    
+    datos = loadData();
+
+    datos.labels = fechas;
+    datos.datasets[0].data = humedades;
+    datos.datasets[1].data = temperaturas;
+    datos.datasets[2].data = salinidades;
+    datos.datasets[3].data = luminosidades;
+
+    return [datos, loadOptions(idSensor)];
+
+    //crearGrafica(datos);
+}
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -30,20 +160,13 @@ function initMap() {
     });
 
 
-    // let search = new URLSearchParams(location.search);
-
-    // if (search.has('idUsuario') ) {
-    //    cargarParcelas(search.get('idUsuario'));
-    //} else {
     cargarParcelas(datosUsuario.id);
-    //}
-
-    // if (search.has('idUsuario') ) {
-    //  cargarPosiciones(search.get('idUsuario'));
-    //} else {
+    // 1º coger la sesion del usuario
+    // 2º coger todos sus ids campos
+    //3º mostrar los ids q has sacado
+    //4º meter esos ids en un array
     cargarPosiciones(datosUsuario.id);
-    //}
-
+    cargarGraficas();
 }
 
 
@@ -115,76 +238,58 @@ function cargarParcelas(idUsuario = "") {
 //COGER EL MISMO CODIGO DE PARCELAS Y HACER LO MISMO CON POSICIONES
 //CAMBIAR LA SENTENCIA SQL
 
+let medicionesSensor = {};
+let grafica = [];
+
 function cargarPosiciones(idUsuario = "") {
     let url = '../api/v1.0/posicion';
-
-
-/*
-//esto es para el admin
-    //if (idUsuario == '1') {
-    url = '../api/v1.0/posicion?idUsuario='+ idUsuario;
-    //}else{
-    url = '../api/v1.0/posicion?idCampos=' + idUsuario;
-    //}
-    */
-
     if (idUsuario != "") {
         url = '../api/v1.0/posicion?idCampos=' + idUsuario;
     }
     fetch(url).then(function (campos) {
         return campos.json();
-    }).then(function (posiciones) {
+    }).then(function (sensores) {
 
+        sensores.forEach(function (sensor) {
+            console.log(sensor);
 
+            sensor.lat = parseFloat(sensor.lat);
+            sensor.lng = parseFloat(sensor.lng);
 
-
-        posiciones.forEach(function (posicion) {
-            //console.log(posicion);
-
-            posicion.lat = parseFloat(posicion.lat);
-            posicion.lng = parseFloat(posicion.lng);
-
-
-
-            posiciones.forEach(function (posicion) {// esto de aqui crea  marcadores y en este caso como hay un foreach es crear todos
-                const contentString =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
-                    "</div>" +
-                    '<h1  id="firstHeading" class="letras-google">Uluru</h1>' +
-                    '<div class="letras-google" id="bodyContent">' +
-
-
-                    //  "<div id='outputtt'></div>"+
-
-                    "<p>evrvvrvr<b></b>, also referred to as <b>Ayers Rock</b>, is a large " +
-                    "sandstone rock formation in the southern part of the " +
-                    "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-                    "south west of the nearest large town, Alice Springs; 450&#160;km " +
-                    "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-                    "Heritage Site.</p>" +
-                    '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-                    "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-                    "(last visited June 22, 2009).</p>" +
-                    "</div>" +
-                    "</div>";
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString,
-                });
-                var marker = new google.maps.Marker({
-                    position: {lat: posicion.lat, lng: posicion.lng},
-                    label:  posicion.idCampos, // este es el id campo al que pertenece
-                    animation: google.maps.Animation.DROP,
-                    map: map,
-                    //title: "Campo"+ posicion.id,
-
-                });
-                marker.addListener("click", () => {
-                    infowindow.open(map, marker);
-                });
+            // Carga los datos de las mediciones
+            let dataUrl = '../api/v1.0/JsonTemp/data.json';
+            let medicionesData = [];
+            fetch(dataUrl).then(function (campos) {
+                return campos.json();
+            }).then(function (mediciones) {
+                mediciones.forEach(function (medicion){
+                    // Comprueba que la medición sea del sensor correcto
+                    if(medicion.idSensor == sensor.idSensor){
+                        medicionesData.push(medicion);
+                    }
+                })
             })
+            medicionesSensor[sensor.idSensor] = medicionesData;
+            console.log(medicionesSensor);
+            grafica[sensor.idSensor] = procesarDatos(sensor.idSensor, medicionesSensor[sensor.idSensor]);
 
+            const contentString =
+                '<div id="contentSensor' + sensor.idSensor + '"><h1>Sensor: ' + sensor.idSensor + '</h1></div>';
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString,
+            });
+            var marker = new google.maps.Marker({
+                position: {lat: sensor.lat, lng: sensor.lng},
+                label:  sensor.idCampos,
+                animation: google.maps.Animation.DROP,
+                map: map,
+                //title: "Campo"+ sensor.id,
 
+            });
+            marker.addListener("click", () => {
+                infowindow.open(map, marker);
+            });
+            //sacarNumcampo();
         })
 
     })
@@ -192,8 +297,34 @@ function cargarPosiciones(idUsuario = "") {
 
 }
 
+function cargarGraficas(){
+    for (let key in medicionesSensor) {
+        crearGrafica(key);
+    }
+}
+
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
+
+/*
+function  sacarNumcampo(){
+    fetch( '../api/v1.0/posicion/', {
+
+        method:"GET"
+
+    }).then(function (respuesta) {
+        if (respuesta.ok) {
+            return respuesta.json();
+        }
+    }).then(function (datos) {
+        console.log( document.getElementById("outputtt"))
+        document.getElementById("outputtt").textContent = datos.idCampos;
+
+    })
+
+
+}
+*/

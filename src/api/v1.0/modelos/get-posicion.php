@@ -20,10 +20,36 @@ if(isset($_GET["idCampos"]) && $_GET['idCampos']!=0) {//si es distinto de cero h
         $res = mysqli_query($conn, $sql);
     }
 
+        
+
 
     while ($fila = mysqli_fetch_assoc($res)) {
         array_push($salida, $fila);
     }
+
+
+    $sql = 'SELECT * FROM mediciones';
+    if(!$result = mysqli_query($conn, $sql)) die(); //si la conexión cancelar programa
+
+    $rawdata = array(); //creamos un array
+
+    //guardamos en un array multidimensional todos los datos de la consulta
+    $i=0;
+
+    while($row = mysqli_fetch_array($result))
+    {
+    $rawdata[$i] = $row;
+    $i++;
+    }
+
+
+    $json = json_encode($rawdata);
+
+    $file = getcwd() . '../JsonTemp/data.json';
+    if(file_exists($file) != true){
+        $fh = fopen($file, 'w');
+    }
+    file_put_contents($file, $json);
 
     //echo json_encode($salida);//enviar a  JSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
     $http_code = 200;
