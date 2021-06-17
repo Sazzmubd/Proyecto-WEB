@@ -110,7 +110,7 @@ function procesarDatosGlobal(medidas){
         humedades.push(parseFloat(element.humedad));
         temperaturas.push(parseFloat(element.temperatura));
         salinidades.push(parseFloat(element.salinidad));
-        luminosidades.push(parseFloat(element.Luminosidad));
+        luminosidades.push(parseFloat(element.luminosidad));
 
     });
     
