@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2021 a las 17:37:45
+-- Tiempo de generación: 18-06-2021 a las 01:29:26
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -130,7 +130,11 @@ INSERT INTO `mediciones` (`idSensor`, `idMedicion`, `humedad`, `salinidad`, `tem
 (1, 3, 31.2, 12.4, 28.03, 2, '2021-05-26 14:00:00'),
 (1, 4, 33.2, 11.4, 26.2, 1, '2021-05-26 18:00:00'),
 (1, 5, 31.2, 12.8, 22.1, 0, '2021-05-26 22:00:00'),
-(1, 6, 30.1, 13.2, 19.2, 0, '2021-05-27 02:00:00');
+(1, 6, 30.1, 13.2, 19.2, 0, '2021-05-27 02:00:00'),
+(2, 7, 36.2, 17.4, 18.03, 4, '2021-06-17 18:32:57'),
+(2, 8, 31.2, 12.4, 38.03, 2, '2021-06-17 18:33:20'),
+(2, 9, 35.2, 15.4, 18.03, 2, '2021-06-17 18:34:06'),
+(2, 10, 40.2, 25.4, 28.03, 2, '2021-06-17 18:34:30');
 
 -- --------------------------------------------------------
 
@@ -288,7 +292,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `mediciones`
 --
 ALTER TABLE `mediciones`
-  MODIFY `idMedicion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idMedicion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `sensor`

@@ -90,7 +90,6 @@ function loadOptions(idSensor){
 
 function crearGrafica(idElem, grafica){
     let ctx = document.getElementById('contentSensor' + idElem);
-    console.log(ctx);
     ctx.height = 500;
     opciones = loadOptions(idElem);
     console.log(grafica, opciones);
@@ -329,10 +328,8 @@ function verdatos(id) {
     for (let i = 1; i<6; i++){
         let canvasFor = document.getElementById(stringContent+i);
         if (canvasFor != canvasVer){
-            console.log(canvasFor);
             canvasFor.style.display = 'none';
         } else {
-            console.log(canvasFor);
             canvasFor.style.display = 'block';
         }
     }
