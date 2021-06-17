@@ -55,14 +55,24 @@ body {
     font-weight: bold;
     display: block;
 }
+.login-box input[type="number"],
+.login-box input[type="float"]
+ {
+    border: none;
+    border-bottom: 1px solid indianred;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px
 
+}
 .login-box input {
     width: 100%;
     margin-bottom: 20px;
 }
 
 .login-box input[type="text"],
-.login-box input[type="phone"],
 .login-box input[type="password"],
 .login-box input[type="direccion1"],
 .login-box input[type="direccion2"] {
