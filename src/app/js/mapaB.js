@@ -90,14 +90,21 @@ function loadOptions(idSensor){
 }
 
 function crearGrafica(idElem, grafica){
+    console.log('contentSensor' + idElem);
     let ctx = document.getElementById('contentSensor' + idElem);
-    console.log(ctx);
-    console.log(datos);
+    console.log($('#contentSensor' + idElem));
+    console.log($('.titulo'));
+    console.log(grafica[0], grafica[1]);
     let miGrafica = new Chart(ctx, {
         type: 'line',
-        data: grafica[0],
-        options: grafica[1]
+        data: grafica,
+        options: loadOptions()
     });
+
+    if ($('#contentSensor' + idElem)){
+        console.log('Entra');
+        $('#contentSensor' + idElem).append(miGrafica);
+    }
 }
 
 function procesarDatos(idSensor, medidas){
@@ -107,6 +114,8 @@ function procesarDatos(idSensor, medidas){
         return 0;
     });
 
+    
+
     let fechas = [];
     let humedades = [];
     let temperaturas = [];
@@ -115,17 +124,16 @@ function procesarDatos(idSensor, medidas){
 
 
     medidas.forEach(element => {
-        if (medidas.idSensor == idSensor){
+            console.log("Medidas: " + element);
             fechas.push(element.fechaMedicion);
             humedades.push(parseFloat(element.humedad));
             temperaturas.push(parseFloat(element.temperatura));
             salinidades.push(parseFloat(element.salinidad));
             luminosidades.push(parseFloat(element.Luminosidad));
-        }
-
     });
     
     datos = loadData();
+    console.log(datos);
 
     datos.labels = fechas;
     datos.datasets[0].data = humedades;
@@ -133,10 +141,37 @@ function procesarDatos(idSensor, medidas){
     datos.datasets[2].data = salinidades;
     datos.datasets[3].data = luminosidades;
 
-    return [datos, loadOptions(idSensor)];
-
-    //crearGrafica(datos);
+    crearGrafica(idSensor, datos);
 }
+
+function getData(){
+    let dataUrl = '../api/v1.0/JsonTemp/data.json';
+    fetch(dataUrl).then(function (campos) {
+        return campos.json();
+    }).then(function (mediciones) {
+        let medicionesData = [];
+        let index = -1;
+        mediciones.forEach(function (medicion){
+            if (index != parseInt(medicion.idSensor)){
+                if(index != -1){
+                    console.log(medicionesData);
+                    procesarDatos(medicionesData[0].idSensor, medicionesData);
+                }
+                medicionesData = [];
+                index = parseInt(medicion.idSensor);
+            }
+            console.log(index);
+            medicionesData.push(medicion);
+            // Comprueba que la medición sea del sensor correcto
+        })
+        console.log(medicionesData);
+        procesarDatos(medicionesData[0].idSensor, medicionesData);
+    })
+
+}
+
+
+
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -166,7 +201,8 @@ function initMap() {
     //3º mostrar los ids q has sacado
     //4º meter esos ids en un array
     cargarPosiciones(datosUsuario.id);
-    cargarGraficas();
+    getData();
+    //setTimeout(getData, 5000);
 }
 
 
@@ -238,8 +274,9 @@ function cargarParcelas(idUsuario = "") {
 //COGER EL MISMO CODIGO DE PARCELAS Y HACER LO MISMO CON POSICIONES
 //CAMBIAR LA SENTENCIA SQL
 
-let medicionesSensor = {};
-let grafica = [];
+
+
+
 
 function cargarPosiciones(idUsuario = "") {
     let url = '../api/v1.0/posicion';
@@ -251,30 +288,20 @@ function cargarPosiciones(idUsuario = "") {
     }).then(function (sensores) {
 
         sensores.forEach(function (sensor) {
-            console.log(sensor);
 
             sensor.lat = parseFloat(sensor.lat);
             sensor.lng = parseFloat(sensor.lng);
 
             // Carga los datos de las mediciones
-            let dataUrl = '../api/v1.0/JsonTemp/data.json';
-            let medicionesData = [];
-            fetch(dataUrl).then(function (campos) {
-                return campos.json();
-            }).then(function (mediciones) {
-                mediciones.forEach(function (medicion){
-                    // Comprueba que la medición sea del sensor correcto
-                    if(medicion.idSensor == sensor.idSensor){
-                        medicionesData.push(medicion);
-                    }
-                })
-            })
-            medicionesSensor[sensor.idSensor] = medicionesData;
-            console.log(medicionesSensor);
-            grafica[sensor.idSensor] = procesarDatos(sensor.idSensor, medicionesSensor[sensor.idSensor]);
+
 
             const contentString =
-                '<div id="contentSensor' + sensor.idSensor + '"><h1>Sensor: ' + sensor.idSensor + '</h1></div>';
+            '<div id="sensor' + sensor.idSensor + '">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<h1  id="firstHeading" class="letras-google">Sensor' + sensor.idSensor + '</h1>' +
+                    '<canvas class="letras-google" id="contentSensor' + sensor.idSensor + '"></canvas>' +
+                    "</div>";
             var infowindow = new google.maps.InfoWindow({
                 content: contentString,
             });
@@ -294,14 +321,8 @@ function cargarPosiciones(idUsuario = "") {
 
     })
 
-
 }
 
-function cargarGraficas(){
-    for (let key in medicionesSensor) {
-        crearGrafica(key);
-    }
-}
 
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------

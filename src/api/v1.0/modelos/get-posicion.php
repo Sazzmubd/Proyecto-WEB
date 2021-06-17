@@ -28,7 +28,7 @@ if(isset($_GET["idCampos"]) && $_GET['idCampos']!=0) {//si es distinto de cero h
     }
 
 
-    $sql = 'SELECT * FROM mediciones';
+    $sql = 'SELECT * FROM mediciones ORDER BY idSensor ASC';
     if(!$result = mysqli_query($conn, $sql)) die(); //si la conexión cancelar programa
 
     $rawdata = array(); //creamos un array
