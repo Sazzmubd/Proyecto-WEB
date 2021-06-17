@@ -308,3 +308,13 @@ ul li {
 .letras-google{
     color: black;
 }
+
+.graphic {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas{
+    width: 50%;
+}

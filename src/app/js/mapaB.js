@@ -10,7 +10,6 @@ let idCampos;
 
 function loadData(){
     let datos = {
-        labels:[],
         datasets:[
             {
                 label: 'humedad',
@@ -77,11 +76,11 @@ function loadOptions(idSensor){
                 text: 'Medidas sensor ' + idSensor
             },
             tooltips: {
-                backgroundColor: '#fff',
-                titleColor: '#000',
+                backgroundColor: '#F0EDFE',
+                titleColor: 'rgba(200,69,34,.5)',
                 titleAlign: 'center',
-                bodyColor: '#333',
-                borderColor: '#666',
+                bodyColor: 'rgba(200,69,34,.5)',
+                borderColor: 'rgba(200,69,34,.5)',
                 borderWidth: 1,
             }
         }
@@ -90,27 +89,22 @@ function loadOptions(idSensor){
 }
 
 function crearGrafica(idElem, grafica){
-    console.log('contentSensor' + idElem);
     let ctx = document.getElementById('contentSensor' + idElem);
-    console.log($('#contentSensor' + idElem));
-    console.log($('.titulo'));
-    console.log(grafica[0], grafica[1]);
+    console.log(ctx);
+    ctx.height = 500;
+    opciones = loadOptions(idElem);
+    console.log(grafica, opciones);
     let miGrafica = new Chart(ctx, {
         type: 'line',
         data: grafica,
-        options: loadOptions()
+        options: opciones
     });
-
-    if ($('#contentSensor' + idElem)){
-        console.log('Entra');
-        $('#contentSensor' + idElem).append(miGrafica);
-    }
 }
 
 function procesarDatos(idSensor, medidas){
     medidas = medidas.sort(function (a, b) {
-        if (a.fechaMedicion < b.fechaMedicion) return -1;
-        if (a.fechaMedicion > b.fechaMedicion) return 1;
+        if (a.fecha < b.fecha) return -1;
+        if (a.fecha > b.fecha) return 1;
         return 0;
     });
 
@@ -124,16 +118,14 @@ function procesarDatos(idSensor, medidas){
 
 
     medidas.forEach(element => {
-            console.log("Medidas: " + element);
-            fechas.push(element.fechaMedicion);
-            humedades.push(parseFloat(element.humedad));
-            temperaturas.push(parseFloat(element.temperatura));
-            salinidades.push(parseFloat(element.salinidad));
-            luminosidades.push(parseFloat(element.Luminosidad));
+        fechas.push(element.fecha);
+        humedades.push(parseFloat(element.humedad));
+        temperaturas.push(parseFloat(element.temperatura));
+        salinidades.push(parseFloat(element.salinidad));
+        luminosidades.push(parseFloat(element.Luminosidad));
     });
     
     datos = loadData();
-    console.log(datos);
 
     datos.labels = fechas;
     datos.datasets[0].data = humedades;
@@ -154,17 +146,14 @@ function getData(){
         mediciones.forEach(function (medicion){
             if (index != parseInt(medicion.idSensor)){
                 if(index != -1){
-                    console.log(medicionesData);
                     procesarDatos(medicionesData[0].idSensor, medicionesData);
                 }
                 medicionesData = [];
                 index = parseInt(medicion.idSensor);
             }
-            console.log(index);
             medicionesData.push(medicion);
             // Comprueba que la medición sea del sensor correcto
         })
-        console.log(medicionesData);
         procesarDatos(medicionesData[0].idSensor, medicionesData);
     })
 
@@ -299,8 +288,8 @@ function cargarPosiciones(idUsuario = "") {
             '<div id="sensor' + sensor.idSensor + '">' +
                     '<div id="siteNotice">' +
                     "</div>" +
-                    '<h1  id="firstHeading" class="letras-google">Sensor' + sensor.idSensor + '</h1>' +
-                    '<canvas class="letras-google" id="contentSensor' + sensor.idSensor + '"></canvas>' +
+                    '<h1 id="firstHeading" class="letras-google">Sensor' + sensor.idSensor + '</h1>' +
+                    '<button onclick="verdatos(' + sensor.idSensor + ')">Ver datos del sensor</button>'
                     "</div>";
             var infowindow = new google.maps.InfoWindow({
                 content: contentString,
@@ -321,6 +310,22 @@ function cargarPosiciones(idUsuario = "") {
 
     })
 
+}
+
+
+function verdatos(id) {
+    let stringContent = 'contentSensor';
+    let canvasVer = document.getElementById(stringContent + id);
+
+    for (let i = 1; i<6; i++){
+        let canvasFor = document.getElementById(stringContent+id);
+        console.log(canvasFor);
+        if (canvasFor != canvasVer){
+            canvasFor.style.display = 'none';
+        } else {
+            canvasFor.style.display = 'block';
+        }
+    }
 }
 
 

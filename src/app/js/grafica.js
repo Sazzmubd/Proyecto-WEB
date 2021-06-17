@@ -1,5 +1,3 @@
-
-
 function loadData(){
     let datos = {
         labels:[],
@@ -94,8 +92,8 @@ function crearGrafica(datos){
 
 function procesarDatos(medidas){
     medidas = medidas.sort(function (a, b) {
-        if (a.fechaMedicion < b.fechaMedicion) return -1;
-        if (a.fechaMedicion > b.fechaMedicion) return 1;
+        if (a.fecha < b.fecha) return -1;
+        if (a.fecha > b.fecha) return 1;
         return 0;
     });
 
@@ -107,8 +105,8 @@ function procesarDatos(medidas){
 
 
     medidas.forEach(element => {
-        let i = fechas.indexOf(element.fechaMedicion);
-        fechas.push(element.fechaMedicion);
+        let i = fechas.indexOf(element.fecha);
+        fechas.push(element.fecha);
         humedades.push(parseFloat(element.humedad));
         temperaturas.push(parseFloat(element.temperatura));
         salinidades.push(parseFloat(element.salinidad));
@@ -124,6 +122,8 @@ function procesarDatos(medidas){
     datos.datasets[2].data = salinidades;
     datos.datasets[3].data = luminosidades;
 
+    console.log(datos.labels);
+
     crearGrafica(datos);
 }
 
@@ -137,5 +137,3 @@ function getData(){
 
 
 getData();
-   
-
