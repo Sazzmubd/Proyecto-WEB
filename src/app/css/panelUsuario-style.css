@@ -1,9 +1,9 @@
 body {
     font-family: arial;
     background: rgb(76, 59, 117);
-    background: -moz-linear-gradient(90deg, rgb(76, 59, 117) 0%, rgba(140, 119, 200, 1) 50%, rgb(76, 59, 117) 100%);
+    /*background: -moz-linear-gradient(90deg, rgb(76, 59, 117) 0%, rgba(140, 119, 200, 1) 50%, rgb(76, 59, 117) 100%);
     background: -webkit-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgb(76, 59, 117) 100%);
-    background: linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
+    background: linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);*/
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c3b75", endColorstr="#4c3b75", GradientType=1);
     color: white;
     margin: 0;
@@ -307,4 +307,14 @@ ul li {
 }
 .letras-google{
     color: black;
+}
+
+.graphic {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas{
+    width: 50%;
 }

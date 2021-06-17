@@ -8,6 +8,10 @@
     <link rel="icon" href="ImagenesProyecto/brote.svg">
     <link rel="stylesheet" href="css/panelUsuario-style.css">
     <link rel="stylesheet" href="css/sidenav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0/dist/chartjs-adapter-luxon.min.js"></script>
+    <script src="js/mapaB.js"></script>
 </head>
 <body>
 
@@ -70,12 +74,31 @@
 </div>
 <!--START: SECCIÓN UBICACIÓN-->
 
+<div class ="graphic">
+    <canvas width='1000px' class="canvasGraphic" id='contentSensor1' style="display: none; width: 1000px; height:500px;"></canvas>
+</div>
+<div class ="graphic">
+    <canvas class="canvasGraphic" id='contentSensor2' style="display: none; width: 1000px;"></canvas>
+</div>
+<div class ="graphic">
+    <canvas class="canvasGraphic" id='contentSensor3' style="display: none; width: 1000px;"></canvas>
+</div>
+<div class ="graphic">
+    <canvas class="canvasGraphic" id='contentSensor4' style="display: none; width: 1000px;"></canvas>
+</div>
+<div class ="graphic">
+    <canvas class="canvasGraphic" width='1000px' id='contentSensor5' style="display: none; width: 1000px;"></canvas>
+</div>
+
 <section class="map">
     <h2>Mapa de Sondassssss</h2>
     <div id="output"></div>                                 <!--  SACAR NOMBREEEEEEEEEEE -->
     <div id="map"></div>
 
 </section>
+
+
+
 <!--END: SECCIÓN UBICACIÓN-->
 
 
@@ -90,7 +113,7 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- <script src="js/panelUsuario-scripts.js"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?=AIzaSyAGiASDXdDjzom5HGyoOCsZshbHe2klfMg&callback=initMap" async defer></script>
-<script src="js/mapaB.js"></script>
+<script src="js/mapaB.js">getData();</script>
 <script src="js/nombreUS.js"></script>                      <!--  SACAR NOMBREEEEEEEEEEE -->
 <script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
 <script src="js/jQuery.js"></script>
