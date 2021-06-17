@@ -318,3 +318,13 @@ ul li {
 .canvas{
     width: 50%;
 }
+
+.exitGraficas {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+
+.map {
+    margin-bottom: 15px;
+}

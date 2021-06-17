@@ -1,4 +1,4 @@
-function loadData(){
+function loadDataGlobal(){
     let datos = {
         labels:[],
         datasets:[
@@ -48,7 +48,7 @@ function loadData(){
     return datos;
 }
 
-function loadOptions(){
+function loadOptionsGlobal(){
     let opciones = {
         responsive: true,
         maintainAspectRatio: false,
@@ -79,9 +79,9 @@ function loadOptions(){
     return opciones;
 }
 
-function crearGrafica(datos){
-    let ctx = document.getElementById('chart');
-    opciones = loadOptions();
+function crearGraficaGlobal(datos){
+    let ctx = document.getElementById('modal-textos');
+    opciones = loadOptionsGlobal();
     console.log(datos);
     let miGrafica = new Chart(ctx, {
         type: 'line',
@@ -90,7 +90,7 @@ function crearGrafica(datos){
     });
 }
 
-function procesarDatos(medidas){
+function procesarDatosGlobal(medidas){
     medidas = medidas.sort(function (a, b) {
         if (a.fecha < b.fecha) return -1;
         if (a.fecha > b.fecha) return 1;
@@ -114,7 +114,7 @@ function procesarDatos(medidas){
 
     });
     
-    datos = loadData();
+    datos = loadDataGlobal();
 
     datos.labels = fechas;
     datos.datasets[0].data = humedades;
@@ -124,16 +124,16 @@ function procesarDatos(medidas){
 
     console.log(datos.labels);
 
-    crearGrafica(datos);
+    crearGraficaGlobal(datos);
 }
 
-function getData(){
+function getDataGlobal(){
     fetch('../api/v1.0/JsonTemp/data.json').then(function (r){
         return r.json();
     }).then(function (j) {
-        procesarDatos(j);
+        procesarDatosGlobal(j);
     });
 }
 
 
-getData();
+getDataGlobal();

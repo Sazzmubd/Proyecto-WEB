@@ -143,6 +143,7 @@ function getData(){
     }).then(function (mediciones) {
         let medicionesData = [];
         let index = -1;
+        console.log(mediciones);
         mediciones.forEach(function (medicion){
             if (index != parseInt(medicion.idSensor)){
                 if(index != -1){
@@ -313,16 +314,25 @@ function cargarPosiciones(idUsuario = "") {
 }
 
 
+function esconderGraficas(){
+    let stringContent = 'contentSensor';
+    document.getElementById("exitGraphicSensor").style.display = 'none';
+    for (let i = 1; i<6; i++){
+        document.getElementById(stringContent+i).style.display = 'none';
+    }
+}
+
 function verdatos(id) {
     let stringContent = 'contentSensor';
     let canvasVer = document.getElementById(stringContent + id);
-
+    document.getElementById("exitGraphicSensor").style.display = 'block';
     for (let i = 1; i<6; i++){
-        let canvasFor = document.getElementById(stringContent+id);
-        console.log(canvasFor);
+        let canvasFor = document.getElementById(stringContent+i);
         if (canvasFor != canvasVer){
+            console.log(canvasFor);
             canvasFor.style.display = 'none';
         } else {
+            console.log(canvasFor);
             canvasFor.style.display = 'block';
         }
     }

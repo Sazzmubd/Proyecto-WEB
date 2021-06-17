@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0/dist/chartjs-adapter-luxon.min.js"></script>
     <script src="js/mapaB.js"></script>
+    <script src="js/grafica.js"></script>
 </head>
 <body>
 
@@ -58,19 +59,17 @@
 
 <!--END: FLEXBOX(TÍTULO - BOTÓN USUARIO)-->
 <div class="pop_up">
-   <div class="btn_popup"><a href="#" class="cta">Ver datos</a></div>
+   <div class="btn_popup"><a href="#" class="cta">Ver datos históricos</a></div>
    <div class="modal-container" >
        <div class="modal modal-close">
         <p class="close">X</p>
-        <div class="modal-textos">
-        <h1>Datos de la sonda</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, possimus neque qui ullam labore debitis obcaecati esse architecto ipsa enim ex facilis repellat nobis autem blanditiis dicta illo impedit in.</p>
-        </div>
-      
+        <canvas id="modal-textos"></canvas>
        </div>
    </div>
-   
+</div>
 
+<div class="exitGraficas">
+    <button id="exitGraphicSensor" onclick="esconderGraficas()" style="display: none">X</button>
 </div>
 <!--START: SECCIÓN UBICACIÓN-->
 
@@ -78,20 +77,20 @@
     <canvas width='1000px' class="canvasGraphic" id='contentSensor1' style="display: none; width: 1000px; height:500px;"></canvas>
 </div>
 <div class ="graphic">
-    <canvas class="canvasGraphic" id='contentSensor2' style="display: none; width: 1000px;"></canvas>
+    <canvas class="canvasGraphic" id='contentSensor2' style="display: none; width: 1000px; height:500px;"></canvas>
 </div>
 <div class ="graphic">
-    <canvas class="canvasGraphic" id='contentSensor3' style="display: none; width: 1000px;"></canvas>
+    <canvas class="canvasGraphic" id='contentSensor3' style="display: none; width: 1000px; height:500px;"></canvas>
 </div>
 <div class ="graphic">
-    <canvas class="canvasGraphic" id='contentSensor4' style="display: none; width: 1000px;"></canvas>
+    <canvas class="canvasGraphic" id='contentSensor4' style="display: none; width: 1000px; height:500px;"></canvas>
 </div>
 <div class ="graphic">
-    <canvas class="canvasGraphic" width='1000px' id='contentSensor5' style="display: none; width: 1000px;"></canvas>
+    <canvas class="canvasGraphic" id='contentSensor5' style="display: none; width: 1000px; height:500px;"></canvas>
 </div>
 
 <section class="map">
-    <h2>Mapa de Sondassssss</h2>
+    <h2>Mapa de Sondas</h2>
     <div id="output"></div>                                 <!--  SACAR NOMBREEEEEEEEEEE -->
     <div id="map"></div>
 
