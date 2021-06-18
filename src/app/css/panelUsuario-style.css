@@ -135,9 +135,16 @@ ul li {
 .btn_popup{
     background-color: red;
     border: 0;
+    color: white;
     border-radius: 5px;
     font-size: 14px;
     padding: 10px 25px;
+    text-decoration: none;
+}
+
+.cta{
+    text-decoration: none;
+    color: white;
 }
 /* START: FLEXBOX (TÍTULO - BOTÓN USUARIO) */
 
