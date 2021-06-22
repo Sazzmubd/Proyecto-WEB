@@ -1,4 +1,4 @@
-fetch("../api/v1.0/modelos/get-admin.php",{
+fetch("../api/v1.0/modelos/admin.php",{
     method:"GET"
 }).then(function (respuesta){
     if(respuesta.ok){//si la repuesta devuleve un ok

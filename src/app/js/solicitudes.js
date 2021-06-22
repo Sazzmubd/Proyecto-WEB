@@ -1,4 +1,4 @@
-fetch("../api/v1.0/modelos/get-tablaSolicitudes.php",{
+fetch("../api/v1.0/modelos/tablaSolicitudes.php",{
     method:"GET"
 }).then(function (respuesta){
     if(respuesta.ok){//si la repuesta devuleve un ok
