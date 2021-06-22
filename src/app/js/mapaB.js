@@ -182,30 +182,16 @@ function initMap() {
         streetViewControl: false,
         rotateControl: false,
     });
-    if(datosUsuario.id == 1){
-        let idUser = document.URL.split("?")[1].replace("idUsuario=","");
-        console.log("ID ->",idUser)
-        cargarParcelas(idUser);
-        // 1º coger la sesion del usuario
-        // 2º coger todos sus ids campos
-        //3º mostrar los ids q has sacado
-        //4º meter esos ids en un array
-        cargarPosiciones(idUser);
-        getData();
-        //setTimeout(getData, 5000);
-    }else{
-        cargarParcelas(datosUsuario.id);
-        // 1º coger la sesion del usuario
-        // 2º coger todos sus ids campos
-        //3º mostrar los ids q has sacado
-        //4º meter esos ids en un array
-        cargarPosiciones(datosUsuario.id);
-        getData();
-        //setTimeout(getData, 5000);
-    }
 
 
-
+    cargarParcelas(datosUsuario.id);
+    // 1º coger la sesion del usuario
+    // 2º coger todos sus ids campos
+    //3º mostrar los ids q has sacado
+    //4º meter esos ids en un array
+    cargarPosiciones(datosUsuario.id);
+    getData();
+    //setTimeout(getData, 5000);
 }
 
 
@@ -214,15 +200,15 @@ function initMap() {
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
-function cargarParcelas(idUsuario) {
-    let url = "";
-    url = 'http://localhost/GitHub/Proyecto-WEB3/src/api/v1.0/parcela?idUsuario='+idUsuario;
-
+function cargarParcelas(idUsuario = "") {
+    let url = '../api/v1.0/parcela';
+    if (idUsuario != "") {
+        url = '../api/v1.0/parcela?idCampos=' + idUsuario;
+    }
     fetch(url).then(function (campos) {
         return campos.json();
     }).then(function (esquinas) {
 
-        console.log(esquinas);
         let bounds = new google.maps.LatLngBounds();//CREO Q SON LOS LIMITES
 
         let paths = [];
@@ -282,10 +268,10 @@ function cargarParcelas(idUsuario) {
 
 
 function cargarPosiciones(idUsuario = "") {
-    let url = "";
-    url = 'http://localhost/GitHub/Proyecto-WEB3/src/api/v1.0/posicion?idUsuario='+idUsuario;
-
-
+    let url = '../api/v1.0/posicion';
+    if (idUsuario != "") {
+        url = '../api/v1.0/posicion?idCampos=' + idUsuario;
+    }
     fetch(url).then(function (campos) {
         return campos.json();
     }).then(function (sensores) {
