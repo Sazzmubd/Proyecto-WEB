@@ -35,6 +35,11 @@
 
     
 }
+:hover a{
+    text-decoration: underline;
+}
+
+
 .leftsize form {
     margin: -20px auto 20px auto;
    
@@ -103,7 +108,28 @@
     margin: 14px auto 0 auto;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (min-width: 800px){
+
+    .leftsize{
+        width: 800px;
+}
+    .leftsize h1 {
+
+        font-size: 36px;
+    }
+
+    .leftsize input[type="text"],
+    .leftsize input[type="password"] {
+        width: 350px;
+        font-size: 20px;
+    }
+
+    .leftsize label{
+        font-size: 22px;
+    }
+
+
+    @media only screen and (max-width: 800px){
 
     .estructura-body{
         padding-bottom: 275px;
