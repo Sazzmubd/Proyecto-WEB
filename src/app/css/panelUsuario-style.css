@@ -19,7 +19,7 @@ body {
     border-bottom: 3px solid white;
 
     /* Cabecera fija */
-    z-index: 100;
+    z-index: 1;
     position: fixed;
     left: 0;
     top: 0;
