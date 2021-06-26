@@ -15,7 +15,7 @@ body {
     width: 100%;
     font-size: 16px;
     margin-top: 20px;
-    color: white;
+    color: black;
     margin-bottom: 10px;
     border-color: indianred;
     border-radius: 0.2rem;
@@ -36,11 +36,7 @@ body {
     background-color: #4c3b75;
     color: white;
     padding: 40px 30px 50px 30px;
-    
-
 }
-
-
 
 .login-box h1 {
     margin: 0;
@@ -90,7 +86,6 @@ body {
 
 .enviar {
     width: 100px;
-    margin: 0 auto;
 }
 
 .link {
@@ -106,38 +101,67 @@ body {
 
 .login-box a:hover {
     color: white;
+    text-decoration: underline;
 }
 
 
 
 
-    @media only screen and (max-width: 800px){
+    @media only screen and (min-width: 800px){
 
         .estructura-body{
-            
             overflow: hidden;    
         }
-        .login-box{                         
-            max-width: 100%;
+        .login-box{
+            width: 800px;
             border: none;
             /*padding-bottom: 5%;*/
             height: 100%;
             padding-top: 30px;
         }
         .login-box h1 {
-            font-size: 20px;
+            font-size: 22px;
         }
         .cuadro-grande {
             width: 100%;
         }
         .login-box label {
-            padding: 0vh;
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 160px;
         }
-        
-
+        .login-box input{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 60%;
+        }
+        .login-box textarea {
+            max-width: 60%;
+        }
+        .seccion1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bloque {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-box select{
+            padding-left: 0px;
+        }
+        .enviar{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
     }
     
-    @media only screen and (max-width: 360px){
+    @media only screen and (max-width: 800px){
         
         .estructura-body{
             
@@ -151,7 +175,7 @@ body {
             padding-top: 30px;
         }
         .login-box h1 {
-            font-size: 16px;
+            font-size: 18px;
         }
         .cuadro-grande {
             width: 100%;
@@ -162,7 +186,5 @@ body {
         .login-box label {
             font-size: small;
         }
-       
-        
 
     }

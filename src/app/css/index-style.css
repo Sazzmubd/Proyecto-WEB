@@ -316,7 +316,7 @@ color: inherit;
     
 }
 
-@media(max-width: 440px){
+@media(max-width: 800px){
     body {
         background-image: url("../ImagenesProyecto/LandingPage/fondoOrdenadorCampoLavanda.jpg");
     }

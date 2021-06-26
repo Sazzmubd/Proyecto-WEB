@@ -113,8 +113,9 @@ main {
 }
 
 .question-header h3 {
+    text-decoration-style: solid;
     font-weight: lighter;
-    font-size: 1.1rem;
+    font-size: 19px;
 }
 
 .dropdown-content {
@@ -152,9 +153,22 @@ main {
 
 }
 
-@media (min-width: 800px) {
-    .logo-menu-container {
-        width: 95%;
-        margin: 14px auto 0 auto;
+@media (max-width: 800px) {
+
+    .container1{
+        max-width: 70%;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .container2 img{
+        width: 50px;
+        height: 80px;
+    }
+    .container2 em{
+        font-size: 28px;
+    }
+    .question-header h3 {
+        font-weight: lighter;
+        font-size: 17px;
     }
 }

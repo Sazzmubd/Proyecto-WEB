@@ -127,6 +127,13 @@
     .leftsize label{
         font-size: 22px;
     }
+    .article.leftsize text{
+        font-size: 24px;
+    }
+
+    .leftsize a:hover{
+    text-decoration: underline;
+    }
 
 
     @media only screen and (max-width: 800px){

@@ -99,7 +99,29 @@ section .imgEmp {
     padding: 20px 40px;
 
     border-top: none;
-    border-bottom: none;
+    border-bottom: 30px;
+}
+.title-text-img-boxt {
+    display: flex;
+    flex-direction: column;
+
+    margin: 76px auto 0 auto;
+    width: 760px;
+    max-width: 76%;
+
+    color: white;
+    text-align: left;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+
+    padding: 20px 40px;
+
+    border-top: none;
+    border-bottom: 30px;
+}
+.title-text-img-box h1{
+    text-align: center;
 }
 
 .no-margin-top {
@@ -128,6 +150,7 @@ section .imgEmp {
 
 .text-box {
     margin: 4px 16px;
+    text-align: center;
 }
 
 .img-box {
@@ -179,24 +202,41 @@ section .imgEmp {
     }
 
     .title-text-img-box {
-        max-width: 1200px;
+        max-width: 1400px;
     }
 
     .logo-menu-container {
         width: 95%;
         margin: 14px auto 0 auto;
     }
-
+    .title-text-img-box{
+        display:flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+        width: 1500px;
+    }
+    .title-text-img-boxt h1 {
+        text-align: center;
+    }
     .title-text-img-box h1{
         font-size: 30px;
     }
 
     .title-text-img-box p{
         font-size: 18px;
+        max-width: 85%;
     }
 
     .title-text-img-box img{
         margin:3vh 0 0 0;
+        max-width: 50%;
+        max-height: 50%;
     }
 
-}
+
+    @media (max-width: 776px) {
+
+        .title-text-img-box{
+            margin-bottom: 30px;
+        }
+    }

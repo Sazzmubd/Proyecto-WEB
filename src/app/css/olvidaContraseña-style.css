@@ -21,8 +21,7 @@
     height: 93.5vh;
     box-sizing: border-box;
     padding: 70px 30px;
-    
-    
+
 }
 
 .enviar {
@@ -109,7 +108,6 @@
 
 @media only screen and (max-width: 800px){
 
-    
 
     .estructura-body{
         padding-bottom: 275px;
@@ -118,12 +116,16 @@
     }
     .login-box{                         
         max-width: 100%;
+        max-height: 100%;
+        margin-bottom: 0%;
         border: none;
-        padding-bottom: 5%;
         margin-top: 6vh;
     }
     .login-box h1 {
         font-size: 20px;
+    }
+    .login-box label{
+        text-align: center;
     }
     .cuadro-grande {
         width: 100%;
@@ -131,5 +133,52 @@
     .cuadro-grande {
         width: 100%;
    }
+    .fondo-pantalla-olv h3{
+        font-size: 14px;
+    }
+    .fondo-pantalla-olv h2{
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 800px) {
+
+    .login-box input {
+        align-items: center;
+        justify-content: center;
+        max-width: 80%;
+    }
+
+    .fondo-pantalla-olv h2 {
+        font-size: 38px;
+    }
+
+    .links text {
+        font-size: 5px;
+    }
+
+    .bloque {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    login-box {
+        max-height:
+    }
+
+    .login-box a {
+        font-size: 20px;
+    }
+
+    .enviar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-box label {
+        font-size: 20px;
+        text-align: center;
+    }
 
 }

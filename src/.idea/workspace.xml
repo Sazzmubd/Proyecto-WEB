@@ -2,69 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32b4d416-660d-4f63-bf12-aa7052284bb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bbdd/proyecto.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../bbdd/proyecto.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bbdd/proyectoDefinitivo (4).sql" beforeDir="false" afterPath="$PROJECT_DIR$/../bbdd/proyectoDefinitivo (4).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bbdd/proyectocorregidaDefinitivo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../bbdd/proyectocorregidaDefinitivo.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/Avatar/uploads/api/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/Avatar/uploads/api/upload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/Avatar/uploads/formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/Avatar/uploads/formulario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/email/PHPMailer/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/email/PHPMailer/Exception.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/email/PHPMailer/PHPMailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/email/PHPMailer/PHPMailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/email/PHPMailer/SMTP.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/email/PHPMailer/SMTP.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/email/email.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/email/email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/email/probar-correo.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/email/probar-correo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/form-vendedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/form-vendedor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/popupmapa.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/popupmapa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pruebas/tablaSolicitudes.php" beforeDir="false" afterPath="$PROJECT_DIR$/../pruebas/tablaSolicitudes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/get-parcela.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/get-parcela.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/get-posicion.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/get-posicion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/post-anuncios.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/post-anuncios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/post-campos.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/post-campos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/post-esquina.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/post-esquina.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/post-sensor.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/post-sensor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1.0/modelos/tablaSolicitudes.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/modelos/tablaSolicitudes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Campos.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Campos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Esquinas.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Esquinas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/agricultura-img2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/agricultura-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ImagenesProyecto/LandingPage/agricultura-landing1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/campos-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/campos-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/esquinas-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/esquinas-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/index-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/index-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/login-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/login-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/monitorSensores-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/monitorSensores-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/nosotrosTerminos-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/nosotrosTerminos-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/olvidaContraseña-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/olvidaContraseña-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/panelUsuario-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/panelUsuario-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/sensor-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/sensor-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/preguntasFrecuentes-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/preguntasFrecuentes-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/solicitud-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/solicitud-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/tablasClientes-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/tablasClientes-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/tablon.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/tablon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/grafica.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/grafica.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/campos-enviar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/campos-enviar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/esquinas-enviar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/esquinas-enviar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/funcionRecogerId.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/funcionRecogerId.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/grafica.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/grafica.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/mapaB.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/mapaB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/nombreUS.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/nombreUS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/sensores-enviar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/sensores-enviar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/solicitudes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/solicitudes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/tablon.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/tablon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/panelUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/panelUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sensor.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/sensor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tablaSolicitudes.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/tablaSolicitudes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/nosotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olvidaContraseña.html" beforeDir="false" afterPath="$PROJECT_DIR$/olvidaContraseña.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solicitud.html" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablon.html" beforeDir="false" afterPath="$PROJECT_DIR$/tablon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terminosPrivacidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/terminosPrivacidad.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +54,8 @@
       <workItem from="1624312255966" duration="134000" />
       <workItem from="1624312927201" duration="583000" />
       <workItem from="1624313673250" duration="831000" />
+      <workItem from="1624356672938" duration="21341000" />
+      <workItem from="1624706737341" duration="5347000" />
     </task>
     <servers />
   </component>
