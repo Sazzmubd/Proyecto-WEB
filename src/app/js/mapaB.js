@@ -92,7 +92,6 @@ function crearGrafica(idElem, grafica){
     let ctx = document.getElementById('contentSensor' + idElem);
     ctx.height = 500;
     opciones = loadOptions(idElem);
-    console.log(grafica, opciones);
     let miGrafica = new Chart(ctx, {
         type: 'line',
         data: grafica,
@@ -114,10 +113,13 @@ function procesarDatos(idSensor, medidas){
     let temperaturas = [];
     let salinidades = [];
     let luminosidades = [];
+    let idSensorData = [];
+    let tablaDatos = [];
 
-
+    console.log("ID: "+idSensor);
     medidas.forEach(element => {
         fechas.push(element.fecha);
+        idSensorData.push(element.idSensor);
         humedades.push(parseFloat(element.humedad));
         temperaturas.push(parseFloat(element.temperatura));
         salinidades.push(parseFloat(element.salinidad));
@@ -132,7 +134,125 @@ function procesarDatos(idSensor, medidas){
     datos.datasets[2].data = salinidades;
     datos.datasets[3].data = luminosidades;
 
+    tablaDatos.push(idSensorData);
+    tablaDatos.push(temperaturas);
+    tablaDatos.push(humedades);
+    tablaDatos.push(salinidades);
+    tablaDatos.push(luminosidades);
+    tablaDatos.push(fechas);
+
+    crearTabla(tablaDatos);
+
     crearGrafica(idSensor, datos);
+}
+
+function createElement(Type, ClassName, Content) {
+    let elem = document.createElement(Type);
+
+    if (ClassName != null) {
+        ClassName.forEach(function (elemClass) {
+            $(elem).addClass(elemClass);
+        });
+    }
+
+    if (Content != null) {
+        Content.forEach(function (elemContent) {
+            elem.innerHTML += elemContent;
+        });
+    }
+
+    return elem;
+}
+
+function createColumnTitle(){
+    let idTitle = createElement('div', ['titleTableId'], ['Id Sensor']);
+    idTitle.style.width = '15%';
+    idTitle.style.display = 'flex';
+    idTitle.style.justifyContent = 'center';
+    let tituloTemperatura = createElement('div', ['titleTableTemperatura'], ['Temperatura']);
+    tituloTemperatura.style.width = '15%';
+    tituloTemperatura.style.display = 'flex';
+    tituloTemperatura.style.justifyContent = 'center';
+    let tituloHumedad = createElement('div', ['titleTableHumedad'], ['Humedad']);
+    tituloHumedad.style.width = '15%';
+    tituloHumedad.style.display = 'flex';
+    tituloHumedad.style.justifyContent = 'center';
+    let tituloSalinidad = createElement('div', ['titleTableSalinidad'], ['Salinidad']);
+    tituloSalinidad.style.width = '15%';
+    tituloSalinidad.style.display = 'flex';
+    tituloSalinidad.style.justifyContent = 'center';
+    let tituloLuminosidad = createElement('div', ['titleTableLuminosidad'], ['Luminosidad']);
+    tituloLuminosidad.style.width = '15%';
+    tituloLuminosidad.style.display = 'flex';
+    tituloLuminosidad.style.justifyContent = 'center';
+    let tituloFecha = createElement('div', ['titleTableFecha'], ['Fecha']);
+    tituloFecha.style.width = '25%';
+    tituloFecha.style.display = 'flex';
+    tituloFecha.style.justifyContent = 'center';
+
+    let content_title = createElement('div', ['columnTitle'], [idTitle.outerHTML, tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
+    content_title.style.display = 'flex';
+    content_title.style.height = '30px';
+    content_title.style.alignItems = 'center';
+    return content_title;
+}
+
+function generarTabla(id) {
+    let divTabla = createElement('div', ['tabla-sensor-' + id], ['']);
+    divTabla.style.marginLeft = '20px';
+    divTabla.style.marginRight = '20px';
+    divTabla.style.border = '1px solid black';
+    divTabla.style.padding = '10px';
+    divTabla.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+    divTabla.style.marginBottom = '20px';
+    divTabla.innerHTML += createColumnTitle().outerHTML;
+    return divTabla;
+}
+
+function createColumnElement(dato, check){
+    console.log(dato);
+    let columna = createElement('div', [], [dato]);
+    columna.style.display = 'flex';
+    columna.style.justifyContent = 'center';
+    if (check == 0){
+        columna.style.width = '15%';
+    } else {
+        columna.style.width = '25%';
+    }
+    return columna;
+}
+
+function crearTabla(datos) {
+    let titulo = createElement('h2', ['text-title-table-sensor-' + datos[0][0]], ['Sensor ' + datos[0][0]]);
+    titulo.marginTop = '30px';
+    titulo.style.width = '100%';
+    titulo.style.display = 'flex';
+    titulo.style.alignItems = 'center';
+    titulo.style.justifyContent = 'center';
+    let tabla = generarTabla(datos[0][0]);
+    let index = 0;
+    console.log(datos);
+    for (let i = 0; i<datos[0].length; i++) {
+        let content = document.createElement('div');
+        content.style.display = 'flex';
+        content.style.alignItems = 'center';
+        for (let j = 0; j<datos.length; j++) {
+            console.log("Columna " + index);
+            let column;
+            if (j != datos.length -1){
+                column = createColumnElement(datos[j][i], 0);
+            } else {
+                column = createColumnElement(datos[j][i], 1);
+            }
+            content.innerHTML += column.outerHTML;
+        }
+        tabla.innerHTML += content.outerHTML;
+        index += 1;
+    }
+
+    console.log(tabla);
+    $(titulo).appendTo('.data-table');
+    $(tabla).appendTo('.data-table');
 }
 
 function getData(){
@@ -142,6 +262,7 @@ function getData(){
     }).then(function (mediciones) {
         let medicionesData = [];
         let index = -1;
+        console.log("Mediciones")
         console.log(mediciones);
         mediciones.forEach(function (medicion){
             if (index != parseInt(medicion.idSensor)){
@@ -182,30 +303,15 @@ function initMap() {
         streetViewControl: false,
         rotateControl: false,
     });
-    if(datosUsuario.id == 1){
-        let idUser = document.URL.split("?")[1].replace("idUsuario=","");
-        console.log("ID ->",idUser)
-        cargarParcelas(idUser);
-        // 1º coger la sesion del usuario
-        // 2º coger todos sus ids campos
-        //3º mostrar los ids q has sacado
-        //4º meter esos ids en un array
-        cargarPosiciones(idUser);
-        getData();
-        //setTimeout(getData, 5000);
-    }else{
-        cargarParcelas(datosUsuario.id);
-        // 1º coger la sesion del usuario
-        // 2º coger todos sus ids campos
-        //3º mostrar los ids q has sacado
-        //4º meter esos ids en un array
-        cargarPosiciones(datosUsuario.id);
-        getData();
-        //setTimeout(getData, 5000);
-    }
 
 
-
+    cargarParcelas(datosUsuario.id);
+    // 1º coger la sesion del usuario
+    // 2º coger todos sus ids campos
+    //3º mostrar los ids q has sacado
+    //4º meter esos ids en un array
+    cargarPosiciones(datosUsuario.id);
+    //setTimeout(getData, 5000);
 }
 
 
@@ -214,15 +320,15 @@ function initMap() {
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
-function cargarParcelas(idUsuario) {
-    let url = "";
-    url = 'http://localhost/GitHub/Proyecto-WEB3/src/api/v1.0/parcela?idUsuario='+idUsuario;
-
+function cargarParcelas(idUsuario = "") {
+    let url = '../api/v1.0/parcela';
+    if (idUsuario != "") {
+        url = '../api/v1.0/parcela?idCampos=' + idUsuario;
+    }
     fetch(url).then(function (campos) {
         return campos.json();
     }).then(function (esquinas) {
 
-        console.log(esquinas);
         let bounds = new google.maps.LatLngBounds();//CREO Q SON LOS LIMITES
 
         let paths = [];
@@ -282,10 +388,10 @@ function cargarParcelas(idUsuario) {
 
 
 function cargarPosiciones(idUsuario = "") {
-    let url = "";
-    url = 'http://localhost/GitHub/Proyecto-WEB3/src/api/v1.0/posicion?idUsuario='+idUsuario;
-
-
+    let url = '../api/v1.0/posicion';
+    if (idUsuario != "") {
+        url = '../api/v1.0/posicion?idCampos=' + idUsuario;
+    }
     fetch(url).then(function (campos) {
         return campos.json();
     }).then(function (sensores) {
@@ -348,6 +454,10 @@ function verdatos(id) {
         }
     }
 }
+
+$(document).ready(function() {
+    getData();
+});
 
 
 //------------------------------------------------------------------------------------------

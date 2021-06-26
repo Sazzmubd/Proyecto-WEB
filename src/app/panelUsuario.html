@@ -8,11 +8,10 @@
     <link rel="icon" href="ImagenesProyecto/brote.svg">
     <link rel="stylesheet" href="css/panelUsuario-style.css">
     <link rel="stylesheet" href="css/sidenav.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0/dist/chartjs-adapter-luxon.min.js"></script>
-    <script src="js/mapaB.js"></script>
-    <script src="js/grafica.js"></script>
 </head>
 <body>
 
@@ -73,6 +72,14 @@
 </div>
 <!--START: SECCIÓN UBICACIÓN-->
 
+<div id="main">
+
+</div>
+
+<form class="form-date" action='../api/v1.0/modelos/get-filter-sensor.php' method='POST'>
+    <div class="content-date-form"></div>
+</form>
+
 <div class ="graphic">
     <canvas width='1000px' class="canvasGraphic" id='contentSensor1' style="display: none; width: 1000px; height:500px;"></canvas>
 </div>
@@ -93,6 +100,9 @@
     <h2>Mapa de Sondas</h2>
     <div id="output"></div>                                 <!--  SACAR NOMBREEEEEEEEEEE -->
     <div id="map"></div>
+</section>
+
+<section class="data-table">
 
 </section>
 
@@ -112,12 +122,13 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- <script src="js/panelUsuario-scripts.js"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?=AIzaSyAGiASDXdDjzom5HGyoOCsZshbHe2klfMg&callback=initMap" async defer></script>
-<script src="js/mapaB.js">getData();</script>
+<script src="js/mapaB.js"></script>
 <script src="js/nombreUS.js"></script>                      <!--  SACAR NOMBREEEEEEEEEEE -->
 <script src="js/cerrar-sesion.js"></script><!--  CERRAR SESION -->
 <script src="js/jQuery.js"></script>
 <script src="js/botonesMostrar.js"></script>
 <script src="js/sidenav.js"></script>
 <script src="js/popup.js"></script>
+<script src="js/controlPanelUsuario.js"></script>
 </body>
 </html>
