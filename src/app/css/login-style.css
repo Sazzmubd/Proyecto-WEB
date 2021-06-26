@@ -35,9 +35,7 @@
 
     
 }
-:hover a{
-    text-decoration: underline;
-}
+
 
 
 .leftsize form {
@@ -93,6 +91,7 @@
 
 .leftsize a:hover {
     color: white;
+    text-decoration: underline;
 }
 
 .mini-menu {
@@ -112,7 +111,7 @@
 
     .leftsize{
         width: 800px;
-}
+    }
     .leftsize h1 {
 
         font-size: 36px;
@@ -129,7 +128,38 @@
     }
 
 
-    @media only screen and (max-width: 800px){
+   
+
+
+}
+
+@media only screen and (min-width: 550px){
+
+    .leftsize{
+        width: 800px;
+    }
+    .leftsize h1 {
+
+        font-size: 36px;
+    }
+
+    .leftsize input[type="text"],
+    .leftsize input[type="password"] {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    .leftsize label{
+        font-size: 22px;
+    }
+
+
+   
+
+
+}
+
+@media only screen and (max-width: 800px){
 
     .estructura-body{
         padding-bottom: 275px;
@@ -140,6 +170,11 @@
         width: 90%;
         max-width: 2000px;
         margin: 14px auto 0 auto;
+    }
+    .leftsize input[type="text"],
+    .leftsize input[type="password"] {
+        width: 70%;
+        font-size: 18px;
     }
     .leftsize{                         
         max-width: 100%;
@@ -155,6 +190,5 @@
     .mini-menu {
         margin-top: 10vh;
     }
-
 
 }
