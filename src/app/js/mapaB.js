@@ -244,8 +244,9 @@ function crearTabla(datos) {
         index += 1;
     }
 
-    $(titulo).appendTo('.data-table');
-    $(tabla).appendTo('.data-table');
+    let conjunto_tabla = createElement('div', ['general-sensor-table-' + datos[0][0]], [titulo.outerHTML, tabla.outerHTML]);
+    conjunto_tabla.style.display = 'none';
+    $(conjunto_tabla).appendTo('.data-table');
 }
 
 function getData(){
@@ -388,16 +389,14 @@ function cargarParcelas(idUsuario) {
 //CAMBIAR LA SENTENCIA SQL
 
 
-function hideSensor(idSensor){
-    $('.tabla-sensor-' + idSensor).hide();
-    $('text-title-table-sensor-' + idSensor).hide();
+function showSensor(idSensor){
+    console.log('ID:' + idSensor);
+    $('.general-sensor-table-' + idSensor).css('display', 'block');
 }
 
 
 function cargarPosiciones(idUsuario = "") {
-    let url = "";
     url = 'http://localhost/GitHub/Proyecto-WEB/src/api/v1.0/posicion?idUsuario='+idUsuario;
-
 
     fetch(url).then(function (campos) {
         return campos.json();
@@ -407,8 +406,7 @@ function cargarPosiciones(idUsuario = "") {
 
             sensor.lat = parseFloat(sensor.lat);
             sensor.lng = parseFloat(sensor.lng);
-            console.log('hoalfd');
-            hideSensor(sensor.idSensor);
+            showSensor(sensor.idSensor);
 
             // Carga los datos de las mediciones
 

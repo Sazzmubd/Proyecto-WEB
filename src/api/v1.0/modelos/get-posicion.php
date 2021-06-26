@@ -47,7 +47,7 @@ if(isset($_GET["idUsuario"]) && $_GET['idUsuario']!=0) {//si es distinto de cero
 
     $json = json_encode($rawdata);
 
-    $file = getcwd() . '/../JsonTemp/data.json';
+    $file = getcwd() . '/JsonTemp/data.json';
     if(file_exists($file) != true){
         $fh = fopen($file, 'w');
     }

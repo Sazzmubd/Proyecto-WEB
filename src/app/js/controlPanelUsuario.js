@@ -1,25 +1,5 @@
-
-/*
-function getFilter(){
-    let start_date = $('.date-input-start').first().val();
-    let end_date = $('.date-input-end').first().val();
-
-    if(start_date != '' && end_date != ''){
-
-    } else {
-        alert('Please fill all empty spaces');
-    }
-}
-
-function detectSubmit(){
-    $('.submit-date-button').click(function(){
-        getFilter();
-    });
-}
-*/
-
 function control_input(){
-    let input_start = createElement('input', ['date-input-start'], []);
+    let input_start = createElement2('input', ['date-input-start'], []);
     input_start.type = 'date';
     input_start.max = new Date().toISOString().split("T")[0];
     input_start.style.marginRight = '20px';
@@ -30,20 +10,20 @@ function control_input(){
     input_end.style.marginRight = '40px';
     input_end.name = 'date-input-end';
 
-    let submit_button = createElement('input', ['submit-date-button'], []);
+    let submit_button = createElement2('input', ['submit-date-button'], []);
     submit_button.value = 'Filtrar';
     submit_button.type = 'button';
     submit_button.name = 'filtrar';
     
-    let content = createElement('div', ['content-date'], [input_start.outerHTML, input_end.outerHTML, submit_button.outerHTML]);
+    let content = createElement2('div', ['content-date'], [input_start.outerHTML, input_end.outerHTML, submit_button.outerHTML]);
     content.style.display = 'flex';
     content.style.justifyContent = 'center';
     content.style.marginTop = '30px';
 
     $(content).appendTo('.content-date-form');
 }
-/*
-function createElement(Type, ClassName, Content) {
+
+function createElement2(Type, ClassName, Content) {
     let elem = document.createElement(Type);
 
     if (ClassName != null) {
@@ -61,7 +41,7 @@ function createElement(Type, ClassName, Content) {
     return elem;
 }
 
-function loadData(){
+function loadData2(){
     let datos = {
         datasets:[
             {
@@ -110,7 +90,7 @@ function loadData(){
     return datos;
 }
 
-function loadOptions(idSensor){
+function loadOptions2(idSensor){
     let opciones = {
         responsive: true,
         maintainAspectRatio: false,
@@ -141,11 +121,11 @@ function loadOptions(idSensor){
     return opciones;
 }
 
-function crearGrafica(idElem, grafica){
+function crearGrafica2(idElem, grafica){
     let ctx = document.getElementById('contentSensor' + idElem);
     $('#contentSensor' + idElem).empty();
     ctx.height = 500;
-    opciones = loadOptions(idElem);
+    opciones = loadOptions2(idElem);
     let miGrafica = new Chart(ctx, {
         type: 'line',
         data: grafica,
@@ -153,7 +133,7 @@ function crearGrafica(idElem, grafica){
     });
 }
 
-function procesarDatos(idSensor, medidas, start_date, end_date){
+function procesarDatos2(idSensor, medidas, start_date, end_date){
     medidas = medidas.sort(function (a, b) {
         if (a.fecha < b.fecha) return -1;
         if (a.fecha > b.fecha) return 1;
@@ -170,18 +150,23 @@ function procesarDatos(idSensor, medidas, start_date, end_date){
     let idSensorData = [];
     let tablaDatos = [];
 
+    console.log('Id sensor:' + idSensor);
     medidas.forEach(element => {
         if(element.fecha >= start_date && element.fecha <= end_date){
+            console.log('entra:' + element.fecha);
             fechas.push(element.fecha);
+            idSensorData.push(element.idSensor);
+            humedades.push(parseFloat(element.humedad));
+            temperaturas.push(parseFloat(element.temperatura));
+            salinidades.push(parseFloat(element.salinidad));
+            luminosidades.push(parseFloat(element.luminosidad));
         }
-        idSensorData.push(element.idSensor);
-        humedades.push(parseFloat(element.humedad));
-        temperaturas.push(parseFloat(element.temperatura));
-        salinidades.push(parseFloat(element.salinidad));
-        luminosidades.push(parseFloat(element.luminosidad));
+        console.log('start' + start_date);
+        console.log('normal:' + element.fecha);
+        console.log('end:' + end_date);
     });
     
-    datos = loadData();
+    datos = loadData2();
 
     datos.labels = fechas;
     datos.datasets[0].data = humedades;
@@ -196,12 +181,12 @@ function procesarDatos(idSensor, medidas, start_date, end_date){
     tablaDatos.push(luminosidades);
     tablaDatos.push(fechas);
 
-    crearTabla(tablaDatos);
+    crearTabla2(idSensor, tablaDatos);
 
-    crearGrafica(idSensor, datos);
+    //crearGrafica2(idSensor, datos);
 }
 
-function getData(start_date, end_date){
+function getData2(start_date, end_date){
     let dataUrl = '../api/v1.0/JsonTemp/data.json';
     fetch(dataUrl).then(function (campos) {
         return campos.json();
@@ -211,7 +196,7 @@ function getData(start_date, end_date){
         mediciones.forEach(function (medicion){
             if (index != parseInt(medicion.idSensor)){
                 if(index != -1){
-                    procesarDatos(medicionesData[0].idSensor, medicionesData, start_date, end_date);
+                    procesarDatos2(medicionesData[0].idSensor, medicionesData, start_date, end_date);
                 }
                 medicionesData = [];
                 index = parseInt(medicion.idSensor);
@@ -219,58 +204,58 @@ function getData(start_date, end_date){
             medicionesData.push(medicion);
             // Comprueba que la medición sea del sensor correcto
         })
-        procesarDatos(medicionesData[0].idSensor, medicionesData, start_date, end_date);
+        procesarDatos2(medicionesData[0].idSensor, medicionesData, start_date, end_date);
     })
 
 }
 
-function createColumnTitle(){
-    let idTitle = createElement('div', ['titleTableId'], ['Id Sensor']);
+function createColumnTitle2(){
+    let idTitle = createElement2('div', ['titleTableId'], ['Id Sensor']);
     idTitle.style.width = '15%';
     idTitle.style.display = 'flex';
     idTitle.style.justifyContent = 'center';
-    let tituloTemperatura = createElement('div', ['titleTableTemperatura'], ['Temperatura']);
+    let tituloTemperatura = createElement2('div', ['titleTableTemperatura'], ['Temperatura']);
     tituloTemperatura.style.width = '15%';
     tituloTemperatura.style.display = 'flex';
     tituloTemperatura.style.justifyContent = 'center';
-    let tituloHumedad = createElement('div', ['titleTableHumedad'], ['Humedad']);
+    let tituloHumedad = createElement2('div', ['titleTableHumedad'], ['Humedad']);
     tituloHumedad.style.width = '15%';
     tituloHumedad.style.display = 'flex';
     tituloHumedad.style.justifyContent = 'center';
-    let tituloSalinidad = createElement('div', ['titleTableSalinidad'], ['Salinidad']);
+    let tituloSalinidad = createElement2('div', ['titleTableSalinidad'], ['Salinidad']);
     tituloSalinidad.style.width = '15%';
     tituloSalinidad.style.display = 'flex';
     tituloSalinidad.style.justifyContent = 'center';
-    let tituloLuminosidad = createElement('div', ['titleTableLuminosidad'], ['Luminosidad']);
+    let tituloLuminosidad = createElement2('div', ['titleTableLuminosidad'], ['Luminosidad']);
     tituloLuminosidad.style.width = '15%';
     tituloLuminosidad.style.display = 'flex';
     tituloLuminosidad.style.justifyContent = 'center';
-    let tituloFecha = createElement('div', ['titleTableFecha'], ['Fecha']);
+    let tituloFecha = createElement2('div', ['titleTableFecha'], ['Fecha']);
     tituloFecha.style.width = '25%';
     tituloFecha.style.display = 'flex';
     tituloFecha.style.justifyContent = 'center';
 
-    let content_title = createElement('div', ['columnTitle'], [idTitle.outerHTML, tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
+    let content_title = createElement2('div', ['columnTitle'], [idTitle.outerHTML, tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
     content_title.style.display = 'flex';
     content_title.style.height = '30px';
     content_title.style.alignItems = 'center';
     return content_title;
 }
 
-function generarTabla(id) {
-    let divTabla = createElement('div', ['tabla-sensor-' + id], ['']);
+function generarTabla2(id) {
+    let divTabla = createElement2('div', ['tabla-sensor-' + id], ['']);
     divTabla.style.marginLeft = '20px';
     divTabla.style.marginRight = '20px';
     divTabla.style.border = '1px solid black';
     divTabla.style.padding = '10px';
     divTabla.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
     divTabla.style.marginBottom = '20px';
-    divTabla.innerHTML += createColumnTitle().outerHTML;
+    divTabla.innerHTML += createColumnTitle2().outerHTML;
     return divTabla;
 }
 
-function createColumnElement(dato, check){
-    let columna = createElement('div', [], [dato]);
+function createColumnElement2(dato, check){
+    let columna = createElement2('div', [], [dato]);
     columna.style.display = 'flex';
     columna.style.justifyContent = 'center';
     if (check == 0){
@@ -281,15 +266,15 @@ function createColumnElement(dato, check){
     return columna;
 }
 
-function crearTabla(datos) {
-    $('.data-table').empty();
-    let titulo = createElement('h2', ['text-title-table-sensor-' + datos[0][0]], ['Sensor ' + datos[0][0]]);
+function crearTabla2(idSensor, datos) {
+    $('.general-sensor-table-'+idSensor).empty();
+    let titulo = createElement2('h2', ['text-title-table-sensor-' + datos[0][0]], ['Sensor ' + idSensor]);
     titulo.marginTop = '30px';
     titulo.style.width = '100%';
     titulo.style.display = 'flex';
     titulo.style.alignItems = 'center';
     titulo.style.justifyContent = 'center';
-    let tabla = generarTabla(datos[0][0]);
+    let tabla = generarTabla2(datos[0][0]);
     let index = 0;
     for (let i = 0; i<datos[0].length; i++) {
         let content = document.createElement('div');
@@ -299,9 +284,9 @@ function crearTabla(datos) {
             let column;
             if (j != datos.length -1){
                 
-                column = createColumnElement(datos[j][i], 0);
+                column = createColumnElement2(datos[j][i], 0);
             } else {
-                column = createColumnElement(datos[j][i], 1);
+                column = createColumnElement2(datos[j][i], 1);
             }
             content.innerHTML += column.outerHTML;
         }
@@ -309,24 +294,21 @@ function crearTabla(datos) {
         index += 1;
     }
 
-    console.log(datos[0][5]);
-    console.log(tabla);
-    $(titulo).appendTo('.data-table');
-    $(tabla).appendTo('.data-table');
+    $(titulo).appendTo('.general-sensor-table-'+idSensor);
+    $(tabla).appendTo('.general-sensor-table-'+idSensor);
 }
 
 
 function getFilteredData(){
     let start_date = $('.date-input-start').first().val();
     let end_date = $('.date-input-end').first().val();
-    alert('hola');
 
     if (start_date != '' && end_date != '') {
         if(start_date <= end_date){
             start_date += ' 00:00:00';
             end_date += ' 23:59:59';
-            alert(start_date, end_date);
-            getData(start_date, end_date);
+            alert(start_date + ' ' + end_date);
+            getData2(start_date, end_date);
         } else {
             alert('La fecha final debe ser mayor o igual a la inicial');
         }
@@ -341,6 +323,6 @@ function detectButtonSubmit(){
     });
 }
 
-*/
-control_input();/*
-detectButtonSubmit();*/
+
+control_input();
+detectButtonSubmit();
