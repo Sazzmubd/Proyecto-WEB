@@ -14,10 +14,8 @@ fetch("../api/v1.0/modelos/get-admin.php",{
             '<td id="tipo" data-titulo="Tipo">'+clientes[i].tipo+'</td>'+
             '<td id="email" data-titulo="Email">'+clientes[i].correo+'</td>'+
             '<td id="telefono" data-titulo="Teléfono">'+clientes[i].telefono+'</td>'+
-            '<td>'+'<a className="logo">'+'<img onclick="verCamposUsuario('+clientes[i].id+')" src="ImagenesProyecto/atencion.svg" height="" width="70"/>'+'</a>'+'</td>'+
-            '<td>'+'<img src="ImagenesProyecto/editar.svg" height="" width="20">'+'</td>'
+            '<td>'+'<a className="logo">'+'<img onclick="verCamposUsuario('+clientes[i].id+')" src="ImagenesProyecto/marcador-de-posicion.svg" height="50"/>'+'</a>'+'</td>'
         //window.datosUsuario = +clientes[i];//                            AQUI DECLARO UNA VARIABLE SUUUUUPEEEEERRRRGLOBAL
-
     }
 })            //onclick="verCamposUsuario(<?php echo $mostrar['id']?>)"
 
