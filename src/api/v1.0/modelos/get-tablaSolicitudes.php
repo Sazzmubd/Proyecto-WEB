@@ -10,6 +10,7 @@ $result=mysqli_query($conexion,$sql);
 
         while($mostrar=mysqli_fetch_assoc($result)){
             $resultado = [];
+            $resultado['id'] = $mostrar['idSolicitudes'];
             $resultado['fechasolicitud']=$mostrar['fechasolicitud'];
             $resultado['nombreApellidosEmpresa']=$mostrar['nombreApellidosEmpresa'];
             $resultado['tipo']=$mostrar['tipo'];
