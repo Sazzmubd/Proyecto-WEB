@@ -106,8 +106,6 @@ function procesarDatos(idSensor, medidas){
         return 0;
     });
 
-    
-
     let fechas = [];
     let humedades = [];
     let temperaturas = [];
@@ -116,7 +114,6 @@ function procesarDatos(idSensor, medidas){
     let idSensorData = [];
     let tablaDatos = [];
 
-    console.log("ID: "+idSensor);
     medidas.forEach(element => {
         fechas.push(element.fecha);
         idSensorData.push(element.idSensor);
@@ -210,7 +207,6 @@ function generarTabla(id) {
 }
 
 function createColumnElement(dato, check){
-    console.log(dato);
     let columna = createElement('div', [], [dato]);
     columna.style.display = 'flex';
     columna.style.justifyContent = 'center';
@@ -231,13 +227,11 @@ function crearTabla(datos) {
     titulo.style.justifyContent = 'center';
     let tabla = generarTabla(datos[0][0]);
     let index = 0;
-    console.log(datos);
     for (let i = 0; i<datos[0].length; i++) {
         let content = document.createElement('div');
         content.style.display = 'flex';
         content.style.alignItems = 'center';
         for (let j = 0; j<datos.length; j++) {
-            console.log("Columna " + index);
             let column;
             if (j != datos.length -1){
                 column = createColumnElement(datos[j][i], 0);
@@ -250,7 +244,6 @@ function crearTabla(datos) {
         index += 1;
     }
 
-    console.log(tabla);
     $(titulo).appendTo('.data-table');
     $(tabla).appendTo('.data-table');
 }
@@ -262,8 +255,6 @@ function getData(){
     }).then(function (mediciones) {
         let medicionesData = [];
         let index = -1;
-        console.log("Mediciones")
-        console.log(mediciones);
         mediciones.forEach(function (medicion){
             if (index != parseInt(medicion.idSensor)){
                 if(index != -1){
@@ -303,15 +294,29 @@ function initMap() {
         streetViewControl: false,
         rotateControl: false,
     });
+    getData();
+    if(datosUsuario.id == 1){
+        let idUser = document.URL.split("?")[1].replace("idUsuario=","");
+        console.log("ID ->",idUser)
+        cargarParcelas(idUser);
+        // 1º coger la sesion del usuario
+        // 2º coger todos sus ids campos
+        //3º mostrar los ids q has sacado
+        //4º meter esos ids en un array
+        cargarPosiciones(idUser);
+        //setTimeout(getData, 5000);
+    }else{
+        cargarParcelas(datosUsuario.id);
+        // 1º coger la sesion del usuario
+        // 2º coger todos sus ids campos
+        //3º mostrar los ids q has sacado
+        //4º meter esos ids en un array
+        cargarPosiciones(datosUsuario.id);
+        //setTimeout(getData, 5000);
+    }
 
 
-    cargarParcelas(datosUsuario.id);
-    // 1º coger la sesion del usuario
-    // 2º coger todos sus ids campos
-    //3º mostrar los ids q has sacado
-    //4º meter esos ids en un array
-    cargarPosiciones(datosUsuario.id);
-    //setTimeout(getData, 5000);
+
 }
 
 
@@ -320,11 +325,10 @@ function initMap() {
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
-function cargarParcelas(idUsuario = "") {
-    let url = '../api/v1.0/parcela';
-    if (idUsuario != "") {
-        url = '../api/v1.0/parcela?idCampos=' + idUsuario;
-    }
+function cargarParcelas(idUsuario) {
+    let url = "";
+    url = 'http://localhost/GitHub/Proyecto-WEB/src/api/v1.0/parcela?idUsuario='+idUsuario;
+
     fetch(url).then(function (campos) {
         return campos.json();
     }).then(function (esquinas) {
@@ -384,14 +388,17 @@ function cargarParcelas(idUsuario = "") {
 //CAMBIAR LA SENTENCIA SQL
 
 
-
+function hideSensor(idSensor){
+    $('.tabla-sensor-' + idSensor).hide();
+    $('text-title-table-sensor-' + idSensor).hide();
+}
 
 
 function cargarPosiciones(idUsuario = "") {
-    let url = '../api/v1.0/posicion';
-    if (idUsuario != "") {
-        url = '../api/v1.0/posicion?idCampos=' + idUsuario;
-    }
+    let url = "";
+    url = 'http://localhost/GitHub/Proyecto-WEB/src/api/v1.0/posicion?idUsuario='+idUsuario;
+
+
     fetch(url).then(function (campos) {
         return campos.json();
     }).then(function (sensores) {
@@ -400,6 +407,8 @@ function cargarPosiciones(idUsuario = "") {
 
             sensor.lat = parseFloat(sensor.lat);
             sensor.lng = parseFloat(sensor.lng);
+            console.log('hoalfd');
+            hideSensor(sensor.idSensor);
 
             // Carga los datos de las mediciones
 
@@ -454,10 +463,6 @@ function verdatos(id) {
         }
     }
 }
-
-$(document).ready(function() {
-    getData();
-});
 
 
 //------------------------------------------------------------------------------------------

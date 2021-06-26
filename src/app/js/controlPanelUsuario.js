@@ -42,9 +42,7 @@ function control_input(){
 
     $(content).appendTo('.content-date-form');
 }
-
-
-
+/*
 function createElement(Type, ClassName, Content) {
     let elem = document.createElement(Type);
 
@@ -210,8 +208,6 @@ function getData(start_date, end_date){
     }).then(function (mediciones) {
         let medicionesData = [];
         let index = -1;
-        console.log("Mediciones")
-        console.log(mediciones);
         mediciones.forEach(function (medicion){
             if (index != parseInt(medicion.idSensor)){
                 if(index != -1){
@@ -227,8 +223,6 @@ function getData(start_date, end_date){
     })
 
 }
-
-
 
 function createColumnTitle(){
     let idTitle = createElement('div', ['titleTableId'], ['Id Sensor']);
@@ -276,7 +270,6 @@ function generarTabla(id) {
 }
 
 function createColumnElement(dato, check){
-    console.log(dato);
     let columna = createElement('div', [], [dato]);
     columna.style.display = 'flex';
     columna.style.justifyContent = 'center';
@@ -298,15 +291,14 @@ function crearTabla(datos) {
     titulo.style.justifyContent = 'center';
     let tabla = generarTabla(datos[0][0]);
     let index = 0;
-    console.log(datos);
     for (let i = 0; i<datos[0].length; i++) {
         let content = document.createElement('div');
         content.style.display = 'flex';
         content.style.alignItems = 'center';
         for (let j = 0; j<datos.length; j++) {
-            console.log("Columna " + index);
             let column;
             if (j != datos.length -1){
+                
                 column = createColumnElement(datos[j][i], 0);
             } else {
                 column = createColumnElement(datos[j][i], 1);
@@ -317,6 +309,7 @@ function crearTabla(datos) {
         index += 1;
     }
 
+    console.log(datos[0][5]);
     console.log(tabla);
     $(titulo).appendTo('.data-table');
     $(tabla).appendTo('.data-table');
@@ -326,6 +319,7 @@ function crearTabla(datos) {
 function getFilteredData(){
     let start_date = $('.date-input-start').first().val();
     let end_date = $('.date-input-end').first().val();
+    alert('hola');
 
     if (start_date != '' && end_date != '') {
         if(start_date <= end_date){
@@ -347,6 +341,6 @@ function detectButtonSubmit(){
     });
 }
 
-
-control_input();
-detectButtonSubmit();
+*/
+control_input();/*
+detectButtonSubmit();*/
