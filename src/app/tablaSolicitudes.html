@@ -17,7 +17,7 @@
 <nav id="mySidenav" class="sidenav">
     <ul>
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#215;</a></li>
-        <li><a class="sidenav-nav" href="javascript:logout()">Cerrar sesión (Admin)</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
+        <li><a class="sidenav-nav" onclick="logout()" href="/">Cerrar sesión (Admin)</a><!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
         </li>
         <li><a class="sidenav-nav" href="admin.html">Clientes y Sensores</a></li>
         <li><a class="sidenav-nav" href="Campos.html">Añadir Campos</a></li>
@@ -45,7 +45,7 @@
 
   <br>
 
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar por...">
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por...">
 
   <!-- Tabla de solicitudes1 -->
   <table class="sortable" id="myTable">
@@ -57,7 +57,7 @@
       <th>Teléfono</th>
       <th>Motivo</th>
       <th>Provincia</th>
-      <th>Añadir/Eliminar</th>
+      <th>+ / -</th>
     </tr>
 
     <tr>

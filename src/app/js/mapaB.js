@@ -216,7 +216,7 @@ function initMap() {
 //------------------------------------------------------------------------------------------
 function cargarParcelas(idUsuario) {
     let url = "";
-    url = 'http://localhost/GitHub/Proyecto-WEB3/src/api/v1.0/parcela?idUsuario='+idUsuario;
+    url = '../api/v1.0/parcela?idUsuario='+idUsuario;
 
     fetch(url).then(function (campos) {
         return campos.json();
@@ -283,7 +283,7 @@ function cargarParcelas(idUsuario) {
 
 function cargarPosiciones(idUsuario = "") {
     let url = "";
-    url = 'http://localhost/GitHub/Proyecto-WEB3/src/api/v1.0/posicion?idUsuario='+idUsuario;
+    url = '../api/v1.0/posicion?idUsuario='+idUsuario;
 
 
     fetch(url).then(function (campos) {

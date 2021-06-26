@@ -72,6 +72,10 @@ body {
     font-size: 16px;
 }
 
+#msg {
+    color: black;
+}
+
 .login-box input[type="submit"] {
     margin-top: 10px;
     border: none;
@@ -90,6 +94,10 @@ body {
 
 .link {
     text-align: center;
+}
+
+.link a:hover{
+    text-decoration: underline;
 }
 
 .login-box a {
