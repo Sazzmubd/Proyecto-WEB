@@ -122,8 +122,10 @@ function loadOptions2(idSensor){
 }
 
 function crearGrafica2(idElem, grafica){
-    let ctx = document.getElementById('contentSensor' + idElem);
-    $('#contentSensor' + idElem).empty();
+    $("canvas#sensorContent" + idElem).remove();
+    $('div#graphicDataContent').append('<canvas class="canvasGraphic" id="sensorContent' + idElem + '" style="display: none; height:500px;"></canvas>');
+    let ctx = document.getElementById('sensorContent' + idElem);
+    $('#sensorContent' + idElem).empty();
     ctx.height = 500;
     opciones = loadOptions2(idElem);
     let miGrafica = new Chart(ctx, {
@@ -150,10 +152,8 @@ function procesarDatos2(idSensor, medidas, start_date, end_date){
     let idSensorData = [];
     let tablaDatos = [];
 
-    console.log('Id sensor:' + idSensor);
     medidas.forEach(element => {
         if(element.fecha >= start_date && element.fecha <= end_date){
-            console.log('entra:' + element.fecha);
             fechas.push(element.fecha);
             idSensorData.push(element.idSensor);
             humedades.push(parseFloat(element.humedad));
@@ -161,9 +161,6 @@ function procesarDatos2(idSensor, medidas, start_date, end_date){
             salinidades.push(parseFloat(element.salinidad));
             luminosidades.push(parseFloat(element.luminosidad));
         }
-        console.log('start' + start_date);
-        console.log('normal:' + element.fecha);
-        console.log('end:' + end_date);
     });
     
     datos = loadData2();
@@ -183,7 +180,7 @@ function procesarDatos2(idSensor, medidas, start_date, end_date){
 
     crearTabla2(idSensor, tablaDatos);
 
-    //crearGrafica2(idSensor, datos);
+    crearGrafica2(idSensor, datos);
 }
 
 function getData2(start_date, end_date){

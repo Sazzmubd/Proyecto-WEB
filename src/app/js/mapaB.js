@@ -89,8 +89,9 @@ function loadOptions(idSensor){
 }
 
 function crearGrafica(idElem, grafica){
-    let ctx = document.getElementById('contentSensor' + idElem);
-    ctx.height = 500;
+    $('div#graphicDataContent').append('<canvas class="canvasGraphic" id="sensorContent' + idElem + '" style="display: none; height:500px;"></canvas>');
+    let ctx = document.getElementById('sensorContent' + idElem);
+    ctx.height = 150;
     opciones = loadOptions(idElem);
     let miGrafica = new Chart(ctx, {
         type: 'line',
@@ -390,7 +391,6 @@ function cargarParcelas(idUsuario) {
 
 
 function showSensor(idSensor){
-    console.log('ID:' + idSensor);
     $('.general-sensor-table-' + idSensor).css('display', 'block');
 }
 
@@ -441,7 +441,7 @@ function cargarPosiciones(idUsuario = "") {
 
 
 function esconderGraficas(){
-    let stringContent = 'contentSensor';
+    let stringContent = 'sensorContent';
     document.getElementById("exitGraphicSensor").style.display = 'none';
     for (let i = 1; i<6; i++){
         document.getElementById(stringContent+i).style.display = 'none';
@@ -449,7 +449,7 @@ function esconderGraficas(){
 }
 
 function verdatos(id) {
-    let stringContent = 'contentSensor';
+    let stringContent = 'sensorContent';
     let canvasVer = document.getElementById(stringContent + id);
     document.getElementById("exitGraphicSensor").style.display = 'block';
     for (let i = 1; i<6; i++){
