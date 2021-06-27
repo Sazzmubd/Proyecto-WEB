@@ -12,6 +12,7 @@ body {
 
 main {
     margin: 5%;
+    height: calc(100vh - 78px);
 }
 .cerrar{
     text-align: right;
