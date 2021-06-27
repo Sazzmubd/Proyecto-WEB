@@ -1,5 +1,5 @@
 var globalSolicitudes;
-
+//'../api/v1.0/sesion/'
 fetch("../api/v1.0/modelos/get-tablaSolicitudes.php",{
     method:"GET"
 }).then(function (respuesta){
