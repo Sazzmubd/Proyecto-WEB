@@ -73,7 +73,7 @@ main {
 
 .titular {
     color: #100e0e;
-    font-size: 37px;
+    font-size: 42px;
     border: black;
     -webkit-text-stroke: black 2px;
 
@@ -107,7 +107,7 @@ main {
 
 .solicita {
     font-weight: lighter;
-    font-size: 18px;
+    font-size: 21px;
     color: white;
     margin-bottom: -12px;
 }
