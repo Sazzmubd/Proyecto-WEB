@@ -64,7 +64,7 @@ function loadOptionsGlobal(){
             },
             title: {
                 display: true,
-                text: 'Medidas históricas'
+                text: 'Últimas 10 medidas'
             },
             tooltips: {
                 backgroundColor: '#fff',
@@ -103,16 +103,19 @@ function procesarDatosGlobal(medidas){
     let salinidades = [];
     let luminosidades = [];
 
-
-    medidas.forEach(element => {
-        let i = fechas.indexOf(element.fecha);
-        fechas.push(element.fecha);
-        humedades.push(parseFloat(element.humedad));
-        temperaturas.push(parseFloat(element.temperatura));
-        salinidades.push(parseFloat(element.salinidad));
-        luminosidades.push(parseFloat(element.luminosidad));
-
-    });
+    let hecho = false;
+    let counter = 0;
+    for (let i=medidas.length-1; i>=0 && !hecho; i--){
+         fechas.push(medidas[i].fecha);
+         humedades.push(parseFloat(medidas[i].humedad));
+         temperaturas.push(parseFloat(medidas[i].temperatura));
+         salinidades.push(parseFloat(medidas[i].salinidad));
+         luminosidades.push(parseFloat(medidas[i].luminosidad));
+         counter++;
+         if(counter>=10) {
+             hecho = true;
+         }
+    }
     
     datos = loadDataGlobal();
 

@@ -335,3 +335,7 @@ ul li {
 .map {
     margin-bottom: 15px;
 }
+
+#graphicDataContent {
+    max-height: 500px;
+}
