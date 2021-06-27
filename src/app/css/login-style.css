@@ -78,7 +78,7 @@
     outline: none;
     height: 40px;
     background:  indianred;/*hacer la casilla transparente*/
-    color: white;
+    color: white+;
     font-size: 18px;
     border-radius: 20px;
 }
