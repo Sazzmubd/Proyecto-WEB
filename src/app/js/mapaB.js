@@ -15,41 +15,42 @@ function loadData(){
                 label: 'humedad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(43,69,34,.5)',
-                borderColor: 'rgb(43,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'none',
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(156, 219, 232)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'temperatura',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(111,69,34,.5)',
-                borderColor: 'rgb(111,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(250, 237, 157)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'salinidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(255,69,34,.5)',
-                borderColor: 'rgb(255,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(255, 166, 92)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'luminosidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(200,69,34,.5)',
-                borderColor: 'rgb(200,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(0, 0, 0)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             }
         ]
     };
@@ -67,22 +68,21 @@ function loadOptions(idSensor){
             }
         },
         plugins: {
-            legend: {
-                position: 'left',
-                align: 'end'
-            },
             title: {
                 display: true,
-                text: 'Medidas sensor ' + idSensor
+                text: 'MEDIDAS SENSOR ' + idSensor
             },
             tooltips: {
                 backgroundColor: '#F0EDFE',
-                titleColor: 'rgba(200,69,34,.5)',
+                titleColor: 'rgba(255,255,255,1)',
                 titleAlign: 'center',
-                bodyColor: 'rgba(200,69,34,.5)',
-                borderColor: 'rgba(200,69,34,.5)',
+                bodyColor: 'rgba(200,69,34,1)',
+                borderColor: 'rgba(200,69,34,1)',
                 borderWidth: 1,
             }
+        },
+        labels: {
+            fontColor: 'black'
         }
     };
     return opciones;
@@ -163,10 +163,6 @@ function createElement(Type, ClassName, Content) {
 }
 
 function createColumnTitle(){
-    let idTitle = createElement('div', ['titleTableId'], ['Id Sensor']);
-    idTitle.style.width = '15%';
-    idTitle.style.display = 'flex';
-    idTitle.style.justifyContent = 'center';
     let tituloTemperatura = createElement('div', ['titleTableTemperatura'], ['Temperatura']);
     tituloTemperatura.style.width = '15%';
     tituloTemperatura.style.display = 'flex';
@@ -188,10 +184,11 @@ function createColumnTitle(){
     tituloFecha.style.display = 'flex';
     tituloFecha.style.justifyContent = 'center';
 
-    let content_title = createElement('div', ['columnTitle'], [idTitle.outerHTML, tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
+    let content_title = createElement('div', ['columnTitle'], [tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
     content_title.style.display = 'flex';
     content_title.style.height = '30px';
     content_title.style.alignItems = 'center';
+    content_title.style.justifyContent = 'center';
     return content_title;
 }
 
@@ -232,7 +229,8 @@ function crearTabla(datos) {
         let content = document.createElement('div');
         content.style.display = 'flex';
         content.style.alignItems = 'center';
-        for (let j = 0; j<datos.length; j++) {
+        content.style.justifyContent = 'center';
+        for (let j = 1; j<datos.length; j++) {
             let column;
             if (j != datos.length -1){
                 column = createColumnElement(datos[j][i], 0);

@@ -48,41 +48,42 @@ function loadData2(){
                 label: 'humedad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(43,69,34,.5)',
-                borderColor: 'rgb(43,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'none',
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(156, 219, 232)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'temperatura',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(111,69,34,.5)',
-                borderColor: 'rgb(111,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(250, 237, 157)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'salinidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(255,69,34,.5)',
-                borderColor: 'rgb(255,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(255, 166, 92)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'luminosidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(200,69,34,.5)',
-                borderColor: 'rgb(200,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(0, 0, 0)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             }
         ]
     };
@@ -100,22 +101,21 @@ function loadOptions2(idSensor){
             }
         },
         plugins: {
-            legend: {
-                position: 'left',
-                align: 'end'
-            },
             title: {
                 display: true,
-                text: 'Medidas sensor ' + idSensor
+                text: 'MEDIDAS SENSOR ' + idSensor
             },
             tooltips: {
                 backgroundColor: '#F0EDFE',
-                titleColor: 'rgba(200,69,34,.5)',
+                titleColor: 'rgba(255,255,255,1)',
                 titleAlign: 'center',
-                bodyColor: 'rgba(200,69,34,.5)',
-                borderColor: 'rgba(200,69,34,.5)',
+                bodyColor: 'rgba(200,69,34,1)',
+                borderColor: 'rgba(200,69,34,1)',
                 borderWidth: 1,
             }
+        },
+        labels: {
+            fontColor: 'black'
         }
     };
     return opciones;
