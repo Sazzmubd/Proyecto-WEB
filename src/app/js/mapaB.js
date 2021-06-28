@@ -91,7 +91,12 @@ function loadOptions(idSensor){
 function crearGrafica(idElem, grafica){
     $('div#graphicDataContent').append('<canvas class="canvasGraphic" id="sensorContent' + idElem + '" style="display: none; height:500px;"></canvas>');
     let ctx = document.getElementById('sensorContent' + idElem);
-    ctx.height = 150;
+    ctx.style.backgroundColor = '#F1F1F1';
+    ctx.style.maxWidth = '1200px';
+    ctx.style.maxHeight = '600px';
+    ctx.style.padding = '5px';
+    ctx.style.paddingBottom = '10px';
+    ctx.style.border = '2px solid black';
     opciones = loadOptions(idElem);
     let miGrafica = new Chart(ctx, {
         type: 'line',
@@ -196,9 +201,9 @@ function generarTabla(id) {
     let divTabla = createElement('div', ['tabla-sensor-' + id], ['']);
     divTabla.style.marginLeft = '20px';
     divTabla.style.marginRight = '20px';
-    divTabla.style.border = '1px solid black';
+    divTabla.style.border = '2px solid black';
     divTabla.style.padding = '10px';
-    divTabla.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+    divTabla.style.backgroundColor = 'white';
     divTabla.style.marginBottom = '20px';
     divTabla.innerHTML += createColumnTitle().outerHTML;
     return divTabla;
@@ -245,6 +250,7 @@ function crearTabla(datos) {
 
     let conjunto_tabla = createElement('div', ['general-sensor-table-' + datos[0][0]], [titulo.outerHTML, tabla.outerHTML]);
     conjunto_tabla.style.display = 'none';
+    conjunto_tabla.style.marginTop = '40px';
     $(conjunto_tabla).appendTo('.data-table');
 }
 

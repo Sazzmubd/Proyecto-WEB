@@ -18,7 +18,7 @@ function control_input(){
     let content = createElement2('div', ['content-date'], [input_start.outerHTML, input_end.outerHTML, submit_button.outerHTML]);
     content.style.display = 'flex';
     content.style.justifyContent = 'center';
-    content.style.marginTop = '30px';
+    content.style.marginTop = '15px';
 
     $(content).appendTo('.content-date-form');
 }
@@ -126,7 +126,12 @@ function crearGrafica2(idElem, grafica){
     $('div#graphicDataContent').append('<canvas class="canvasGraphic" id="sensorContent' + idElem + '" style="display: none; height:500px;"></canvas>');
     let ctx = document.getElementById('sensorContent' + idElem);
     $('#sensorContent' + idElem).empty();
-    ctx.height = 500;
+    ctx.style.backgroundColor = '#F1F1F1';
+    ctx.style.maxWidth = '1200px';
+    ctx.style.maxHeight = '600px';
+    ctx.style.padding = '5px';
+    ctx.style.paddingBottom = '10px';
+    ctx.style.border = '5px solid black';
     opciones = loadOptions2(idElem);
     let miGrafica = new Chart(ctx, {
         type: 'line',
@@ -243,7 +248,7 @@ function generarTabla2(id) {
     let divTabla = createElement2('div', ['tabla-sensor-' + id], ['']);
     divTabla.style.marginLeft = '20px';
     divTabla.style.marginRight = '20px';
-    divTabla.style.border = '1px solid black';
+    divTabla.style.border = '2px solid black';
     divTabla.style.padding = '10px';
     divTabla.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
     divTabla.style.marginBottom = '20px';

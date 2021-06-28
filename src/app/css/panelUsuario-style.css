@@ -1,11 +1,10 @@
 body {
     font-family: arial;
-    background: rgb(76, 59, 117);
     /*background: -moz-linear-gradient(90deg, rgb(76, 59, 117) 0%, rgba(140, 119, 200, 1) 50%, rgb(76, 59, 117) 100%);
     background: -webkit-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgb(76, 59, 117) 100%);
     background: linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);*/
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c3b75", endColorstr="#4c3b75", GradientType=1);
-    color: white;
+    color: black;
     margin: 0;
     width: 100%;
 }
@@ -91,6 +90,7 @@ ul li {
 .close{
     position: absolute;
     top: 5px;
+    margin: 0;
     right: 5px;
     display: inline-block;
     width: 25px;
@@ -133,9 +133,8 @@ ul li {
     transform: translateY(-200%);
 }
 .btn_popup{
-    background-color: red;
-    border: 0;
-    color: white;
+    background-color: blueviolet;
+    border: 2px solid black;
     border-radius: 5px;
     font-size: 14px;
     padding: 10px 25px;
@@ -145,14 +144,13 @@ ul li {
 .cta{
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 /* START: FLEXBOX (TÍTULO - BOTÓN USUARIO) */
 
 .titulo-usuario-box {
-    max-width: 1200px;
-    margin: 90px auto 0 auto;
-
-    width: 94%;
+    padding: 90px 30px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -160,8 +158,6 @@ ul li {
 }
 
 .titulo-usuario-box div {
-
-    width: 100%;
     display: flex;
     margin-left: 0rem;
     align-items: center;
@@ -209,7 +205,7 @@ ul li {
 }
 
 .titulo {
-    margin-left: 0.8rem;
+    margin-left: 1rem;
     font-weight: lighter;
 }
 
@@ -289,12 +285,6 @@ ul li {
         margin: 0px auto 0 auto;
     }
 
-    .titulo-usuario-box {
-        width: 80%;
-        max-width: 1200px;
-        margin-top: 100px;
-    }
-
     .titulo-usuario-box div h1 {
         font-size: 40px;
     }
@@ -305,7 +295,7 @@ ul li {
 
     .map,
     .lista-sondas {
-        width: 80%;
+        width: 85%;
         max-width: 1200px;
         margin: 0 auto;
     }
@@ -339,7 +329,54 @@ ul li {
     margin-bottom: 15px;
 }
 
+#upperGraphic {
+    padding: 25px 7.5%;
+}
+
 #graphicDataContent {
-    max-height: 500px;
-    margin: 30px 0;
+    padding: 5px 0;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    background-image: url("../ImagenesProyecto/monitorSensores/fondo.jpg");
+}
+
+#submain {
+    width: 75%;
+    background-color: white;
+    box-shadow: 0 10px 13px;
+}
+
+#output {
+    margin-right: 40px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.data-table {
+    margin:0 7.5%;
+    margin-top: 70px;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    background-color: #F1F1F1;
+}
+
+.filtro-general {
+    display: flex;
+    justify-content: center;
+}
+
+.color-filtro-general {
+    width: 85%;
+    padding: 20px 0;
+    background-color: #F1F1F1;
+}
+
+.text-date-form{
+    margin-top: 30px;
+    text-align: center;
 }
