@@ -65,7 +65,7 @@ h2{
 #myInput {
     width: 100%;
     font-size: 16px; /* Increase font-size */
-    border: 1px solid #ddd; /* Add a grey border */
+    border: 2px solid dimgrey; /* Add a grey border */
     margin-bottom: 1rem; /* Add some space below the input */
 }
 .logo-menu-container {
