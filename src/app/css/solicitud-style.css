@@ -31,11 +31,14 @@ body {
 
 .login-box {
     margin-top: 5em;
+    width: 100%;
+    max-width: 70%;
+    background-color: white;
+    color: black;
     height: 100%;
-    max-width: 90%;
-    background-color: #4c3b75;
-    color: white;
-    padding: 40px 30px 50px 30px;
+    box-sizing: border-box;
+    padding-top: 70px;
+    padding-bottom: 50px;
 }
 
 .login-box h1 {
@@ -68,7 +71,7 @@ body {
     background: transparent;
     outline: none;
     height: 40px;
-    color: white;
+    color: black;
     font-size: 16px;
 }
 
@@ -83,7 +86,7 @@ body {
     height: 40px;
     background: indianred;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 20px;
 
 }
@@ -122,10 +125,11 @@ body {
         }
         .login-box{
             width: 800px;
+            max-width: 90%;
             border: none;
             /*padding-bottom: 5%;*/
             height: 100%;
-            padding-top: 30px;
+            padding: 40px 30px 50px 30px;
         }
         .login-box h1 {
             font-size: 22px;
@@ -175,18 +179,16 @@ body {
             
             overflow: hidden;    
         }
-        .login-box{                         
+        .login-box{
             max-width: 100%;
             border: none;
-            /*padding-bottom: 0%;*/
-            height: 100%;
-            padding-top: 30px;
+            padding-bottom: 5%;
         }
         .login-box h1 {
             font-size: 18px;
         }
         .cuadro-grande {
-            width: 100%;
+            width: 90%;
         }
         .login-box label {
             padding: -20px;

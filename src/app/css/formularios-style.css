@@ -36,7 +36,6 @@ main {
     height: 78px;
     background: #d2c8ef;
     color: black;
-    border-bottom: 3px solid white;
 
     /* Cabecera fija */
     position: fixed;
@@ -73,11 +72,6 @@ main {
 }
 
 
-.obligatorio{
-    color: red;
-}
-
-
 .footer {
 
     display: flex;
@@ -90,7 +84,6 @@ main {
 
     width: border-box;
 
-    border-top: 3px solid white;
     background-color: #363637;
 
     margin: 0 auto 0 auto;
