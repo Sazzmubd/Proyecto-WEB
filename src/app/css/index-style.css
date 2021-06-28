@@ -21,7 +21,8 @@
     background: #d2c8ef;
     border-bottom: 3px solid purple;
     color: black;
-    
+
+    border-bottom: 3px solid white;
 
     /* Cabecera fija */
     position: fixed;
@@ -107,8 +108,6 @@ main {
 .titular {
     color: #100e0e;
     font-size: 42px;
-   
-
 }
 
 .titular2 {
