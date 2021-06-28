@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="32b4d416-660d-4f63-bf12-aa7052284bb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/index-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/index-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/panelUsuario-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/panelUsuario-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/controlPanelUsuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/controlPanelUsuario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/panelUsuarioAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/panelUsuarioAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/css/olvidaContraseña-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/olvidaContraseña-style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
