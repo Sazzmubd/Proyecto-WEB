@@ -25,3 +25,10 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.display = "block";
 }
+
+/* funcion para que el header baje con scroll*/
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll',function(){
+    header.classList.toggle('active', window.scrollY>0)
+});
