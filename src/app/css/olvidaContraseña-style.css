@@ -127,15 +127,15 @@
            
     }
     .login-box{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        margin-top: 5em;
+        width: 100%;
         max-width: 100%;
-        max-height: 100%;
-        margin-bottom: 0%;
-        border: none;
-        margin-top: 6vh;
+        background-color: white;
+        color: black;
+        height: 100%;
+        box-sizing: border-box;
+        padding-top:  70px;
+        padding-bottom: 120px;
     }
     .login-box h1 {
         font-size: 20px;
@@ -150,7 +150,8 @@
         font-size: 14px;
     }
     .fondo-pantalla-olv h2{
-        font-size: 24px;
+        font-size: 26px;
+        text-decoration: underline;
     }
     .login-box input[type="submit"]{
         height: 35px;
@@ -166,11 +167,13 @@
     .login-box input {
         align-items: center;
         justify-content: center;
-        width: 50%;
+        width: 40%;
+
     }
 
     .fondo-pantalla-olv h2 {
         font-size: 38px;
+        text-decoration: underline;
     }
 
     .links text {
