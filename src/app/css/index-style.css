@@ -1,10 +1,10 @@
 
 .fondo {
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url("../ImagenesProyecto/LandingPage/lavanderfield.jpg");
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+    background-image: /*linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),*/ url("../ImagenesProyecto/LandingPage/fondoOrdenadorCampoLavanda.jpg");
+    /*height: 100vh;*/
+    /*background-size: cover;
+    background-position: center;*/
 
     background-repeat: no-repeat;
 
@@ -18,7 +18,8 @@
 .header {
 
     height: 78px;
-   
+    background: #d2c8ef;
+    border-bottom: 3px solid purple;
     color: black;
     
 
@@ -29,10 +30,7 @@
     width: 100%;
 }
 
-.header.active{
-    background: #d2c8ef;
-    border-bottom: 3px solid purple;
-}
+
 
 .logo-menu-container {
     display: flex;
@@ -240,11 +238,7 @@ main {
 
 }
 
-.flexbox-container{
 
-    border-bottom: 2px solid purple;
-
-}
 
 
 section .img1 {
