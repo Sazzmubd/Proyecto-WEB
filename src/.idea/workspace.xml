@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32b4d416-660d-4f63-bf12-aa7052284bb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/css/index-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/index-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/v1.0/modelos/post-deleteCliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1.0/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1.0/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/solicitud-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/solicitud-scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/solicitudes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/solicitudes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +39,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1.0/modelos" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\Proyecto-WEB\src\api\v1.0\modelos" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,6 +62,8 @@
       <workItem from="1624701726218" duration="3868000" />
       <workItem from="1624728829440" duration="157000" />
       <workItem from="1624810749961" duration="5906000" />
+      <workItem from="1624875618095" duration="6552000" />
+      <workItem from="1624897861704" duration="1065000" />
     </task>
     <servers />
   </component>

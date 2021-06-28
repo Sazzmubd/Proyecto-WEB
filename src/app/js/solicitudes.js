@@ -56,6 +56,8 @@ function addClient(id){
         console.log("Se ha añadido correctamente",result)
     })
 
+    borrarSolicitud(id);
+
 }
 
 function borrarSolicitud(id){
@@ -81,7 +83,7 @@ function borrarSolicitud(id){
         }
     }).then(res =>{
         res.text()
-        //window.location.reload();
+        window.location.reload();
     })
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));

@@ -1,5 +1,7 @@
 document.querySelector("form").addEventListener("submit", function (event) {
 
+    alert("Solicitud enviada");
+
     event.preventDefault();//para q no envie cuando hagas enter el submit
     let dataLogin = new FormData(event.target); //aqui se almacena los datos en la variable esa
 
@@ -13,6 +15,6 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
         console.log(res);
         res.json().then(data => console.log(data))
-
+        window.location.reload();
     })
 })
