@@ -16,7 +16,7 @@
     margin-top: 5em;
     width: 100%;
     max-width: 100%;
-    background-color: white;
+    
     color: black;
     box-sizing: border-box;
     padding: 70px 30px;
@@ -33,6 +33,7 @@
 }
 .links :hover{
     text-decoration: underline;
+    color: white;
 }
 .login-box h2 {
     margin: 0;
@@ -40,11 +41,13 @@
     padding: 0 0 26px;
     text-align: center;
     font-size: 22px;
+    color: white;
 }
 
 .login-box h3 {
     text-align: center;
     margin: -5px 0 40px 0;
+    color: white;
 }
 
 .login-box label{
@@ -52,49 +55,43 @@
     padding: 3vh;/*quitar espaciados*/
     font-weight: bold;
     display: block;
+    color: white;
 }
 .login-box input{
     width: 100%;/*que se vea toda la linea ocupada*/
     margin-bottom: 20px;
 }
-.login-box input[type="text"],
-.login-box input[type="password"]{
 
-    border: none;
-    border-bottom: 1px solid indianred;
-    background:  transparent;/*hacer la casilla transparente*/
-    outline: none;
-    font-family: Arial;
-    height: 40px;
-    color: black;
-    font-size: 16px;
-    
-}
 
 .login-box input[type="submit"]{
-    border: none;
+    margin-top: 10px;
+    border: 2px solid grey;
     outline: none;
-    width: 100%;
-    height: 50px;
-    background:  indianred;/*hacer la casilla transparente*/
-    color: white;
-    font-size: 20px;
-    font-family: "Arial";
+    height: 40px;
+    background: white;
+    color: grey;
+    font-size: 18px;
     border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 .login-box input[type="text"],
 .login-box input[type="password"]{
 
-    border: none;
-    border-bottom: 1px solid indianred;
-    background:  transparent;/*hacer la casilla transparente*/
+    border: 1px solid black;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.75);
     outline: none;
     height: 40px;
     color: black;
     font-size: 16px;
+    padding-left: 10px;
+
 
 }
-
+::placeholder{
+    color: black;
+}
 .login-box input :hover{
     border: none;
     outline: none;
@@ -109,10 +106,10 @@
     text-decoration: none;
     font-size: 17px;
     line-height: 20px;
-    color: slategray;
+    color: white;
 }
 .login-box a:hover {
-    color: black;
+    color: white;
     text-decoration: underline;
 }
 
@@ -130,7 +127,7 @@
         margin-top: 5em;
         width: 100%;
         max-width: 100%;
-        background-color: white;
+        
         color: black;
         height: 100%;
         box-sizing: border-box;
@@ -151,20 +148,21 @@
     }
     .fondo-pantalla-olv h2{
         font-size: 26px;
-        text-decoration: underline;
+        
     }
-    .login-box input[type="submit"]{
+    /*.login-box input[type="submit"]{
         height: 35px;
-        background:  indianred;/*hacer la casilla transparente*/
-        color: white;
+        background:  indianred;*//*hacer la casilla transparente*/
+        /*color: white;
         font-size: 17px;
         font-family: "Arial";
         border-radius: 20px;
-    }
+    }*/
 }
 @media only screen and (min-width: 800px) {
 
-    .login-box input {
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
         align-items: center;
         justify-content: center;
         width: 40%;
@@ -173,7 +171,7 @@
 
     .fondo-pantalla-olv h2 {
         font-size: 38px;
-        text-decoration: underline;
+        
     }
 
     .links text {
@@ -195,7 +193,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 7%;
+        
     }
 
     .login-box label {
