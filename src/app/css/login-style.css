@@ -25,7 +25,7 @@
     margin-top: 5em;
     width: 100%;
     max-width: 70%;
-    background-color: white;
+   
     color: black;
     height: 100%;
     box-sizing: border-box;
@@ -41,17 +41,18 @@
 }
 .leftsize h1 {
     margin: -20px auto 20px auto;
-   
+    color: white;
     padding: 0 0 26px;
     text-align: center;
     font-size: 22px;
-    text-decoration: underline;
+    
 }
 .leftsize label{
     margin: 0;
     padding: 3vh;/*quitar espaciados*/
     font-weight: bold;
     display: block;
+    color: white;
 }
 .login-box input{
     width: 100%;/*que se vea toda la linea ocupada*/
@@ -61,38 +62,63 @@
 .leftsize input select,
 .leftsize input[type="password"]{
 
-    border: none;
-    border-bottom: 1px solid indianred;
-    background-color: transparent;/*hacer la casilla transparente*/
+    border: 1px solid black;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.75);
     outline: none;
     height: 40px;
     color: black;
     font-size: 16px;
+    padding-left: 10px;
+
+    /*border: none;
+    border-bottom: 1px solid indianred;
+    background-color: transparent;*//*hacer la casilla transparente*//*
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;*/
 }
 
 .leftsize input[type="submit"]{
-    border: none;
+
+    margin-top: 10px;
+    border: 2px solid grey;
     outline: none;
     height: 40px;
-    background:  indianred;/*hacer la casilla transparente*/
-    color: white;
+    background: white;
+    color: grey;
     font-size: 18px;
     border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+
+    /*border: none;
+    outline: none;
+    height: 40px;
+    background:  indianred;*//*hacer la casilla transparente*//*
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;*/
 }
 .leftsize a{
     text-decoration: none;
     font-size: 16px;
     line-height: 23px;
-    color: slategray;
+    color: white;
 }
 
 .leftsize a:hover {
-    color: black;
+    color: white;
     text-decoration: underline;
 }
 
+::placeholder{
+    color: black;
+}
+
 .mini-menu {
-    background-color: white;
+    
     margin-top: 4vh;
     text-align: center;
     color: white;

@@ -11,7 +11,7 @@ body {
 }
 
 .fondo-pantalla-log{
-    background: url("../ImagenesProyecto/campo1.jpg");
+    background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url("../ImagenesProyecto/campo1.jpg");
 
     background-size: cover;
 }
