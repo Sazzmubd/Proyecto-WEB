@@ -1,3 +1,3 @@
 function verCamposUsuario(idUsuario){
-    location.href= "panelUsuario.html?idUsuario="+idUsuario;
+    location.href= "panelUsuarioAdmin.html?idUsuario="+idUsuario;
 }

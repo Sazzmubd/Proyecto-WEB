@@ -1,8 +1,10 @@
 
 .fondo {
     width: 100%;
-    background-image: url("../ImagenesProyecto/LandingPage/fondoOrdenadorCampoLavanda.jpg");
-    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url("../ImagenesProyecto/LandingPage/lavanderfield.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
 
     background-repeat: no-repeat;
 
@@ -16,14 +18,20 @@
 .header {
 
     height: 78px;
-    background: #d2c8ef;
+   
     color: black;
+    
 
     /* Cabecera fija */
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
+}
+
+.header.active{
+    background: #d2c8ef;
+    border-bottom: 3px solid purple;
 }
 
 .logo-menu-container {
@@ -56,12 +64,40 @@ main {
     -webkit-text-stroke-color: 2px black;
 
 }
+.titular-relleno a{
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer; 
+    text-decoration: none;
+}
+
+.titular-relleno a:hover{
+    background: white;
+    border: 2px solid purple;
+    color: purple;
+    
+
+
+    
+}
+
+.boton{
+    margin-top: 70px;
+}
 
 .titular-relleno2 {
 
     width: 96%;
     text-align: center;
-    margin:20% auto 0% auto;
+    margin: 20% auto 0% auto;
 
 }
 
@@ -73,8 +109,7 @@ main {
 .titular {
     color: #100e0e;
     font-size: 42px;
-    border: black;
-    -webkit-text-stroke: black;
+   
 
 }
 
@@ -111,7 +146,7 @@ main {
     margin-bottom: -12px;
 }
 
-.btn-container {
+/*.btn-container {
     margin: -2% 0px 50px 0;
     display: flex;
     flex-direction: column;
@@ -138,7 +173,7 @@ main {
 .btn:active {
     color: #ffffff;
     background-color: white;
-}
+}*/
 
 .flexbox {
     display: flex;
@@ -207,6 +242,8 @@ main {
 
 .flexbox-container{
 
+    border-bottom: 2px solid purple;
+
 }
 
 
@@ -249,7 +286,7 @@ section .img1 {
 
     width: border-box;
 
-    border-top: 3px solid white;
+    
     background-color: black;
 
     margin: 0 auto 0 auto;

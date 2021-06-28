@@ -1,46 +1,46 @@
 function loadDataGlobal(){
     let datos = {
-        labels:[],
         datasets:[
             {
                 label: 'humedad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(43,69,34,.5)',
-                borderColor: 'rgb(43,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'none',
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(156, 219, 232)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'temperatura',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(111,69,34,.5)',
-                borderColor: 'rgb(111,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(250, 237, 157)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'salinidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(255,69,34,.5)',
-                borderColor: 'rgb(255,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(255, 166, 92)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'luminosidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(200,69,34,.5)',
-                borderColor: 'rgb(200,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(0, 0, 0)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             }
         ]
     };
@@ -58,13 +58,9 @@ function loadOptionsGlobal(){
             }
         },
         plugins: {
-            legend: {
-                position: 'left',
-                align: 'end'
-            },
             title: {
                 display: true,
-                text: 'Medidas históricas'
+                text: 'Últimas 10 medidas'
             },
             tooltips: {
                 backgroundColor: '#fff',
@@ -103,16 +99,19 @@ function procesarDatosGlobal(medidas){
     let salinidades = [];
     let luminosidades = [];
 
-
-    medidas.forEach(element => {
-        let i = fechas.indexOf(element.fecha);
-        fechas.push(element.fecha);
-        humedades.push(parseFloat(element.humedad));
-        temperaturas.push(parseFloat(element.temperatura));
-        salinidades.push(parseFloat(element.salinidad));
-        luminosidades.push(parseFloat(element.luminosidad));
-
-    });
+    let hecho = false;
+    let counter = 0;
+    for (let i=medidas.length-1; i>=0 && !hecho; i--){
+         fechas.push(medidas[i].fecha);
+         humedades.push(parseFloat(medidas[i].humedad));
+         temperaturas.push(parseFloat(medidas[i].temperatura));
+         salinidades.push(parseFloat(medidas[i].salinidad));
+         luminosidades.push(parseFloat(medidas[i].luminosidad));
+         counter++;
+         if(counter>=10) {
+             hecho = true;
+         }
+    }
     
     datos = loadDataGlobal();
 

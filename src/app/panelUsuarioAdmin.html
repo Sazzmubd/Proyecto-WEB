@@ -21,11 +21,9 @@
         <li><a class="sidenav-nav" onclick="logout()" href="/" >Cerrar sesión</a>
             <!-- AQUI EJECUTO JSSSSSSSSSSSSSSSSSSSSSS -->
         </li>
-        <li><a class="sidenav-nav" href="../preguntasFrecuentes.html">Preguntas Frecuentes</a>
+        <li><a class="sidenav-nav" href="tablaSolicitudes.html">Tabla Solicitudes</a>
         </li>
-        <li><a class="sidenav-nav" href="../nosotros.html">Acerca de Nosotros</a>
-        </li>
-        <li><a class="sidenav-nav" href="#footer">Contáctanos</a>
+        <li><a class="sidenav-nav" href="admin.html">Clientes y Sensores</a>
         </li>
     </ul>
 </nav>
@@ -46,65 +44,53 @@
 <!--END: -->
 
 <!--START: FLEXBOX(TÍTULO - BOTÓN USUARIO)-->
-<main>
-    <div id="submain">
-        <div class="titulo-usuario-box">
-            <div>
-                <img src="ImagenesProyecto/monitorSensores/Info_Simple_bw.png" alt="">
-                <h1 class="titulo">Panel de Información</h1>
-            </div>
-
-            <div id="output"></div>
-
-        </div>
-
-        <!--END: FLEXBOX(TÍTULO - BOTÓN USUARIO)-->
-        <div class="filtro-general">
-            <div class="color-filtro-general">
-                <div class="pop_up">
-                <div class="btn_popup"><a href="#" class="cta">Ver datos históricos</a></div>
-                <div class="modal-container" >
-                    <div class="modal modal-close">
-                        <p class="close">X</p>
-                        <canvas id="modal-textos"></canvas>
-                    </div>
-                </div>
-                </div>
-
-                <!--START: SECCIÓN UBICACIÓN-->
-
-                <div id="main">
-                    
-                </div>
-                <div class="text-date-form">
-                    Busque mediciones según la fecha:
-                    <form class="form-date" action='../api/v1.0/modelos/get-filter-sensor.php' method='POST'>
-                        <div class="content-date-form"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-
-        <section id = "upperGraphic">
-            <div class="exitGraficas">
-                <button id="exitGraphicSensor" onclick="esconderGraficas()" style="display: none">X</button>
-            </div>
-            <div id="graphicDataContent">
-
-            </div>
-        </section>
-
-        <section class="map">
-            <h2>Mapa de Sondas</h2>                            <!--  SACAR NOMBREEEEEEEEEEE -->
-            <div id="map"></div>
-        </section>
-
-        <section class="data-table">
-
-        </section>
+<div class="titulo-usuario-box">
+    <div>
+        <img src="ImagenesProyecto/monitorSensores/Panel-de-usuario.svg" alt="">
+        <h1 class="titulo">PANEL DE CONTROL</h1>
     </div>
-</main>
+
+    <div id="output"></div>
+
+</div>
+
+<!--END: FLEXBOX(TÍTULO - BOTÓN USUARIO)-->
+<div class="pop_up">
+    <div class="btn_popup"><a href="#" class="cta">Ver datos históricos</a></div>
+    <div class="modal-container" >
+        <div class="modal modal-close">
+            <p class="close">X</p>
+            <canvas id="modal-textos"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="exitGraficas">
+    <button id="exitGraphicSensor" onclick="esconderGraficas()" style="display: none">X</button>
+</div>
+<!--START: SECCIÓN UBICACIÓN-->
+
+<div id="main">
+
+</div>
+
+<form class="form-date" action='../api/v1.0/modelos/get-filter-sensor.php' method='POST'>
+    <div class="content-date-form"></div>
+</form>
+
+<div id="graphicDataContent">
+
+</div>
+
+<section class="map">
+    <h2>Mapa de Sondas</h2>
+    <div id="output"></div>                                 <!--  SACAR NOMBREEEEEEEEEEE -->
+    <div id="map"></div>
+</section>
+
+<section class="data-table">
+
+</section>
 
 
 

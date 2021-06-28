@@ -15,41 +15,42 @@ function loadData(){
                 label: 'humedad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(43,69,34,.5)',
-                borderColor: 'rgb(43,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'none',
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(156, 219, 232)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'temperatura',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(111,69,34,.5)',
-                borderColor: 'rgb(111,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(250, 237, 157)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'salinidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(255,69,34,.5)',
-                borderColor: 'rgb(255,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(255, 166, 92)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             },
             {
                 label: 'luminosidad',
                 data: [],
                 fill: true,
-                backgroundColor: 'rgba(200,69,34,.5)',
-                borderColor: 'rgb(200,110,86)',
-                borderDash: [2,3],
-                pointStyle: 'rectRot',
-                pointRadius: 10,
+                backgroundColor: 'rgba(255,69,34,0)',
+                borderColor: 'rgb(0, 0, 0)',
+                borderDash: [],
+                pointStyle: 'circle',
+                pointRadius: 7,
             }
         ]
     };
@@ -67,32 +68,36 @@ function loadOptions(idSensor){
             }
         },
         plugins: {
-            legend: {
-                position: 'left',
-                align: 'end'
-            },
             title: {
                 display: true,
-                text: 'Medidas sensor ' + idSensor
+                text: 'MEDIDAS SENSOR ' + idSensor
             },
             tooltips: {
                 backgroundColor: '#F0EDFE',
-                titleColor: 'rgba(200,69,34,.5)',
+                titleColor: 'rgba(255,255,255,1)',
                 titleAlign: 'center',
-                bodyColor: 'rgba(200,69,34,.5)',
-                borderColor: 'rgba(200,69,34,.5)',
+                bodyColor: 'rgba(200,69,34,1)',
+                borderColor: 'rgba(200,69,34,1)',
                 borderWidth: 1,
             }
+        },
+        labels: {
+            fontColor: 'black'
         }
     };
     return opciones;
 }
 
 function crearGrafica(idElem, grafica){
-    let ctx = document.getElementById('contentSensor' + idElem);
-    ctx.height = 500;
+    $('div#graphicDataContent').append('<canvas class="canvasGraphic" id="sensorContent' + idElem + '" style="display: none; height:500px;"></canvas>');
+    let ctx = document.getElementById('sensorContent' + idElem);
+    ctx.style.backgroundColor = '#F1F1F1';
+    ctx.style.maxWidth = '1200px';
+    ctx.style.maxHeight = '600px';
+    ctx.style.padding = '5px';
+    ctx.style.paddingBottom = '10px';
+    ctx.style.border = '2px solid black';
     opciones = loadOptions(idElem);
-    console.log(grafica, opciones);
     let miGrafica = new Chart(ctx, {
         type: 'line',
         data: grafica,
@@ -107,17 +112,17 @@ function procesarDatos(idSensor, medidas){
         return 0;
     });
 
-    
-
     let fechas = [];
     let humedades = [];
     let temperaturas = [];
     let salinidades = [];
     let luminosidades = [];
-
+    let idSensorData = [];
+    let tablaDatos = [];
 
     medidas.forEach(element => {
         fechas.push(element.fecha);
+        idSensorData.push(element.idSensor);
         humedades.push(parseFloat(element.humedad));
         temperaturas.push(parseFloat(element.temperatura));
         salinidades.push(parseFloat(element.salinidad));
@@ -132,7 +137,121 @@ function procesarDatos(idSensor, medidas){
     datos.datasets[2].data = salinidades;
     datos.datasets[3].data = luminosidades;
 
+    tablaDatos.push(idSensorData);
+    tablaDatos.push(temperaturas);
+    tablaDatos.push(humedades);
+    tablaDatos.push(salinidades);
+    tablaDatos.push(luminosidades);
+    tablaDatos.push(fechas);
+
+    crearTabla(tablaDatos);
+
     crearGrafica(idSensor, datos);
+}
+
+function createElement(Type, ClassName, Content) {
+    let elem = document.createElement(Type);
+
+    if (ClassName != null) {
+        ClassName.forEach(function (elemClass) {
+            $(elem).addClass(elemClass);
+        });
+    }
+
+    if (Content != null) {
+        Content.forEach(function (elemContent) {
+            elem.innerHTML += elemContent;
+        });
+    }
+
+    return elem;
+}
+
+function createColumnTitle(){
+    let tituloTemperatura = createElement('div', ['titleTableTemperatura'], ['Temperatura']);
+    tituloTemperatura.style.width = '15%';
+    tituloTemperatura.style.display = 'flex';
+    tituloTemperatura.style.justifyContent = 'center';
+    let tituloHumedad = createElement('div', ['titleTableHumedad'], ['Humedad']);
+    tituloHumedad.style.width = '15%';
+    tituloHumedad.style.display = 'flex';
+    tituloHumedad.style.justifyContent = 'center';
+    let tituloSalinidad = createElement('div', ['titleTableSalinidad'], ['Salinidad']);
+    tituloSalinidad.style.width = '15%';
+    tituloSalinidad.style.display = 'flex';
+    tituloSalinidad.style.justifyContent = 'center';
+    let tituloLuminosidad = createElement('div', ['titleTableLuminosidad'], ['Luminosidad']);
+    tituloLuminosidad.style.width = '15%';
+    tituloLuminosidad.style.display = 'flex';
+    tituloLuminosidad.style.justifyContent = 'center';
+    let tituloFecha = createElement('div', ['titleTableFecha'], ['Fecha']);
+    tituloFecha.style.width = '25%';
+    tituloFecha.style.display = 'flex';
+    tituloFecha.style.justifyContent = 'center';
+
+    let content_title = createElement('div', ['columnTitle'], [tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
+    content_title.style.display = 'flex';
+    content_title.style.height = '30px';
+    content_title.style.alignItems = 'center';
+    content_title.style.justifyContent = 'center';
+    return content_title;
+}
+
+function generarTabla(id) {
+    let divTabla = createElement('div', ['tabla-sensor-' + id], ['']);
+    divTabla.style.marginLeft = '20px';
+    divTabla.style.marginRight = '20px';
+    divTabla.style.border = '2px solid black';
+    divTabla.style.padding = '10px';
+    divTabla.style.backgroundColor = 'white';
+    divTabla.style.marginBottom = '20px';
+    divTabla.innerHTML += createColumnTitle().outerHTML;
+    return divTabla;
+}
+
+function createColumnElement(dato, check){
+    let columna = createElement('div', [], [dato]);
+    columna.style.display = 'flex';
+    columna.style.justifyContent = 'center';
+    if (check == 0){
+        columna.style.width = '15%';
+    } else {
+        columna.style.width = '25%';
+    }
+    return columna;
+}
+
+function crearTabla(datos) {
+    let titulo = createElement('h2', ['text-title-table-sensor-' + datos[0][0]], ['Sensor ' + datos[0][0]]);
+    titulo.marginTop = '30px';
+    titulo.style.width = '100%';
+    titulo.style.display = 'flex';
+    titulo.style.alignItems = 'center';
+    titulo.style.justifyContent = 'center';
+    let tabla = generarTabla(datos[0][0]);
+    let index = 0;
+    for (let i = 0; i<datos[0].length; i++) {
+        let content = document.createElement('div');
+        content.style.display = 'flex';
+        content.style.alignItems = 'center';
+        content.style.justifyContent = 'center';
+        for (let j = 1; j<datos.length; j++) {
+            let column;
+            if (j != datos.length -1){
+                column = createColumnElement(datos[j][i], 0);
+            } else {
+                column = createColumnElement(datos[j][i], 1);
+            }
+            content.innerHTML += column.outerHTML;
+        }
+        tabla.innerHTML += content.outerHTML;
+        index += 1;
+    }
+
+    let conjunto_tabla = createElement('div', ['general-sensor-table-' + datos[0][0]], [titulo.outerHTML, tabla.outerHTML]);
+    conjunto_tabla.style.display = 'none';
+    conjunto_tabla.style.marginTop = '40px';
+    $(conjunto_tabla).appendTo('.data-table');
 }
 
 function getData(){
@@ -142,7 +261,6 @@ function getData(){
     }).then(function (mediciones) {
         let medicionesData = [];
         let index = -1;
-        console.log(mediciones);
         mediciones.forEach(function (medicion){
             if (index != parseInt(medicion.idSensor)){
                 if(index != -1){
@@ -182,6 +300,7 @@ function initMap() {
         streetViewControl: false,
         rotateControl: false,
     });
+    getData();
     if(datosUsuario.id == 1){
         let idUser = document.URL.split("?")[1].replace("idUsuario=","");
         console.log("ID ->",idUser)
@@ -191,7 +310,6 @@ function initMap() {
         //3º mostrar los ids q has sacado
         //4º meter esos ids en un array
         cargarPosiciones(idUser);
-        getData();
         //setTimeout(getData, 5000);
     }else{
         cargarParcelas(datosUsuario.id);
@@ -200,7 +318,6 @@ function initMap() {
         //3º mostrar los ids q has sacado
         //4º meter esos ids en un array
         cargarPosiciones(datosUsuario.id);
-        getData();
         //setTimeout(getData, 5000);
     }
 
@@ -222,7 +339,6 @@ function cargarParcelas(idUsuario) {
         return campos.json();
     }).then(function (esquinas) {
 
-        console.log(esquinas);
         let bounds = new google.maps.LatLngBounds();//CREO Q SON LOS LIMITES
 
         let paths = [];
@@ -278,7 +394,9 @@ function cargarParcelas(idUsuario) {
 //CAMBIAR LA SENTENCIA SQL
 
 
-
+function showSensor(idSensor){
+    $('.general-sensor-table-' + idSensor).css('display', 'block');
+}
 
 
 function cargarPosiciones(idUsuario = "") {
@@ -294,6 +412,7 @@ function cargarPosiciones(idUsuario = "") {
 
             sensor.lat = parseFloat(sensor.lat);
             sensor.lng = parseFloat(sensor.lng);
+            showSensor(sensor.idSensor);
 
             // Carga los datos de las mediciones
 
@@ -328,7 +447,7 @@ function cargarPosiciones(idUsuario = "") {
 
 
 function esconderGraficas(){
-    let stringContent = 'contentSensor';
+    let stringContent = 'sensorContent';
     document.getElementById("exitGraphicSensor").style.display = 'none';
     for (let i = 1; i<6; i++){
         document.getElementById(stringContent+i).style.display = 'none';
@@ -336,7 +455,7 @@ function esconderGraficas(){
 }
 
 function verdatos(id) {
-    let stringContent = 'contentSensor';
+    let stringContent = 'sensorContent';
     let canvasVer = document.getElementById(stringContent + id);
     document.getElementById("exitGraphicSensor").style.display = 'block';
     for (let i = 1; i<6; i++){
