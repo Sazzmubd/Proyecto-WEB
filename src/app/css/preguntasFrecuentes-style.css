@@ -1,9 +1,9 @@
 body {
 
-    background-image: url("Imágenes Proyecto/Landing Page/fondoResponsive.png");
-    width: 100%;
+    background-image: url("../ImagenesProyecto/30780-lavanda.jpg");
     height: 100%;
-    background-size: 100%;
+    background-size: 170%;
+    background-position: right;
 
     background-repeat: no-repeat;
 
@@ -67,17 +67,17 @@ main {
 }
 
 .titulo-imagen {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
 .container1 {
-    background-color: #62528c;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 10px 20px;
-    border: 3px solid #ffffff;
+    border: 2px solid black;
 
     width: 85%;
     margin: 3% auto;
@@ -86,6 +86,9 @@ main {
     font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.5px;
+}
+.container2.titulo-imagen {
+    border: 2px solid black;
 }
 
 .dropbtn {
