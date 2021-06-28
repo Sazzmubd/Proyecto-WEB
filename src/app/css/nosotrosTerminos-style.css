@@ -1,8 +1,11 @@
 body {
     font-family: arial;
-    background: white;
+    background: rgb(76, 59, 117);
+    background: -moz-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
+    background: linear-gradient(90deg, rgba(76, 59, 117, 1) 0%, rgba(140, 119, 200, 1) 50%, rgba(76, 59, 117, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c3b75", endColorstr="#4c3b75", GradientType=1);
-    color: black;
+    color: white;
 
     margin: 0;
 }
@@ -11,6 +14,7 @@ body {
 
     height: 78px;
     background: #d2c8ef;
+    border-bottom: 3px solid white;
 
     /* Cabecera fija */
     position: fixed;
@@ -53,8 +57,8 @@ nav ul {
 .saber-mas {
 
     padding: 5px 6px;
-    color: black;
-    background-color: white
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 2px;
     border: 1px solid black;
     text-shadow: 0px 0px 4px black;
@@ -86,10 +90,10 @@ section .imgEmp {
     width: 760px;
     max-width: 76%;
 
-    color: black;
+    color: white;
     text-align: left;
 
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 2px;
    
     padding: 20px 40px;
@@ -101,13 +105,14 @@ section .imgEmp {
     display: flex;
     flex-direction: column;
 
+    margin: 76px auto 0 auto;
     width: 760px;
     max-width: 76%;
 
-    color: black;
+    color: white;
     text-align: left;
 
-    background-color: white
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 2px;
 
     padding: 20px 40px;
@@ -117,7 +122,6 @@ section .imgEmp {
 }
 .title-text-img-box h1{
     text-align: center;
-
 }
 
 .no-margin-top {
@@ -125,7 +129,7 @@ section .imgEmp {
 }
 
 .title-text-img-box h1{
-     font-size: 22px;
+     font-size: 30px;
  }
 
 .title-text-img-box p , ul{
@@ -191,7 +195,7 @@ section .imgEmp {
 
 }
 
-@media (min-width: 800px) {
+@media (min-width: 776px) {
     .quienesSomoss {
         flex-direction: row;
         max-width: 1200px;
@@ -205,92 +209,34 @@ section .imgEmp {
         width: 95%;
         margin: 14px auto 0 auto;
     }
-
-    .title-text-img-box {
-        display: flex;
+    .title-text-img-box{
+        display:flex;
         flex-direction: row;
         margin-bottom: 30px;
         width: 1500px;
     }
-    .title-text-img-boxt {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 30px;
-        width: 1500px;
-        margin-left: 120px;
-        max-width: 76%;
-
-        color: black;
-        text-align: left;
-
-        background-color: white
-        border-radius: 2px;
-
-        padding: 20px 40px;
-
-        border-top: none;
-        border-bottom: 30px;
-    }
-
     .title-text-img-boxt h1 {
         text-align: center;
     }
-
-    .title-text-img-box h1 {
+    .title-text-img-box h1{
         font-size: 30px;
-        margin-bottom: 35px;
     }
 
-    .title-text-img-box p {
+    .title-text-img-box p{
         font-size: 18px;
         max-width: 85%;
     }
 
-    .title-text-img-box img {
-        margin: 3vh 0 0 0;
+    .title-text-img-box img{
+        margin:3vh 0 0 0;
         max-width: 50%;
-        max-height: 400px;
+        max-height: 50%;
     }
 
 
-
-
-    @media (max-width: 800px) {
+    @media (max-width: 776px) {
 
         .title-text-img-box{
             margin-bottom: 30px;
-            max-width: 100%;
         }
-        .title-text-img-box p{
-            font-size: 14px;
-            width: 95%;
-        }
-        .title-text-img-box h1 {
-            font-size: 22px;
-        }
-        .title-text-img-box img {
-            max-width: 100%;
-        }
-        .title-text-img-box li{
-            font-size: 14px;
-        }
-        .title-text-img-boxt {
-            display: flex;
-            flex-direction: column;
-
-            max-width: 76%;
-
-            color: black;
-            text-align: left;
-
-            background-color: white;
-            border-radius: 2px;
-
-            padding: 20px 40px;
-
-            border-top: none;
-            border-bottom: 30px;
-        }
-
-
     }

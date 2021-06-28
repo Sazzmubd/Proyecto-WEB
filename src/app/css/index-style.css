@@ -20,7 +20,11 @@
     height: 78px;
    
     color: black;
+<<<<<<< HEAD
     
+=======
+    border-bottom: 3px solid white;
+>>>>>>> parent of 1932030 (nuevo diseño 30%)
 
     /* Cabecera fija */
     position: fixed;
@@ -109,7 +113,12 @@ main {
 .titular {
     color: #100e0e;
     font-size: 42px;
+<<<<<<< HEAD
    
+=======
+    border: black;
+    -webkit-text-stroke: black 2px;
+>>>>>>> parent of 1932030 (nuevo diseño 30%)
 
 }
 

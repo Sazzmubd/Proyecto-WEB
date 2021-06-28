@@ -3,8 +3,7 @@
     margin: 0;
     padding: 0;
     background-size: cover;
-    font-family: Lato, sans-serif;
-    font-weight: 400;
+    font-family: arial;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -25,15 +24,18 @@
     margin-top: 5em;
     width: 100%;
     max-width: 70%;
-    background-color: white;
-    color: black;
+    background-color: #4c3b75;
+    color: white;
     height: 100%;
     box-sizing: border-box;
     padding-top:  70px;
     padding-bottom: 50px;
+    
+    
 
     
 }
+
 
 
 .leftsize form {
@@ -48,7 +50,6 @@
     padding: 0 0 26px;
     text-align: center;
     font-size: 22px;
-    text-decoration: underline;
 }
 .leftsize label{
     margin: 0;
@@ -61,15 +62,14 @@
     margin-bottom: 20px;
 }
 .leftsize input[type="text"],
-.leftsize input select,
 .leftsize input[type="password"]{
 
     border: none;
     border-bottom: 1px solid indianred;
-    background-color: transparent;/*hacer la casilla transparente*/
+    background:  transparent;/*hacer la casilla transparente*/
     outline: none;
     height: 40px;
-    color: black;
+    color: white;
     font-size: 16px;
 }
 
@@ -78,24 +78,24 @@
     outline: none;
     height: 40px;
     background:  indianred;/*hacer la casilla transparente*/
-    color: white;
+    color: white+;
     font-size: 18px;
     border-radius: 20px;
 }
 .leftsize a{
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 23px;
-    color: slategray;
+    color: white;
 }
 
 .leftsize a:hover {
-    color: black;
+    color: white;
     text-decoration: underline;
 }
 
 .mini-menu {
-    background-color: white;
+    background-color: #4c3b75;
     margin-top: 4vh;
     text-align: center;
     color: white;
@@ -111,7 +111,6 @@
 
     .leftsize{
         width: 800px;
-        max-height: 85%;
     }
     .leftsize h1 {
 
@@ -134,17 +133,17 @@
     .leftsize a:hover{
     text-decoration: underline;
     }
-    .left-size a{
-        font-size: 40px;
-    }
+
+
+   
+
 
 }
 
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 550px){
 
     .leftsize{
         width: 800px;
-        max-height: 85%;
     }
     .leftsize h1 {
 
@@ -190,16 +189,13 @@
         padding-bottom: 5%;
     }
     .login-box h1 {
-        padding-top: -20px;
         font-size: 20px;
     }
     .cuadro-grande {
         width: 100%;
     }
     .mini-menu {
-        display: flex;
-        flex-direction: column;
-        padding-top: -30px;
+        margin-top: 10vh;
     }
 
 }
