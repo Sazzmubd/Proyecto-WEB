@@ -27,7 +27,7 @@ main {
 }
 
 .fondo-pantalla-sol{
-    background: url("../ImagenesProyecto/campo3.jpg");
+    background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url("../ImagenesProyecto/campo3.jpg");
     background-size: cover;
 }
 

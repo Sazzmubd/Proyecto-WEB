@@ -9,19 +9,242 @@ body {
     /* To properly align multiline text fields with their labels */
     vertical-align: top;
     /* To give enough room to type some text */
-    background: white;
-    border-bottom: 1px solid indianred;
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid black;
     height: 5em;
     width: 100%;
     font-size: 16px;
     margin-top: 20px;
     color: black;
     margin-bottom: 10px;
-    border-color: indianred;
-    border-radius: 0.2rem;
+    padding-left: 10px;
+    padding-top: 5px;
+   
+    border-radius: 20px;
 }
 
 .estructura-body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.login-box {
+    width: 50%;
+    margin-top: 5em;
+    height: 100%;
+    max-width: 90%;
+    
+    color: white;
+    padding: 40px 30px 50px 30px;
+    
+
+}
+
+.login-box h1 {
+    margin: 0;
+    padding: 0 0 26px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.login-box label {
+    margin: 0;
+    padding: 2vh;
+    font-weight: bold;
+    display: block;
+}
+
+.login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+select{
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+option{
+    background: white;
+    color: black;
+    border: 1px solid white;
+}
+
+
+
+.login-box input[type="text"],
+.login-box input[type="phone"],
+.login-box input[type="password"],
+.login-box input[type="direccion1"],
+.login-box input[type="direccion2"] {
+
+    border: 1px solid black;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+    padding-left: 10px;
+}
+::placeholder{
+    color: black;
+}
+.login-box input[type="submit"] {
+    margin-top: 10px;
+    border: 2px solid grey;
+    outline: none;
+    height: 40px;
+    background: white;
+    color: grey;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.enviar {
+    width: 200px;
+    margin: 0 auto;
+    
+}
+
+.link {
+    text-align: center;
+}
+
+.login-box a {
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 20px;
+    color: white;
+}
+
+.login-box a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+
+    @media only screen and (max-width: 800px){
+
+        .estructura-body{
+            width: 100%;
+            overflow: hidden;    
+        }
+        .login-box{                         
+            width: 70%;
+            border: none;
+            /*padding-bottom: 5%;*/
+            height: 100%;
+            padding-top: 30px;
+        }
+        .login-box h1 {
+            font-size: 20px;
+        }
+        .cuadro-grande {
+            width: 100%;
+        }
+        .login-box label {
+            padding: 0vh;
+        }
+        
+
+    }
+
+    @media only screen and (max-width: 500px){
+
+        .estructura-body{
+            width: 100%;
+            overflow: hidden;    
+        }
+        .login-box{                         
+            width: 100%;
+            border: none;
+            /*padding-bottom: 5%;*/
+            height: 100%;
+            padding-top: 30px;
+        }
+        .login-box h1 {
+            font-size: 20px;
+        }
+        .cuadro-grande {
+            width: 100%;
+        }
+        .login-box label {
+            padding: 0vh;
+        }
+        
+
+    }
+    
+    @media only screen and (max-width: 360px){
+        
+        .estructura-body{
+            width: 100%;
+            overflow: hidden;    
+        }
+        .login-box{                         
+            width: 100%;
+            border: none;
+            /*padding-bottom: 0%;*/
+            height: 100%;
+            padding-top: 30px;
+        }
+        .login-box h1 {
+            font-size: 16px;
+        }
+        .cuadro-grande {
+            width: 100%;
+        }
+        .login-box label {
+            padding: -20px;
+        }
+        .login-box label {
+            font-size: small;
+        }
+       
+        
+
+    }
+
+/*body {
+    font-family: arial;
+    
+    
+}*/
+
+/*.cuadro-grande {
+    font-family: arial;*/
+    /* To properly align multiline text fields with their labels */
+    /*vertical-align: top;*/
+    /* To give enough room to type some text */
+    /*background: rgba(255, 255, 255, 0.75);
+    border: 2px solid black;
+    height: 5em;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    color: black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+   
+    border-radius: 20px;
+}
+
+
+.estructura-body {
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -33,7 +256,7 @@ body {
     margin-top: 5em;
     width: 100%;
     max-width: 70%;
-    background-color: white;
+    background-color: rgba(0,0,0,0.50);
     color: black;
     height: 100%;
     box-sizing: border-box;
@@ -113,12 +336,12 @@ body {
 .login-box a:hover {
     color: white;
     text-decoration: underline;
-}
+}*/
 
 
 
 
-    @media only screen and (min-width: 800px){
+   /* @media only screen and (min-width: 800px){
 
         .estructura-body{
             overflow: hidden;    
@@ -126,9 +349,9 @@ body {
         .login-box{
             width: 800px;
             max-width: 90%;
-            border: none;
+            border: none;*/
             /*padding-bottom: 5%;*/
-            height: 100%;
+           /* height: 100%;
             padding: 40px 30px 50px 30px;
         }
         .login-box h1 {
@@ -197,4 +420,4 @@ body {
             font-size: small;
         }
 
-    }
+    }*/
