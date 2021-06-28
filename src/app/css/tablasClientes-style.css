@@ -12,7 +12,7 @@ body {
 
 main {
     margin: 5%;
-    height: calc(100vh - 78px);
+    /*height: calc(100vh - 78px);*/
 }
 .cerrar{
     text-align: right;
@@ -96,7 +96,7 @@ h2{
     justify-content: space-around;
     align-items: center;
 
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
