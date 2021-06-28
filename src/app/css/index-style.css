@@ -1,4 +1,3 @@
-
 .fondo {
     width: 100%;
     background-image: /*linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),*/ url("../ImagenesProyecto/LandingPage/fondoOrdenadorCampoLavanda.jpg");
@@ -60,6 +59,7 @@ main {
     width: 96%;
     text-align: center;
     margin:17% auto 20% auto;
+    margin-top: 9rem;
     -webkit-text-stroke-color: 2px black;
 
 }

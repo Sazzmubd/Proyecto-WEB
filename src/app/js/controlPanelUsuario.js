@@ -7,7 +7,7 @@ function control_input(){
     let input_end = createElement('input', ['date-input-end'], []);
     input_end.type = 'date';
     input_end.max = new Date().toISOString().split("T")[0];
-    input_end.style.marginRight = '40px';
+    input_end.style.marginRight = '20px';
     input_end.name = 'date-input-end';
 
     let submit_button = createElement2('input', ['submit-date-button'], []);
@@ -233,7 +233,7 @@ function createColumnTitle2(){
     tituloLuminosidad.style.display = 'flex';
     tituloLuminosidad.style.justifyContent = 'center';
     let tituloFecha = createElement2('div', ['titleTableFecha'], ['Fecha']);
-    tituloFecha.style.width = '25%';
+    tituloFecha.style.width = '15%';
     tituloFecha.style.display = 'flex';
     tituloFecha.style.justifyContent = 'center';
 
