@@ -1,6 +1,6 @@
 var globalSolicitudes;
 //'../api/v1.0/sesion/'
-fetch("../api/v1.0/modelos/get-tablaSolicitudes.php",{
+fetch("../api/v1.0/tablaSolicitudes",{
     method:"GET"
 }).then(function (respuesta){
     if(respuesta.ok){//si la repuesta devuleve un ok
