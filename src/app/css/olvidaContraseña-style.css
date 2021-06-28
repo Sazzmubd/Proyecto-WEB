@@ -15,10 +15,9 @@
 .login-box{
     margin-top: 5em;
     width: 100%;
-    max-width: 70%;
-    background-color: #4c3b75;
-    color: white;
-    height: 93.5vh;
+    max-width: 100%;
+    background-color: white;
+    color: black;
     box-sizing: border-box;
     padding: 70px 30px;
 
@@ -55,7 +54,7 @@
     display: block;
 }
 .login-box input{
-    width: 100%;/*que se vea toda la linea ocupada*/
+    width: 80%;/*que se vea toda la linea ocupada*/
     margin-bottom: 20px;
 }
 .login-box input[type="text"],
@@ -67,7 +66,7 @@
     outline: none;
     font-family: Arial;
     height: 40px;
-    color: white;
+    color: black;
     font-size: 16px;
     
 }
@@ -75,18 +74,32 @@
 .login-box input[type="submit"]{
     border: none;
     outline: none;
-    height: 40px;
+    height: 50px;
     background:  indianred;/*hacer la casilla transparente*/
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Arial";
     border-radius: 20px;
 }
+.login-box input[type="text"],
+.login-box input[type="password"]{
+
+    border: none;
+    border-bottom: 1px solid indianred;
+    background:  transparent;/*hacer la casilla transparente*/
+    outline: none;
+    font-family: Arial;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+
+}
+
 .login-box input :hover{
     border: none;
     outline: none;
     height: 40px;
-    background:  white;/*hacer la casilla transparente*/
+    background:  black;/*hacer la casilla transparente*/
     color: indianred;
     font-size: 18px;
     font-family: "Arial";
@@ -97,10 +110,10 @@
     text-decoration: none;
     font-size: 17px;
     line-height: 20px;
-    color: white;
+    color: slategray;
 }
 .login-box a:hover {
-    color: white;
+    color: black;
     text-decoration: underline;
 }
 
@@ -114,7 +127,11 @@
         overflow: hidden;
            
     }
-    .login-box{                         
+    .login-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         max-width: 100%;
         max-height: 100%;
         margin-bottom: 0%;
@@ -130,14 +147,19 @@
     .cuadro-grande {
         width: 100%;
     }
-    .cuadro-grande {
-        width: 100%;
-   }
     .fondo-pantalla-olv h3{
         font-size: 14px;
     }
     .fondo-pantalla-olv h2{
         font-size: 24px;
+    }
+    .login-box input[type="submit"]{
+        height: 35px;
+        background:  indianred;/*hacer la casilla transparente*/
+        color: white;
+        font-size: 17px;
+        font-family: "Arial";
+        border-radius: 20px;
     }
 }
 @media only screen and (min-width: 800px) {
@@ -162,9 +184,6 @@
         align-items: center;
     }
 
-    login-box {
-        max-height:
-    }
 
     .login-box a {
         font-size: 20px;
