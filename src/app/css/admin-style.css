@@ -14,7 +14,6 @@ body {
     height: 78px;
     background: #d2c8ef;
     color: black;
-    border-bottom: 3px solid white;
 
     /* Cabecera fija */
     position: fixed;

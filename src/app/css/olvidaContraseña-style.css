@@ -54,7 +54,7 @@
     display: block;
 }
 .login-box input{
-    width: 80%;/*que se vea toda la linea ocupada*/
+    width: 100%;/*que se vea toda la linea ocupada*/
     margin-bottom: 20px;
 }
 .login-box input[type="text"],
@@ -74,6 +74,7 @@
 .login-box input[type="submit"]{
     border: none;
     outline: none;
+    width: 100%;
     height: 50px;
     background:  indianred;/*hacer la casilla transparente*/
     color: white;
@@ -165,7 +166,7 @@
     .login-box input {
         align-items: center;
         justify-content: center;
-        max-width: 80%;
+        width: 50%;
     }
 
     .fondo-pantalla-olv h2 {
@@ -184,13 +185,14 @@
 
 
     .login-box a {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .enviar {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 7%;
     }
 
     .login-box label {
