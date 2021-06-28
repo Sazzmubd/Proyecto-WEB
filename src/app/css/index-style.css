@@ -18,10 +18,8 @@
 
     height: 78px;
     background: #d2c8ef;
-    border-bottom: 3px solid purple;
     color: black;
 
-    border-bottom: 3px solid white;
 
     /* Cabecera fija */
     position: fixed;
@@ -315,7 +313,7 @@ section .img1 {
         padding-bottom: 10px;
 
     }
-    .text box{
+    .text-box{
         display: flex;
         flex-direction: column
     }

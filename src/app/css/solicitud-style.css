@@ -132,7 +132,7 @@ body {
             padding: 40px 30px 50px 30px;
         }
         .login-box h1 {
-            font-size: 22px;
+            font-size: 36px;
         }
         .cuadro-grande {
             width: 100%;
@@ -188,7 +188,8 @@ body {
             font-size: 18px;
         }
         .cuadro-grande {
-            width: 90%;
+            width: 80%;
+            margin-left: 20px;
         }
         .login-box label {
             padding: -20px;
@@ -196,5 +197,17 @@ body {
         .login-box label {
             font-size: small;
         }
+        .login-box input {
+            width: 100%;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            max-width: 80%;
+        }
+
+    .enviar{
+        margin-left: 130px;
+        margin-top: 30px;
+
+    }
 
     }
