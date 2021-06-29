@@ -2,7 +2,7 @@ body {
 
     background-image: url("../ImagenesProyecto/30780-lavanda.jpg");
     height: 100%;
-    background-size: 170%;
+    background-size: 160%;
     background-position: right;
 
     background-repeat: no-repeat;
@@ -158,6 +158,9 @@ main {
 
 @media (max-width: 800px) {
 
+    body{
+        background-size: 1000%;
+    }
     .container1{
         max-width: 70%;
         font-size: 16px;
