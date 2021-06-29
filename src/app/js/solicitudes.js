@@ -5,12 +5,12 @@ fetch("../api/v1.0/tablaSolicitudes/",{
 }).then(function (respuesta){
     if(respuesta.ok){//si la repuesta devuleve un ok
         console.log("ok");
-        return respuesta.text();
+        return respuesta.json();
     }
 }).then(function (solicitudes){
-    console.log(solicitudes);
+    //console.log(solicitudes);
     globalSolicitudes = solicitudes;
-
+    console.log(solicitudes);
     for (let i = 0; i < solicitudes.length; i++) {
         document.getElementById("myTable").innerHTML=document.getElementById("myTable").innerHTML+'<td data-titulo="Fecha">'+'<div style="width: 6rem" id="fecha">'+solicitudes[i].fechasolicitud+'</div>'+'</td>'+
             '<td name="nombreyapellidos" data-titulo="Nombre y Apellidos">'+solicitudes[i].nombreApellidosEmpresa+'</td>'+
@@ -25,7 +25,7 @@ fetch("../api/v1.0/tablaSolicitudes/",{
 
 
 function addClient(id){
-    console.log("------------AÑADO CLIENTE --------------------")
+    //console.log("------------AÑADO CLIENTE --------------------")
     var url = '../api/v1.0/cliente/';
     let data = globalSolicitudes[id];
     let parsedData ={

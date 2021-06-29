@@ -22,7 +22,9 @@ if (mysqli_num_rows($result) > 0) {
         $_SESSION["clientes"]=$resultado;
 
     }
-    echo json_encode($arrayresultado);
+    $salida = $arrayresultado;
+
+    //echo json_encode($arrayresultado);
 }
 else {
     http_response_code(401);
