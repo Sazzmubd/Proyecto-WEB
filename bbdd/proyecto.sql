@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2021 a las 11:49:17
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 29-06-2021 a las 21:11:52
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,7 +62,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombreapellidosempresa`, `tipo`, `correo`, `telefono`) VALUES
-(1, 'Francisco Esteve Cortes', 'empresa', 'fran@gmail.com', 63274823),
+(1, 'Eduardo Garcia Cortes', 'empresa', 'fran@gmail.com', 63274823),
 (2, 'Carlos Prieto Marinez', 'particular', 'carlosp@gmail.com', 637383883),
 (3, 'Paco Sanz Gorriz', 'particular', 'paco@gmail.com', 63274822);
 
@@ -181,6 +181,24 @@ INSERT INTO `mediciones` (`idSensor`, `idMedicion`, `humedad`, `salinidad`, `tem
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `olvidarcontrasenya`
+--
+
+CREATE TABLE `olvidarcontrasenya` (
+  `correo` varchar(255) NOT NULL,
+  `idCambiarContrasenya` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `olvidarcontrasenya`
+--
+
+INSERT INTO `olvidarcontrasenya` (`correo`, `idCambiarContrasenya`) VALUES
+('algo@gmail.vom', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `sensor`
 --
 
@@ -224,11 +242,10 @@ CREATE TABLE `solicitud` (
 --
 
 INSERT INTO `solicitud` (`idSolicitudes`, `nombreApellidosEmpresa`, `tipo`, `correo`, `telefono`, `motivo`, `provincia`, `fechasolicitud`) VALUES
-(22, 'aaaaaaaaaaaaaaaaaaa', 'Particular', 'mmmmmmmmmmmmmmmmmmmm', 65556493, 'mmmmmmmmmmmmmmmmmmmmm', 'mmmmmmmmmmmmmmmmmm', '2021-05-25'),
-(23, 'qqqqqqqqqqqqqqq', 'Particular', 'qqqqqqqqqqqqqqq', 65556493, 'qqqqqqqqqqqqqqqq', 'qqqqqqqqqqqqq', '2021-05-25'),
-(24, 'iiiiiiiiiiiii', 'Particular', 'iiiiiiiiiiii', 65556493, 'iiiiiiiiiiiii', 'iiiiiiiiiiiiiiiiiiii', '2021-05-25'),
-(25, '333333333333', 'Particular', '33333333333', 0, '33333333333', '33333333333333', '2021-05-28'),
-(26, 'yyyyyyyyyyyyy', 'Particular', 'yyyyyyyyyyyyyyyy', 65556493, 'yyyyyyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyyyyy', '2021-06-02');
+(29, 'Ignacio Mendoza Rodrigo', 'Particular', 'ingnii@gmail.com', 633364872, 'Quiero llevar las tecnologias a mis campos.', 'Alicante', '2021-06-27'),
+(30, 'Carlos Fernandez Ruiz', 'Empresa', 'carlos@gmail.com', 688864000, 'Me gustaria controlar milimetricamente todos mis campos', 'Castellon', '2021-06-27'),
+(31, 'Alvaro Escribano Rodrigo', 'Particular', 'alvaro@gmail.com', 655564961, 'Mas tecnologia en mis campos', 'Valencia', '2021-06-27'),
+(32, 'Jeremy Escribano Rodrigo', 'Particular', 'jjemyy@gmail.com', 655564911, 'Nuevas tecnologias', 'Barcelona', '2021-06-28');
 
 -- --------------------------------------------------------
 
@@ -284,6 +301,12 @@ ALTER TABLE `mediciones`
   ADD KEY `idSensor` (`idSensor`);
 
 --
+-- Indices de la tabla `olvidarcontrasenya`
+--
+ALTER TABLE `olvidarcontrasenya`
+  ADD PRIMARY KEY (`idCambiarContrasenya`);
+
+--
 -- Indices de la tabla `sensor`
 --
 ALTER TABLE `sensor`
@@ -317,13 +340,19 @@ ALTER TABLE `campos`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `mediciones`
 --
 ALTER TABLE `mediciones`
   MODIFY `idMedicion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT de la tabla `olvidarcontrasenya`
+--
+ALTER TABLE `olvidarcontrasenya`
+  MODIFY `idCambiarContrasenya` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `sensor`
@@ -335,7 +364,7 @@ ALTER TABLE `sensor`
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `idSolicitudes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `idSolicitudes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
