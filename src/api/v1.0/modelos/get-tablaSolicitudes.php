@@ -24,7 +24,8 @@ $result=mysqli_query($conexion,$sql);
             $_SESSION["solicitud"]=$resultado;
 
         }
-            echo json_encode($arrayresultado);
+        var_dump($arrayresultado);
+            //echo json_encode($arrayresultado);
         }
         else {
             http_response_code(401);
