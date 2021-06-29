@@ -1,8 +1,10 @@
 <?php
+/*
 $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
+*/
 
 $sql="SELECT * from solicitud";
-$result=mysqli_query($conexion,$sql);
+$result=mysqli_query($conn,$sql);
 
         if (mysqli_num_rows($result) > 0) {
             $arrayresultado= [];
