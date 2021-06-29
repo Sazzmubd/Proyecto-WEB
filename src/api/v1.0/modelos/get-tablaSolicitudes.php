@@ -1,6 +1,7 @@
 <?php
 $conexion = mysqli_connect('localhost', 'root', '', 'proyecto');
-
+//('localhost:3306
+//', 'aescrod_Francisco', 'fRANCISCO12345678', 'aescrod_proyectoWebUsuarios');
 $sql="SELECT * from solicitud";
 $result=mysqli_query($conexion,$sql);
 
