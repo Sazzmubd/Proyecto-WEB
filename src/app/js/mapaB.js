@@ -168,20 +168,20 @@ function createElement(Type, ClassName, Content) {
 }
 
 function createColumnTitle(){
-    let tituloTemperatura = createElement('div', ['titleTableTemperatura'], ['Temperatura']);
-    tituloTemperatura.style.width = '15%';
+    let tituloTemperatura = createElement('div', ['titleTableTemperatura'], ['Temp. (ºC)']);
+    tituloTemperatura.style.width = '18.75%';
     tituloTemperatura.style.display = 'flex';
     tituloTemperatura.style.justifyContent = 'center';
-    let tituloHumedad = createElement('div', ['titleTableHumedad'], ['Humedad']);
-    tituloHumedad.style.width = '15%';
+    let tituloHumedad = createElement('div', ['titleTableHumedad'], ['Hum. (%)']);
+    tituloHumedad.style.width = '18.75%';
     tituloHumedad.style.display = 'flex';
     tituloHumedad.style.justifyContent = 'center';
-    let tituloSalinidad = createElement('div', ['titleTableSalinidad'], ['Salinidad']);
-    tituloSalinidad.style.width = '15%';
+    let tituloSalinidad = createElement('div', ['titleTableSalinidad'], ['Sal. (g/l)']);
+    tituloSalinidad.style.width = '18.75%';
     tituloSalinidad.style.display = 'flex';
     tituloSalinidad.style.justifyContent = 'center';
-    let tituloLuminosidad = createElement('div', ['titleTableLuminosidad'], ['Luminosidad']);
-    tituloLuminosidad.style.width = '15%';
+    let tituloLuminosidad = createElement('div', ['titleTableLuminosidad'], ['Lum. (lx)']);
+    tituloLuminosidad.style.width = '18.75%';
     tituloLuminosidad.style.display = 'flex';
     tituloLuminosidad.style.justifyContent = 'center';
     let tituloFecha = createElement('div', ['titleTableFecha'], ['Fecha']);
@@ -214,7 +214,7 @@ function createColumnElement(dato, check){
     columna.style.display = 'flex';
     columna.style.justifyContent = 'center';
     if (check == 0){
-        columna.style.width = '15%';
+        columna.style.width = '18.75%';
     } else {
         columna.style.width = '25%';
     }

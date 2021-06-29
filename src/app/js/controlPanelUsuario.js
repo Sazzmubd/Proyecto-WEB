@@ -212,35 +212,32 @@ function getData2(start_date, end_date){
 }
 
 function createColumnTitle2(){
-    let idTitle = createElement2('div', ['titleTableId'], ['Id Sensor']);
-    idTitle.style.width = '15%';
-    idTitle.style.display = 'flex';
-    idTitle.style.justifyContent = 'center';
-    let tituloTemperatura = createElement2('div', ['titleTableTemperatura'], ['Temperatura']);
-    tituloTemperatura.style.width = '15%';
+    let tituloTemperatura = createElement2('div', ['titleTableTemperatura'], ['Temp. (ºC)']);
+    tituloTemperatura.style.width = '18.75%';
     tituloTemperatura.style.display = 'flex';
     tituloTemperatura.style.justifyContent = 'center';
-    let tituloHumedad = createElement2('div', ['titleTableHumedad'], ['Humedad']);
-    tituloHumedad.style.width = '15%';
+    let tituloHumedad = createElement2('div', ['titleTableHumedad'], ['Hum. (%)']);
+    tituloHumedad.style.width = '18.75%';
     tituloHumedad.style.display = 'flex';
     tituloHumedad.style.justifyContent = 'center';
-    let tituloSalinidad = createElement2('div', ['titleTableSalinidad'], ['Salinidad']);
-    tituloSalinidad.style.width = '15%';
+    let tituloSalinidad = createElement2('div', ['titleTableSalinidad'], ['Sal. (g/l)']);
+    tituloSalinidad.style.width = '18.75%';
     tituloSalinidad.style.display = 'flex';
     tituloSalinidad.style.justifyContent = 'center';
-    let tituloLuminosidad = createElement2('div', ['titleTableLuminosidad'], ['Luminosidad']);
-    tituloLuminosidad.style.width = '15%';
+    let tituloLuminosidad = createElement2('div', ['titleTableLuminosidad'], ['Lum. (lx)']);
+    tituloLuminosidad.style.width = '18.75%';
     tituloLuminosidad.style.display = 'flex';
     tituloLuminosidad.style.justifyContent = 'center';
     let tituloFecha = createElement2('div', ['titleTableFecha'], ['Fecha']);
-    tituloFecha.style.width = '15%';
+    tituloFecha.style.width = '25%';
     tituloFecha.style.display = 'flex';
     tituloFecha.style.justifyContent = 'center';
 
-    let content_title = createElement2('div', ['columnTitle'], [idTitle.outerHTML, tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
+    let content_title = createElement2('div', ['columnTitle'], [tituloTemperatura.outerHTML, tituloHumedad.outerHTML, tituloSalinidad.outerHTML, tituloLuminosidad.outerHTML, tituloFecha.outerHTML]);
     content_title.style.display = 'flex';
     content_title.style.height = '30px';
     content_title.style.alignItems = 'center';
+    content_title.style.justifyContent = 'center';
     return content_title;
 }
 
@@ -261,7 +258,7 @@ function createColumnElement2(dato, check){
     columna.style.display = 'flex';
     columna.style.justifyContent = 'center';
     if (check == 0){
-        columna.style.width = '15%';
+        columna.style.width = '18.75%';
     } else {
         columna.style.width = '25%';
     }
@@ -282,10 +279,10 @@ function crearTabla2(idSensor, datos) {
         let content = document.createElement('div');
         content.style.display = 'flex';
         content.style.alignItems = 'center';
-        for (let j = 0; j<datos.length; j++) {
+        content.style.justifyContent = 'center';
+        for (let j = 1; j<datos.length; j++) {
             let column;
             if (j != datos.length -1){
-                
                 column = createColumnElement2(datos[j][i], 0);
             } else {
                 column = createColumnElement2(datos[j][i], 1);
@@ -309,7 +306,6 @@ function getFilteredData(){
         if(start_date <= end_date){
             start_date += ' 00:00:00';
             end_date += ' 23:59:59';
-            alert(start_date + ' ' + end_date);
             getData2(start_date, end_date);
         } else {
             alert('La fecha final debe ser mayor o igual a la inicial');
